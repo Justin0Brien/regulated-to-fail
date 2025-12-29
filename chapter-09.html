@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immigration Policy as a Revenue Lever</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .lever-handle {
+            transition: transform 0.3s ease;
+        }
+        .valve-wheel {
+            animation: spin-slow 10s linear infinite;
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 8.0: POLICY_VOLATILITY
+        </div>
+        <div class="inline-block border border-green-500/30 bg-green-500/10 px-3 py-1 rounded-full text-xs text-green-400 font-bold mb-4 uppercase tracking-wider">
+            The £23.7bn Export
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Unstable Lever</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Growth Ambition vs. Migration Control"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 8: How immigration policy became a financial control switch, creating a "stop-start" revenue stream that destabilises university planning.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Double Bind (Visual Scale) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-yellow-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The State's Double Bind</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+                
+                <!-- Left: Growth Narrative -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div class="text-green-400 font-bold uppercase text-xs tracking-widest mb-2">The Export Story</div>
+                    <div class="bg-green-500/10 border border-green-500/30 p-4 rounded-lg relative overflow-hidden">
+                        <i class="fa-solid fa-arrow-trend-up absolute -right-2 -bottom-2 text-6xl text-green-500/10"></i>
+                        <span class="block text-3xl font-bold text-white">£35bn</span>
+                        <span class="text-xs text-slate-400">Export Target by 2030</span>
+                    </div>
+                </div>
+
+                <!-- Center: The Fulcrum -->
+                <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center border-4 border-slate-600 z-10">
+                    <i class="fa-solid fa-scale-balanced text-slate-400"></i>
+                </div>
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-700 -z-0"></div>
+
+                <!-- Right: Control Narrative -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div class="text-red-400 font-bold uppercase text-xs tracking-widest mb-2">The Migration Story</div>
+                    <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-lg relative overflow-hidden">
+                        <i class="fa-solid fa-hand text-6xl text-red-500/10 absolute -left-2 -bottom-2"></i>
+                        <span class="block text-3xl font-bold text-white">"Tighten"</span>
+                        <span class="text-xs text-slate-400">Net Migration Targets</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-sm text-slate-400 mt-6 italic">
+                "Describing international students as an export industry to grow, and an immigration problem to tighten, in the same breath."
+            </p>
+        </div>
+
+        <!-- Section 2: The Dependants Cliff (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-lg font-bold text-white">The "Cliff Edge"</h3>
+                    <p class="text-xs text-slate-400">Dependant Visas Issued (2023 vs 2024)</p>
+                </div>
+                <div class="text-right">
+                    <span class="block text-3xl font-bold text-red-500">-85%</span>
+                    <span class="text-[10px] text-slate-400 uppercase">Collapse</span>
+                </div>
+            </div>
+
+            <div class="h-56 w-full">
+                <canvas id="cliffChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-right italic">Source: Migration Observatory 2025</p>
+        </div>
+
+        <!-- Section 3: The Policy Valves (Diagram) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The "Revenue Tap"</h3>
+            <p class="text-xs text-slate-400 mb-6">How policy constricts the flow</p>
+
+            <div class="flex-grow flex flex-col justify-center gap-4">
+                <!-- Pipe Segment 1 -->
+                <div class="relative bg-slate-800 p-3 rounded border border-slate-600 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <span class="text-sm text-slate-300 font-bold">Int'l Fees (£23.7bn)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-600"></i>
+                </div>
+
+                <!-- Valve: Dependants -->
+                <div class="relative bg-red-900/20 p-3 rounded border border-red-500/50 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-ban text-red-500"></i>
+                        <div>
+                            <span class="text-xs text-red-400 font-bold block">RESTRICTION: Dependants</span>
+                            <span class="text-[10px] text-slate-400">Jan 2024 Ban</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valve: Levy -->
+                <div class="relative bg-orange-900/20 p-3 rounded border border-orange-500/50 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar text-orange-500"></i>
+                        <div>
+                            <span class="text-xs text-orange-400 font-bold block">TAXATION: The Levy</span>
+                            <span class="text-[10px] text-slate-400">Proposed £925/student</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output -->
+                <div class="relative bg-slate-800 p-3 rounded border border-slate-600 flex items-center justify-center">
+                    <span class="text-xs text-slate-500 italic">Result: Volatile Liquidity</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Time Lag (Timeline) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 border border-slate-700">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">The Planning Mismatch</h3>
+                <p class="text-sm text-slate-400">Universities operate on long cycles; Politics operates on short ones.</p>
+                <div class="mt-6 space-y-6 relative">
+                     <!-- Line -->
+                     <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-slate-700"></div>
+
+                     <div class="relative pl-10">
+                         <div class="absolute left-2 top-1 w-4 h-4 rounded-full bg-blue-500 border-2 border-slate-900"></div>
+                         <h4 class="text-blue-400 text-xs font-bold uppercase">Recruitment Cycle</h4>
+                         <p class="text-white font-bold">18-24 Months</p>
+                         <p class="text-[10px] text-slate-400">Agent work, test prep, application, visa processing.</p>
+                     </div>
+
+                     <div class="relative pl-10">
+                         <div class="absolute left-2 top-1 w-4 h-4 rounded-full bg-red-500 border-2 border-slate-900"></div>
+                         <h4 class="text-red-400 text-xs font-bold uppercase">Policy Shock</h4>
+                         <p class="text-white font-bold">Immediate</p>
+                         <p class="text-[10px] text-slate-400">Mid-cycle announcements destroy pipelines built years ago.</p>
+                     </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded border border-slate-700 flex flex-col justify-center">
+                <blockquote class="text-slate-400 italic text-sm text-center">
+                    "A university can survive a gradual decline if it is predictable. It struggles to survive a 'cliff' created by applicant behaviour changing faster than the institution can change its obligations."
+                </blockquote>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Migration Observatory (2025). <em>Student migration to the UK</em>. Available at: <a href="https://migrationobservatory.ox.ac.uk" class="text-blue-400 hover:underline">migrationobservatory.ox.ac.uk</a></li>
+            <li>[2] Department for Education (2025). <em>International student levy: technical detail</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+            <li>[3] Department for Business and Trade (2019). <em>International Education Strategy</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+            <li>[4] Explore Education Statistics (2025). <em>UK revenue from education related exports</em>.</li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxCliff = document.getElementById('cliffChart').getContext('2d');
+        
+        new Chart(ctxCliff, {
+            type: 'bar',
+            data: {
+                labels: ['2023 (Baseline)', '2024 (Post-Ban)'],
+                datasets: [{
+                    label: 'Dependant Visas Issued',
+                    data: [143000, 22000],
+                    backgroundColor: ['#3b82f6', '#ef4444'], // Blue to Red
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString() + ' Visas';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Can Be Done Now (Within Existing Rules)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .lever-switch {
+            width: 40px;
+            height: 20px;
+            background: #334155;
+            border-radius: 999px;
+            position: relative;
+        }
+        .lever-switch.active {
+            background: #22c55e;
+        }
+        .lever-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .lever-switch.active::after {
+            transform: translateX(20px);
+        }
+        .sieve-mesh {
+            background-image: radial-gradient(#94a3b8 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 27.0: OPERATIONAL_LEVERS
+        </div>
+        <div class="inline-block border border-green-500/30 bg-green-500/10 px-3 py-1 rounded-full text-xs text-green-400 font-bold mb-4 uppercase tracking-wider">
+            Stop Waiting, Start Steering
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Survival Toolkit</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Action within the rules as they are."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 27: The operational moves institutions can make immediately to restore margin, control costs, and survive the squeeze.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Control Room (Visual Concept) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-green-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">Stop Watching the Weather, Start Steering the Ship</h3>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Left: Uncontrollable -->
+                <div class="w-full md:w-1/2 opacity-50 bg-slate-900 border border-slate-700 p-4 rounded-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-700 text-[10px] px-2 text-slate-400 font-bold rounded-bl">UNCONTROLLABLE</div>
+                    <h4 class="text-slate-400 font-bold mb-4 text-sm">"The Weather"</h4>
+                    <ul class="space-y-3 text-xs text-slate-500">
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-cloud-bolt mr-2"></i> Visa Policy</span>
+                            <span class="text-red-900 bg-red-900/20 px-2 rounded">VOLATILE</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-sterling-sign mr-2"></i> Tuition Fee Cap</span>
+                            <span class="text-red-900 bg-red-900/20 px-2 rounded">FIXED</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-arrow-trend-up mr-2"></i> Inflation</span>
+                            <span class="text-red-900 bg-red-900/20 px-2 rounded">HIGH</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Controllable -->
+                <div class="w-full md:w-1/2 bg-slate-800 border-2 border-green-500 p-4 rounded-lg relative shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+                    <div class="absolute top-0 right-0 bg-green-500 text-[10px] px-2 text-slate-900 font-bold rounded-bl">YOUR LEVERS</div>
+                    <h4 class="text-white font-bold mb-4 text-sm">"The Ship"</h4>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-filter mr-2 text-green-400"></i> Portfolio Margin</span>
+                            <div class="lever-switch active"></div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-building-lock mr-2 text-green-400"></i> Estates Footprint</span>
+                            <div class="lever-switch active"></div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span><i class="fa-solid fa-ban mr-2 text-green-400"></i> Maverick Spend</span>
+                            <div class="lever-switch active"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Portfolio Sieve (Funnel) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-orange-500">
+            <h3 class="text-lg font-bold text-white mb-2">The "True Margin" Sieve</h3>
+            <p class="text-xs text-slate-400 mb-6">Stop cross-subsidising the "Long Tail".</p>
+
+            <div class="flex flex-col items-center relative">
+                <!-- Top Input -->
+                <div class="w-full bg-slate-700 p-2 rounded text-center text-xs text-slate-300 mb-1">
+                    All Courses (Gross Fee Income)
+                </div>
+                <i class="fa-solid fa-arrow-down text-slate-500 mb-1"></i>
+
+                <!-- The Sieve -->
+                <div class="w-3/4 h-24 bg-orange-900/20 border-2 border-orange-500 rounded-lg sieve-mesh flex items-center justify-center text-center relative mb-1">
+                    <span class="bg-slate-900 px-2 text-xs text-orange-400 font-bold border border-orange-500 rounded">Contribution Filter</span>
+                    <div class="absolute -right-24 text-[10px] text-slate-500 w-20 text-left">
+                        <i class="fa-solid fa-xmark text-red-500 mr-1"></i> Staff Cost<br>
+                        <i class="fa-solid fa-xmark text-red-500 mr-1"></i> Space Cost<br>
+                        <i class="fa-solid fa-xmark text-red-500 mr-1"></i> Admin Load
+                    </div>
+                </div>
+                
+                <i class="fa-solid fa-arrow-down text-orange-500 mb-1"></i>
+
+                <!-- The Output -->
+                <div class="w-1/2 bg-green-500 p-2 rounded text-center text-xs text-slate-900 font-bold shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+                    The Surplus Engine
+                </div>
+                <p class="text-[10px] text-slate-500 mt-2">"Identify the 20% of activity generating 80% of the cash."</p>
+            </div>
+        </div>
+
+        <!-- Section 3: The Trigger Protocol (Logic Flow) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500">
+            <h3 class="text-lg font-bold text-white mb-2">The "Trigger Protocol"</h3>
+            <p class="text-xs text-slate-400 mb-6">Replace "Optimism" with "If/Then".</p>
+
+            <div class="space-y-4">
+                <!-- Trigger 1 -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-slate-900 border border-slate-600 p-2 rounded w-1/3 text-center">
+                        <span class="text-[10px] text-slate-400 block">IF</span>
+                        <span class="text-xs font-bold text-white">Recruitment < 95%</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-blue-500"></i>
+                    <div class="bg-blue-900/20 border border-blue-500 p-2 rounded w-1/2 text-center">
+                        <span class="text-[10px] text-blue-300 block">THEN (Automatic)</span>
+                        <span class="text-xs font-bold text-blue-400">Freeze Non-Academic Hires</span>
+                    </div>
+                </div>
+
+                <!-- Trigger 2 -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-slate-900 border border-slate-600 p-2 rounded w-1/3 text-center">
+                        <span class="text-[10px] text-slate-400 block">IF</span>
+                        <span class="text-xs font-bold text-white">Cash < 45 Days</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-orange-500"></i>
+                    <div class="bg-orange-900/20 border border-orange-500 p-2 rounded w-1/2 text-center">
+                        <span class="text-[10px] text-orange-300 block">THEN (Automatic)</span>
+                        <span class="text-xs font-bold text-orange-400">Halt Capital Projects</span>
+                    </div>
+                </div>
+
+                <!-- Trigger 3 -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-slate-900 border border-slate-600 p-2 rounded w-1/3 text-center">
+                        <span class="text-[10px] text-slate-400 block">IF</span>
+                        <span class="text-xs font-bold text-white">Module Size < 15</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-red-500"></i>
+                    <div class="bg-red-900/20 border border-red-500 p-2 rounded w-1/2 text-center">
+                        <span class="text-[10px] text-red-300 block">THEN (Automatic)</span>
+                        <span class="text-xs font-bold text-red-400">Cancel / Merge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Cash Shield (Checklist) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700 bg-slate-900">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">The Immediate Cash Shield</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                
+                <div class="bg-slate-800 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-lock"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-1">Lock Procurement</h4>
+                    <p class="text-[10px] text-slate-400">Stop "Maverick Spend". No PO, no payment. Force compliance.</p>
+                </div>
+
+                <div class="bg-slate-800 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-building-slash"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-1">Mothball Space</h4>
+                    <p class="text-[10px] text-slate-400">Close one building entirely. Save heating, cleaning, security.</p>
+                </div>
+
+                <div class="bg-slate-800 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-1">Pipeline Daily</h4>
+                    <p class="text-[10px] text-slate-400">Manage admissions as a daily sales funnel, not a monthly report.</p>
+                </div>
+
+                <div class="bg-slate-800 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-eye"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-1">Honest Data</h4>
+                    <p class="text-[10px] text-slate-400">Create a "Truth Committee". Strip optimism from the forecast.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Regulated To Fail Project (2024). <em>UK HE Financial Situation GPT Deep Research</em>. Internal Working Paper.</li>
+            <li>[2] Regulated To Fail Project (2024). <em>Strategic Missteps Behind the UK University Financial Crisis</em>. Internal Working Paper.</li>
+            <li>[3] Regulated To Fail Project (2024). <em>Structural Rupture and Strategic Reinvention</em>. Internal Working Paper.</li>
+        </ul>
+    </footer>
+
+</body>
+</html>

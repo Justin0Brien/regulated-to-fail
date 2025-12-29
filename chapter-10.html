@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mythology of Volume - Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .iceberg-gradient {
+            background: linear-gradient(to bottom, #3b82f6 40%, #1e3a8a 100%);
+        }
+        .water-line {
+            border-top: 2px dashed #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 9.0: MARGIN_ANALYSIS
+        </div>
+        <div class="inline-block border border-red-500/30 bg-red-500/10 px-3 py-1 rounded-full text-xs text-red-400 font-bold mb-4 uppercase tracking-wider">
+            Myth: "Just Recruit More"
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Mythology of Volume</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Revenue is not Profit. Volume is not Safety."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 9: Why chasing student numbers without understanding margin creates a bigger, busier, and more fragile institution.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Three Businesses (Stack) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-blue-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">One Logo, Three Different Businesses</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Business 1 -->
+                <div class="bg-slate-900 p-4 rounded border border-red-500/30 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl">Loss Leader</div>
+                    <div class="mb-3 text-red-400 text-2xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4 class="font-bold text-white text-sm uppercase">Home Undergraduate</h4>
+                    <ul class="mt-3 space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-lock text-slate-600 mr-1"></i> <strong>Price:</strong> Capped & Eroded</li>
+                        <li><i class="fa-solid fa-arrow-up text-slate-600 mr-1"></i> <strong>Cost:</strong> Rising Expectations</li>
+                        <li class="text-red-400 font-bold mt-2">Result: Structural Deficit</li>
+                    </ul>
+                </div>
+
+                <!-- Business 2 -->
+                <div class="bg-slate-900 p-4 rounded border border-green-500/30 relative overflow-hidden group">
+                     <div class="absolute top-0 right-0 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl">Cash Generator</div>
+                    <div class="mb-3 text-green-400 text-2xl"><i class="fa-solid fa-plane-departure"></i></div>
+                    <h4 class="font-bold text-white text-sm uppercase">International</h4>
+                    <ul class="mt-3 space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-unlock text-slate-600 mr-1"></i> <strong>Price:</strong> Unregulated</li>
+                        <li><i class="fa-solid fa-triangle-exclamation text-yellow-500 mr-1"></i> <strong>Risk:</strong> High Volatility</li>
+                        <li class="text-green-400 font-bold mt-2">Result: The "Plug"</li>
+                    </ul>
+                </div>
+
+                <!-- Business 3 -->
+                <div class="bg-slate-900 p-4 rounded border border-orange-500/30 relative overflow-hidden group">
+                     <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl">The Hybrid</div>
+                    <div class="mb-3 text-orange-400 text-2xl"><i class="fa-solid fa-user-graduate"></i></div>
+                    <h4 class="font-bold text-white text-sm uppercase">Postgraduate Taught</h4>
+                    <ul class="mt-3 space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-ticket text-slate-600 mr-1"></i> <strong>Price:</strong> Variable</li>
+                        <li><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> <strong>Risk:</strong> Policy Sensitive</li>
+                        <li class="text-orange-400 font-bold mt-2">Result: Unstable Yield</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Margin Trap (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Margin Trap</h3>
+            <p class="text-xs text-slate-400 mb-4">Why Volume ≠ Safety</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="marginChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                "Adding Home Students increases the deficit unless cross-subsidised."
+            </p>
+        </div>
+
+        <!-- Section 3: The Acquisition Iceberg -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The Hidden Cost of Sale</h3>
+            <p class="text-xs text-slate-400 mb-4">"Recruitment is not free"</p>
+
+            <div class="flex-grow relative flex justify-center items-center">
+                <div class="w-full h-full relative flex flex-col items-center justify-center">
+                    
+                    <!-- Water Line -->
+                    <div class="absolute top-[30%] w-full water-line z-10"></div>
+                    <div class="absolute top-[28%] right-2 text-xs text-blue-300 font-mono">Gross Fee Income</div>
+
+                    <!-- Iceberg Top -->
+                    <div class="bg-white w-32 h-16 rounded-t-xl z-0 flex items-center justify-center">
+                        <span class="text-slate-900 font-bold text-xs">Tuition Fee</span>
+                    </div>
+
+                    <!-- Iceberg Bottom -->
+                    <div class="iceberg-gradient w-40 h-32 rounded-b-3xl flex flex-col items-center pt-4 z-0 text-center">
+                        <div class="text-white/80 text-[10px] mb-1"><i class="fa-solid fa-hand-holding-dollar mr-1"></i> Agent Commissions</div>
+                        <div class="text-white/80 text-[10px] mb-1"><i class="fa-solid fa-bullhorn mr-1"></i> Marketing Spend</div>
+                        <div class="text-white/80 text-[10px] mb-1"><i class="fa-solid fa-file-contract mr-1"></i> Compliance Costs</div>
+                        <div class="text-white/80 text-[10px]"><i class="fa-solid fa-ticket mr-1"></i> Scholarships</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Fixed Cost Ratchet (Process) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">The "Grow to Survive" Ratchet</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative">
+                <!-- Step 1 -->
+                <div class="w-full md:w-1/4 p-4 bg-slate-900 rounded border border-green-500/30 text-center">
+                    <h4 class="text-green-400 font-bold text-xs uppercase mb-2">1. Recruit More</h4>
+                    <p class="text-[10px] text-slate-400">Short-term cash injection to plug gaps.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+                
+                <!-- Step 2 -->
+                <div class="w-full md:w-1/4 p-4 bg-slate-900 rounded border border-slate-600 text-center">
+                    <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">2. Expand Capacity</h4>
+                    <p class="text-[10px] text-slate-400">Hire staff, lease buildings, expand systems.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+
+                <!-- Step 3 -->
+                <div class="w-full md:w-1/4 p-4 bg-slate-900 rounded border border-red-500/30 text-center relative">
+                    <i class="fa-solid fa-lock absolute -top-3 -right-3 text-red-500 bg-slate-900 p-1 rounded-full border border-red-500"></i>
+                    <h4 class="text-red-400 font-bold text-xs uppercase mb-2">3. Fixed Liabilities</h4>
+                    <p class="text-[10px] text-slate-400">Variable income becomes permanent cost.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+
+                <!-- Step 4 -->
+                <div class="w-full md:w-1/4 p-4 bg-slate-900 rounded border border-red-500/30 text-center">
+                    <h4 class="text-red-400 font-bold text-xs uppercase mb-2">4. Fragility</h4>
+                    <p class="text-[10px] text-slate-400">Cannot shrink without breaking delivery.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Office for Students (2025). <em>Financial sustainability: November 2025 update</em>. Available at: <a href="https://www.officeforstudents.org.uk" class="text-blue-400 hover:underline">officeforstudents.org.uk</a></li>
+            <li>[2] Universities UK (2025). <em>How teaching funding per student has declined</em>. Available at: <a href="https://www.universitiesuk.ac.uk" class="text-blue-400 hover:underline">universitiesuk.ac.uk</a></li>
+            <li>[3] Russell Group (2025). <em>Tuition fees worth two-thirds of value</em>. Available at: <a href="https://www.russellgroup.ac.uk" class="text-blue-400 hover:underline">russellgroup.ac.uk</a></li>
+            <li>[4] Social Market Foundation (2024). <em>Too much of a good thing?</em>. Available at: <a href="https://www.smf.co.uk" class="text-blue-400 hover:underline">smf.co.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxMargin = document.getElementById('marginChart').getContext('2d');
+        
+        new Chart(ctxMargin, {
+            type: 'bar',
+            data: {
+                labels: ['Income (Fee)', 'Cost of Delivery'],
+                datasets: [
+                    {
+                        label: 'Home Undergraduate',
+                        data: [9250, 10500], // Conceptual data: Cost exceeds Income
+                        backgroundColor: ['#3b82f6', '#ef4444'], // Blue Income, Red Cost
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'International',
+                        data: [16000, 11000], // Conceptual data: Surplus
+                        backgroundColor: ['#22c55e', '#ef4444'], // Green Income, Red Cost
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return '£' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

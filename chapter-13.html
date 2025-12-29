@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement: The Leak Nobody Sees</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .water-line {
+            border-top: 2px dashed #94a3b8;
+        }
+        .iceberg-gradient {
+            background: linear-gradient(to bottom, #3b82f6 30%, #1e3a8a 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 13.0: MAVERICK_SPEND
+        </div>
+        <div class="inline-block border border-orange-500/30 bg-orange-500/10 px-3 py-1 rounded-full text-xs text-orange-400 font-bold mb-4 uppercase tracking-wider">
+            The Autonomy Tax
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Procurement Leak</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"It is not a Department. It is a Hidden Machine."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 13: How decentralized buying, process friction, and "maverick spend" destroy value before the invoice even arrives.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Maverick Loop (Process Cycle) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-orange-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The "Maverick Spend" Cycle</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative">
+                
+                <!-- Step 1 -->
+                <div class="w-full md:w-1/5 text-center group">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-slate-500 group-hover:border-orange-500 transition-colors">
+                        <i class="fa-solid fa-flask text-slate-300"></i>
+                    </div>
+                    <h4 class="text-white text-xs font-bold uppercase">1. The Need</h4>
+                    <p class="text-[10px] text-slate-400 mt-1">PI needs equipment "now".</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+
+                <!-- Step 2 -->
+                <div class="w-full md:w-1/5 text-center group">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-red-500 shadow-[0_0_10px_rgba(239,68,68,0.3)]">
+                        <i class="fa-solid fa-person-running text-red-400"></i>
+                    </div>
+                    <h4 class="text-red-400 text-xs font-bold uppercase">2. The Bypass</h4>
+                    <p class="text-[10px] text-slate-400 mt-1">Avoids "slow" forms. Buys direct.</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+
+                <!-- Step 3 -->
+                <div class="w-full md:w-1/5 text-center group">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-slate-500">
+                        <i class="fa-solid fa-box-open text-slate-300"></i>
+                    </div>
+                    <h4 class="text-white text-xs font-bold uppercase">3. Delivery</h4>
+                    <p class="text-[10px] text-slate-400 mt-1">Goods arrive. Money is "spent".</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-600 hidden md:block"></i>
+
+                <!-- Step 4 -->
+                <div class="w-full md:w-1/5 text-center group">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-orange-500">
+                        <i class="fa-solid fa-file-invoice-dollar text-orange-400"></i>
+                    </div>
+                    <h4 class="text-orange-400 text-xs font-bold uppercase">4. The Surprise</h4>
+                    <p class="text-[10px] text-slate-400 mt-1">Invoice lands in Finance inbox.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-slate-900/50 p-3 rounded border border-slate-700 text-center">
+                <p class="text-xs text-slate-300 italic">"Finance becomes an archaeology department, reconstructing past decisions."</p>
+            </div>
+        </div>
+
+        <!-- Section 2: The Spend Iceberg (Visual Metaphor) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-5 border-t-4 border-t-blue-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The Spend Iceberg</h3>
+            <p class="text-xs text-slate-400 mb-6">Why negotiation alone fails.</p>
+
+            <div class="flex-grow relative flex justify-center items-center h-64 bg-slate-900 rounded border border-slate-700 overflow-hidden">
+                
+                <!-- Water Line -->
+                <div class="absolute top-[35%] w-full water-line z-10"></div>
+                <div class="absolute top-[32%] right-2 text-[10px] text-blue-300 font-mono uppercase">Visible Cost</div>
+
+                <!-- Iceberg Top -->
+                <div class="absolute top-[15%] w-32 h-20 bg-white rounded-t-xl z-0 flex items-center justify-center shadow-lg">
+                    <div class="text-center">
+                        <i class="fa-solid fa-tag text-slate-800 text-xl"></i>
+                        <span class="block text-slate-900 font-bold text-xs mt-1">Sticker Price</span>
+                    </div>
+                </div>
+
+                <!-- Iceberg Bottom -->
+                <div class="absolute top-[35%] w-48 h-48 iceberg-gradient rounded-b-full flex flex-col items-center pt-6 z-0 text-center">
+                    <div class="space-y-2">
+                        <div class="bg-blue-900/50 px-2 py-1 rounded text-[10px] text-white backdrop-blur-sm"><i class="fa-solid fa-rotate mr-1"></i> Transaction Cost</div>
+                        <div class="bg-blue-900/50 px-2 py-1 rounded text-[10px] text-white backdrop-blur-sm"><i class="fa-solid fa-file-contract mr-1"></i> Compliance Risk</div>
+                        <div class="bg-blue-900/50 px-2 py-1 rounded text-[10px] text-white backdrop-blur-sm"><i class="fa-solid fa-user-secret mr-1"></i> Fraud / Error</div>
+                        <div class="bg-blue-900/50 px-2 py-1 rounded text-[10px] text-white backdrop-blur-sm"><i class="fa-solid fa-magnifying-glass mr-1"></i> Reconciliation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Autonomy Tax (Bar Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-7 border-t-4 border-t-red-500">
+            <h3 class="text-lg font-bold text-white mb-2">The "Autonomy Tax"</h3>
+            <p class="text-xs text-slate-400 mb-4">Fragmented vs. Consolidated Spend</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="autonomyChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                Data Context: BUFDG Procurement Value Survey 2024 & Jisc Savings Analysis
+            </p>
+        </div>
+
+        <!-- Section 4: The Fix Ladder (Steps) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">How to Fix the Leak</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                
+                <!-- Step 1 -->
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-blue-500 text-center h-full">
+                    <div class="text-blue-400 font-bold text-2xl mb-2">1</div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2">Simplify</h4>
+                    <p class="text-[10px] text-slate-400">Make the official route faster than the workaround.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-blue-500 text-center h-full">
+                    <div class="text-blue-400 font-bold text-2xl mb-2">2</div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2">Standardise</h4>
+                    <p class="text-[10px] text-slate-400">Stop buying 27 varieties of laptop.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-blue-500 text-center h-full">
+                    <div class="text-blue-400 font-bold text-2xl mb-2">3</div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2">Fix Data</h4>
+                    <p class="text-[10px] text-slate-400">Clean supplier lists. No more "archaeology".</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500 text-center h-full shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                    <div class="text-green-400 font-bold text-2xl mb-2">4</div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2">Incentivise</h4>
+                    <p class="text-[10px] text-slate-400">Let departments keep some savings.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500 text-center h-full shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                    <div class="text-green-400 font-bold text-2xl mb-2">5</div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2">Aggregate</h4>
+                    <p class="text-[10px] text-slate-400">Use consortia (Jisc, SUPC) for leverage.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] BUFDG (2025). <em>Procurement Value Survey 2023–24 Results Report</em>. Available at: <a href="https://bufdg.ac.uk" class="text-blue-400 hover:underline">bufdg.ac.uk</a></li>
+            <li>[2] Jisc (2025). <em>Jisc-negotiated licensing delivers £500 million in member savings</em>. Available at: <a href="https://www.jisc.ac.uk" class="text-blue-400 hover:underline">jisc.ac.uk</a></li>
+            <li>[3] UKUPC (2020). <em>Statement on sector procurement support</em>. Available at: <a href="https://www.ukupc.ac.uk" class="text-blue-400 hover:underline">ukupc.ac.uk</a></li>
+            <li>[4] Financial Times (2025). <em>UK faces 'significant risk' from procurement collusion</em>. Available at: <a href="https://www.ft.com" class="text-blue-400 hover:underline">ft.com</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxAutonomy = document.getElementById('autonomyChart').getContext('2d');
+        
+        new Chart(ctxAutonomy, {
+            type: 'bar',
+            data: {
+                labels: ['Unit Price', 'Process Cost', 'Risk Exposure'],
+                datasets: [
+                    {
+                        label: 'Fragmented Spend (Maverick)',
+                        data: [100, 80, 90], // High costs/risk
+                        backgroundColor: '#ef4444', // Red
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Consolidated Spend (Managed)',
+                        data: [85, 20, 30], // Lower costs/risk
+                        backgroundColor: '#22c55e', // Green
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y + '% (Relative)';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { display: false } // Concept chart
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

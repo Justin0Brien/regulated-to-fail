@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government's Slow-motion Decisions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .sediment-layer {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .sediment-layer:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        /* Rot effect overlay */
+        .rot-pattern {
+            background-image: radial-gradient(#ef4444 1px, transparent 1px);
+            background-size: 10px 10px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 23.0: POLICY_SEDIMENT
+        </div>
+        <div class="inline-block border border-slate-500/30 bg-slate-500/10 px-3 py-1 rounded-full text-xs text-slate-400 font-bold mb-4 uppercase tracking-wider">
+            The Cumulative Error
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Policy Sediment</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Decisions that piled up until the floor broke."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 23: How a decade of individually defensible "slow-motion" decisions compounded into a structural crisis.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Sediment Stack (Visual Layer Cake) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-slate-500 flex flex-col md:flex-row gap-8 items-center">
+            
+            <div class="w-full md:w-1/3">
+                <h3 class="text-lg font-bold text-white mb-2">Policy as Sediment</h3>
+                <p class="text-sm text-slate-400 mb-4">
+                    The crisis is not one event. It is a geological accumulation of deferred problems.
+                </p>
+                <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                    <p class="text-xs text-slate-300 italic">
+                        "They are not dramatic enough to be treated as decisive, but they are decisive in aggregate."
+                    </p>
+                </div>
+            </div>
+
+            <!-- The Stack -->
+            <div class="w-full md:w-2/3 flex flex-col gap-1 relative">
+                <!-- Layer 1 -->
+                <div class="sediment-layer bg-blue-900/40 border border-blue-500/50 p-3 rounded text-center">
+                    <span class="text-xs font-bold text-blue-400">2012: The Fixed Nominal Cap</span>
+                    <p class="text-[10px] text-slate-400">Created a revenue ceiling that inflation would inevitably erode.</p>
+                </div>
+                
+                <!-- Layer 2 -->
+                <div class="sediment-layer bg-indigo-900/40 border border-indigo-500/50 p-3 rounded text-center -mt-2">
+                    <span class="text-xs font-bold text-indigo-400">2015: Removal of Numbers Cap</span>
+                    <p class="text-[10px] text-slate-400">Triggered a volume war; forced institutions to grow to survive.</p>
+                </div>
+
+                <!-- Layer 3 -->
+                <div class="sediment-layer bg-purple-900/40 border border-purple-500/50 p-3 rounded text-center -mt-2">
+                    <span class="text-xs font-bold text-purple-400">2017: Regulatory Expansion (HERA)</span>
+                    <p class="text-[10px] text-slate-400">Increased cost of compliance just as margins tightened.</p>
+                </div>
+
+                <!-- Layer 4 -->
+                <div class="sediment-layer bg-orange-900/40 border border-orange-500/50 p-3 rounded text-center -mt-2">
+                    <span class="text-xs font-bold text-orange-400">2022: The Great Freeze</span>
+                    <p class="text-[10px] text-slate-400">Inflation spiked; fees stayed flat. The "real terms" crash.</p>
+                </div>
+
+                <!-- Layer 5 (Top) -->
+                <div class="sediment-layer bg-red-900/60 border border-red-500 p-3 rounded text-center -mt-2 shadow-lg">
+                    <span class="text-xs font-bold text-red-400">2024: Visa Policy Volatility</span>
+                    <p class="text-[10px] text-slate-300">Cut the cross-subsidy lifeline.</p>
+                </div>
+
+                <!-- The Result (Base) -->
+                <div class="mt-2 text-center">
+                    <i class="fa-solid fa-arrow-down text-slate-500"></i>
+                    <span class="text-[10px] text-slate-500 block uppercase tracking-widest">Structural Compression</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The "Kick the Can" Decision Tree -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-12 border-t-4 border-t-yellow-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The "Kick the Can" Game</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                
+                <!-- Decision 1 -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 px-2 text-[10px] text-yellow-500 font-bold border border-slate-600 rounded">DECISION 1: FEES</div>
+                    <div class="mt-2 text-sm text-white font-bold mb-2">Inflation is rising.</div>
+                    
+                    <div class="flex justify-center gap-2 mb-2">
+                        <div class="w-1/2 bg-green-900/20 p-2 rounded border border-green-900/50 opacity-50">
+                            <span class="block text-[9px] text-green-400">Indexation</span>
+                            <span class="block text-[8px] text-slate-500">(Boring, Safe)</span>
+                        </div>
+                        <div class="w-1/2 bg-red-900/20 p-2 rounded border border-red-500/50">
+                            <span class="block text-[9px] text-red-400">Freeze</span>
+                            <span class="block text-[8px] text-slate-500">(Political Win)</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-slate-600 absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden md:block"></i>
+                </div>
+
+                <!-- Decision 2 -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 px-2 text-[10px] text-yellow-500 font-bold border border-slate-600 rounded">DECISION 2: RESEARCH</div>
+                    <div class="mt-2 text-sm text-white font-bold mb-2">Deficit is growing.</div>
+                    
+                    <div class="flex justify-center gap-2 mb-2">
+                        <div class="w-1/2 bg-green-900/20 p-2 rounded border border-green-900/50 opacity-50">
+                            <span class="block text-[9px] text-green-400">Fund fEC</span>
+                            <span class="block text-[8px] text-slate-500">(Expensive)</span>
+                        </div>
+                        <div class="w-1/2 bg-red-900/20 p-2 rounded border border-red-500/50">
+                            <span class="block text-[9px] text-red-400">Cross-Subsidise</span>
+                            <span class="block text-[8px] text-slate-500">(Implicit)</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-slate-600 absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden md:block"></i>
+                </div>
+
+                <!-- Decision 3 -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 px-2 text-[10px] text-yellow-500 font-bold border border-slate-600 rounded">DECISION 3: IMMIGRATION</div>
+                    <div class="mt-2 text-sm text-white font-bold mb-2">Numbers are high.</div>
+                    
+                    <div class="flex justify-center gap-2 mb-2">
+                        <div class="w-1/2 bg-green-900/20 p-2 rounded border border-green-900/50 opacity-50">
+                            <span class="block text-[9px] text-green-400">Stable Policy</span>
+                            <span class="block text-[8px] text-slate-500">(Predictable)</span>
+                        </div>
+                        <div class="w-1/2 bg-red-900/20 p-2 rounded border border-red-500/50">
+                            <span class="block text-[9px] text-red-400">Restrict</span>
+                            <span class="block text-[8px] text-slate-500">(Tough Action)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-6 text-center">
+                <span class="text-xs text-red-400 font-bold bg-red-900/10 px-3 py-1 rounded border border-red-500/30">
+                    RESULT: System Fragility (No Margin Left)
+                </span>
+            </div>
+        </div>
+
+        <!-- Section 3: The Damp Metaphor (Visual) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-cyan-500 flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-white mb-2">The "Damp" Metaphor</h3>
+            <p class="text-xs text-slate-400 mb-4">Why you can't ignore one patch.</p>
+
+            <div class="flex-grow bg-slate-800 rounded border border-slate-600 relative overflow-hidden p-6 flex items-center justify-center">
+                <div class="rot-pattern absolute inset-0"></div>
+                <div class="grid grid-cols-2 gap-4 relative z-10 w-full">
+                    <div class="bg-slate-900 p-3 rounded border border-cyan-500/30 text-center">
+                        <i class="fa-solid fa-droplet text-cyan-400 mb-1"></i>
+                        <span class="block text-[10px] text-slate-300">Tuition Freeze</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded border border-cyan-500/30 text-center">
+                        <i class="fa-solid fa-droplet text-cyan-400 mb-1"></i>
+                        <span class="block text-[10px] text-slate-300">Pension Spike</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded border border-cyan-500/30 text-center">
+                        <i class="fa-solid fa-droplet text-cyan-400 mb-1"></i>
+                        <span class="block text-[10px] text-slate-300">Maintenance Backlog</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded border border-cyan-500/30 text-center">
+                        <i class="fa-solid fa-droplet text-cyan-400 mb-1"></i>
+                        <span class="block text-[10px] text-slate-300">Visa Ban</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                "You can ignore one patch, but the whole place still rots."
+            </p>
+        </div>
+
+        <!-- Section 4: The Boring Alternative (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-green-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Boring Alternative</h3>
+            <p class="text-xs text-slate-400 mb-4">UK vs. "Stable" System</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="counterfactualChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                The counterfactual isn't magic; it's just boring predictability.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Office for Students (2025). <em>Financial Sustainability of Higher Education Providers in England</em>. Available at: <a href="https://www.officeforstudents.org.uk" class="text-blue-400 hover:underline">officeforstudents.org.uk</a></li>
+            <li>[2] Institute for Fiscal Studies (2024). <em>Annual report on education spending</em>. Available at: <a href="https://ifs.org.uk" class="text-blue-400 hover:underline">ifs.org.uk</a></li>
+            <li>[3] Regulated To Fail Project (2025). <em>Government Policy and the UK University Funding Crisis (Internal Working Paper)</em>.</li>
+            <li>[4] Regulated To Fail Project (2025). <em>Strategic Missteps Behind the UK University Financial Crisis (Internal Working Paper)</em>.</li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxCounter = document.getElementById('counterfactualChart').getContext('2d');
+        
+        new Chart(ctxCounter, {
+            type: 'radar',
+            data: {
+                labels: ['Predictability', 'Financial Stability', 'Autonomy', 'Political Risk', 'Efficiency Incentive'],
+                datasets: [{
+                    label: 'Current UK System',
+                    data: [20, 30, 40, 90, 80], // High risk, high political interference
+                    backgroundColor: 'rgba(239, 68, 68, 0.2)', // Red
+                    borderColor: '#ef4444',
+                    pointBackgroundColor: '#ef4444'
+                }, {
+                    label: 'The "Boring" Alternative',
+                    data: [90, 85, 70, 30, 60], // High stability, low risk
+                    backgroundColor: 'rgba(34, 197, 94, 0.2)', // Green
+                    borderColor: '#22c55e',
+                    pointBackgroundColor: '#22c55e'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: {
+                            color: '#94a3b8',
+                            font: { family: 'Inter', size: 10 }
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#e2e8f0', font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

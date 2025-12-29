@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Services: The Obvious Answer that Fails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .trap-zone {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(239, 68, 68, 0.1),
+                rgba(239, 68, 68, 0.1) 10px,
+                rgba(239, 68, 68, 0.05) 10px,
+                rgba(239, 68, 68, 0.05) 20px
+            );
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 14.0: SHARED_SERVICES_FAILURES
+        </div>
+        <div class="inline-block border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 rounded-full text-xs text-indigo-400 font-bold mb-4 uppercase tracking-wider">
+            The Collaboration Paradox
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Shared Services Trap</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"The logic is perfect. The execution is lethal."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 14: Why the "obvious" solution of sharing back-office functions hits the structural walls of VAT, governance, and autonomy.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Trap Diagram -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-indigo-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">Why the "Obvious" Answer Fails</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 relative">
+                
+                <!-- The Idea -->
+                <div class="w-full md:w-1/4 text-center">
+                    <div class="bg-indigo-900/20 border border-indigo-500/30 p-4 rounded-lg mb-2">
+                        <i class="fa-solid fa-lightbulb text-4xl text-indigo-400 mb-2"></i>
+                        <h4 class="font-bold text-white">The Idea</h4>
+                        <p class="text-xs text-slate-400">"We all run Payroll. Let's combine it."</p>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-600 text-2xl hidden md:block"></i>
+
+                <!-- The Reality (Trap) -->
+                <div class="w-full md:w-1/2 relative bg-slate-900 border border-slate-600 p-6 rounded-lg trap-zone">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-500 text-red-400">FRICTION ZONE</div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-gavel text-slate-500"></i>
+                            <span class="text-xs text-slate-300">Procurement Rules</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-percent text-red-500"></i>
+                            <span class="text-xs text-slate-300">VAT Charges (+20%)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-users-gear text-orange-500"></i>
+                            <span class="text-xs text-slate-300">Governance Tax</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-cat text-blue-500"></i>
+                            <span class="text-xs text-slate-300">Loss of Autonomy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-600 text-2xl hidden md:block"></i>
+
+                <!-- The Result -->
+                <div class="w-full md:w-1/4 text-center">
+                    <div class="bg-slate-900 border border-slate-700 p-4 rounded-lg mb-2 opacity-70">
+                        <i class="fa-solid fa-ban text-4xl text-slate-500 mb-2"></i>
+                        <h4 class="font-bold text-slate-400">The Stall</h4>
+                        <p class="text-xs text-slate-500">"It's too complicated. Let's keep it local."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The VAT Trap (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500">
+            <h3 class="text-lg font-bold text-white mb-2">The VAT Arithmetic</h3>
+            <p class="text-xs text-slate-400 mb-4">Why sharing can cost more.</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="vatChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                Unless a strict exemption applies, VAT can wipe out the efficiency gain.
+            </p>
+        </div>
+
+        <!-- Section 3: The Governance Tax (Visual) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-orange-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The "Governance Tax"</h3>
+            <p class="text-xs text-slate-400 mb-6">Shared services require expensive management.</p>
+
+            <div class="flex-grow flex flex-col justify-center space-y-4">
+                <!-- Direct Cost -->
+                <div class="w-full bg-slate-800 rounded h-8 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 h-full bg-blue-500 w-[70%] flex items-center pl-3">
+                        <span class="text-[10px] text-white font-bold">Service Cost</span>
+                    </div>
+                </div>
+
+                <!-- Hidden Cost -->
+                <div class="w-full bg-slate-800 rounded h-8 relative overflow-hidden border border-orange-500/50">
+                    <div class="absolute top-0 left-0 h-full bg-orange-500 w-[30%] flex items-center pl-3">
+                        <span class="text-[10px] text-slate-900 font-bold">Relationship Mgmt.</span>
+                    </div>
+                    <div class="absolute top-0 left-[30%] h-full w-[1px] bg-slate-900"></div>
+                    <div class="absolute top-0 right-2 h-full flex items-center">
+                        <span class="text-[10px] text-orange-400 italic">Hidden Overhead</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-3 rounded text-[10px] text-slate-400 border border-slate-700">
+                    <i class="fa-solid fa-quote-left mr-2 text-slate-600"></i>
+                    Someone must run the board, negotiate levels, and manage disputes. This is not an incidental add-on.
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Real Ask (Checklist) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">What Success Actually Requires</h3>
+            <p class="text-center text-sm text-slate-400 mb-8">It's not a software purchase. It's a surrender of sovereignty.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-flag-checkered"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-2">Concede Uniqueness</h4>
+                    <p class="text-xs text-slate-400">Admit that your way isn't special.</p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-2">Accept Standardisation</h4>
+                    <p class="text-xs text-slate-400">Variation is a luxury you can't afford.</p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-2">Invest Upfront</h4>
+                    <p class="text-xs text-slate-400">Pay for the transition before the saving.</p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded border-b-4 border-green-500">
+                    <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h4 class="text-white font-bold text-sm mb-2">Tolerate Pain</h4>
+                    <p class="text-xs text-slate-400">Service gets worse before it gets better.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Jisc (2025). <em>Opportunities for efficiency through shared services</em>. Available at: <a href="https://www.jisc.ac.uk" class="text-blue-400 hover:underline">jisc.ac.uk</a></li>
+            <li>[2] Universities UK (2025). <em>Transformation and Efficiency Taskforce: Towards a new era of collaboration</em>. Available at: <a href="https://www.universitiesuk.ac.uk" class="text-blue-400 hover:underline">universitiesuk.ac.uk</a></li>
+            <li>[3] Crown Commercial Service (2016). <em>Guidance on Public/Public Contracts</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+            <li>[4] HM Revenue & Customs (2012). <em>VAT: Cost Sharing Exemption</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxVAT = document.getElementById('vatChart').getContext('2d');
+        
+        new Chart(ctxVAT, {
+            type: 'bar',
+            data: {
+                labels: ['Operational Saving', 'VAT Cost', 'Net Result'],
+                datasets: [{
+                    data: [15, -20, -5], // 15% saving, 20% tax cost = 5% loss
+                    backgroundColor: [
+                        '#22c55e', // Green (Saving)
+                        '#ef4444', // Red (Tax)
+                        '#f97316'  // Orange (Loss)
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

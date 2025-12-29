@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT: The 20% Tax on Collaboration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .tax-wall {
+            background-image: repeating-linear-gradient(
+                135deg,
+                #7f1d1d,
+                #7f1d1d 10px,
+                #991b1b 10px,
+                #991b1b 20px
+            );
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 19.0: VAT_LEAKAGE
+        </div>
+        <div class="inline-block border border-red-500/30 bg-red-500/10 px-3 py-1 rounded-full text-xs text-red-400 font-bold mb-4 uppercase tracking-wider">
+            The Collaboration Surcharge
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The VAT Penalty</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Why it costs 20% extra to be efficient"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 19: How the tax system inadvertently punishes universities for sharing services, turning "economies of scale" into net losses.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The "Exempt" Trap (Visual Explanation) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-orange-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The "Exempt" Status Trap</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Normal Company -->
+                <div class="bg-slate-900 p-6 rounded border border-slate-700 opacity-60">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i class="fa-solid fa-building text-slate-500"></i>
+                        <h4 class="font-bold text-slate-400">Normal Company</h4>
+                    </div>
+                    <div class="space-y-4 text-sm text-slate-500">
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span>1. Buys IT Service (£100 + £20 VAT)</span>
+                            <span>Pay £120</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span>2. Charges VAT on Sales</span>
+                            <span>Yes</span>
+                        </div>
+                        <div class="flex justify-between text-green-500 font-bold">
+                            <span>3. Reclaims Input VAT?</span>
+                            <span>YES (Net Cost £100)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University -->
+                <div class="bg-slate-900 p-6 rounded border-2 border-orange-500 relative shadow-xl">
+                    <div class="absolute -top-3 right-4 bg-orange-500 text-slate-900 text-[10px] font-bold px-2 py-1 rounded">THE LEAK</div>
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i class="fa-solid fa-graduation-cap text-orange-400"></i>
+                        <h4 class="font-bold text-white">University</h4>
+                    </div>
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span>1. Buys IT Service (£100 + £20 VAT)</span>
+                            <span>Pay £120</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span>2. Charges VAT on Tuition?</span>
+                            <span class="text-red-400">NO (Exempt)</span>
+                        </div>
+                        <div class="flex justify-between text-red-400 font-bold">
+                            <span>3. Reclaims Input VAT?</span>
+                            <span>NO (Net Cost £120)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate-400 mt-6 italic">
+                "Exempt means you don't charge it, but you also can't claim it back. The VAT sticks."
+            </p>
+        </div>
+
+        <!-- Section 2: The Collaboration Surcharge (Diagram) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Collaboration Surcharge</h3>
+            <p class="text-xs text-slate-400 mb-6">Why sharing costs more.</p>
+
+            <div class="flex flex-col gap-6">
+                <!-- Scenario A: In-House -->
+                <div class="bg-slate-900 p-3 rounded border border-slate-700 relative">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-white">Scenario A: In-House Payroll</span>
+                        <span class="text-[10px] bg-green-500/20 text-green-400 px-2 rounded">VAT Free</span>
+                    </div>
+                    <div class="h-8 bg-blue-500 rounded flex items-center justify-center text-xs text-white font-bold w-full">
+                        Cost: £100k
+                    </div>
+                </div>
+
+                <!-- Scenario B: Shared -->
+                <div class="bg-slate-900 p-3 rounded border border-slate-700 relative">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-white">Scenario B: Shared Service</span>
+                        <span class="text-[10px] bg-red-500/20 text-red-400 px-2 rounded">VAT Charged</span>
+                    </div>
+                    <div class="flex w-full">
+                        <div class="h-8 bg-blue-500 rounded-l flex items-center justify-center text-xs text-white font-bold w-[83%]">
+                            Cost: £100k
+                        </div>
+                        <div class="h-8 bg-red-500 rounded-r flex items-center justify-center text-xs text-white font-bold w-[17%] tax-wall">
+                            +£20k
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Breakeven Hurdle (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Efficiency Hurdle</h3>
+            <p class="text-xs text-slate-400 mb-4">You must save >20% just to break even.</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="hurdleChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                A 15% operational saving becomes a 5% financial loss after VAT.
+            </p>
+        </div>
+
+        <!-- Section 4: The CSE Maze (Process) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">Why not use the Exemption? (The CSE Maze)</h3>
+            
+            <div class="relative">
+                <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-700 -translate-x-1/2 hidden md:block"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- The Promise -->
+                    <div class="text-center md:text-right md:pr-12">
+                        <div class="bg-green-900/20 border border-green-500/50 p-4 rounded inline-block mb-4">
+                            <i class="fa-solid fa-file-contract text-2xl text-green-400"></i>
+                            <h4 class="text-green-400 font-bold text-sm mt-2">Cost Sharing Exemption</h4>
+                            <p class="text-[10px] text-slate-400">"Shared services at cost are exempt!"</p>
+                        </div>
+                    </div>
+
+                    <!-- The Reality (Checklist) -->
+                    <div class="text-left md:pl-12 space-y-3">
+                        <div class="flex items-center gap-3 opacity-50">
+                            <i class="fa-solid fa-check-double text-slate-500"></i>
+                            <span class="text-xs text-slate-400">Must be a separate legal entity.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-orange-500"></i>
+                            <span class="text-xs text-slate-300"><strong>Strict Cost-Only:</strong> No profit allowed. Hard to invest/grow.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-orange-500"></i>
+                            <span class="text-xs text-slate-300"><strong>Directly Necessary:</strong> Non-qualifying use disqualifies it.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-ban text-red-500"></i>
+                            <span class="text-xs text-slate-300"><strong>UK Only:</strong> Cannot easily include int'l partners.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-slate-900 p-4 rounded text-center border border-slate-700">
+                <p class="text-sm text-slate-300 italic">
+                    "The exemption exists, but the compliance cost and legal risk often outweigh the saving."
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] HMRC (2025). <em>Education and vocational training (VAT Notice 701/30)</em>. Available at: <a href="https://www.gov.uk/guidance/vat-on-education-and-vocational-training-notice-70130" class="text-blue-400 hover:underline">gov.uk</a></li>
+            <li>[2] Wonkhe (2024). <em>VAT is not always the barrier to shared services that it is thought to be</em>. Available at: <a href="https://wonkhe.com" class="text-blue-400 hover:underline">wonkhe.com</a></li>
+            <li>[3] N8 Research Partnership (2025). <em>VAT (Equipment Sharing Toolkit)</em>. Available at: <a href="https://www.n8research.org.uk" class="text-blue-400 hover:underline">n8research.org.uk</a></li>
+            <li>[4] HM Revenue & Customs (2018). <em>VAT rules for higher education providers (VAT information sheet 08/18)</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxHurdle = document.getElementById('hurdleChart').getContext('2d');
+        
+        new Chart(ctxHurdle, {
+            type: 'bar',
+            data: {
+                labels: ['Scenario 1: 15% Saving', 'Scenario 2: 25% Saving'],
+                datasets: [
+                    {
+                        label: 'Operational Saving',
+                        data: [15, 25],
+                        backgroundColor: '#22c55e', // Green
+                        stack: 'Stack 0'
+                    },
+                    {
+                        label: 'VAT Cost (-20%)',
+                        data: [-20, -20],
+                        backgroundColor: '#ef4444', // Red
+                        stack: 'Stack 0'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            footer: function(tooltipItems) {
+                                let total = 0;
+                                tooltipItems.forEach(function(tooltipItem) {
+                                    total += tooltipItem.parsed.y;
+                                });
+                                return 'Net Result: ' + total + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8', callback: function(value) { return value + '%'; } },
+                        beginAtZero: true
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

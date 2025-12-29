@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities' Own Strategic Errors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .ratchet-step {
+            border-left: 2px dashed #94a3b8;
+            position: relative;
+        }
+        .ratchet-step::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #f59e0b; /* Amber */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 25.0: STRATEGIC_AUDIT
+        </div>
+        <div class="inline-block border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 rounded-full text-xs text-yellow-400 font-bold mb-4 uppercase tracking-wider">
+            Systematic Optimism
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Strategic Error Audit</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Betting the house on a sunny day."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 25: How universities actively contributed to their own fragility through optimism bias, prestige chasing, and rigid debt.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Optimism Ratchet (Process) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-yellow-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The "Optimism Ratchet"</h3>
+            
+            <div class="flex flex-col md:flex-row items-start justify-center gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="w-full md:w-1/4 relative">
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <span class="text-xs font-bold text-white block mb-2">Year 1: The Gap</span>
+                        <p class="text-[10px] text-slate-400">"We are slightly behind budget on recruitment."</p>
+                    </div>
+                    <div class="mt-2 text-center text-yellow-500 text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="bg-yellow-900/20 p-2 rounded border border-yellow-500/50 text-center">
+                        <span class="text-[10px] text-yellow-400 font-bold">Reaction: "Stretch Target"</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="w-full md:w-1/4 relative mt-8 md:mt-0">
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <span class="text-xs font-bold text-white block mb-2">Year 2: The Miss</span>
+                        <p class="text-[10px] text-slate-400">"We missed the stretch target. Deficit widens."</p>
+                    </div>
+                    <div class="mt-2 text-center text-orange-500 text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="bg-orange-900/20 p-2 rounded border border-orange-500/50 text-center">
+                        <span class="text-[10px] text-orange-400 font-bold">Reaction: "Growth Plan"</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="w-full md:w-1/4 relative mt-16 md:mt-0">
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <span class="text-xs font-bold text-white block mb-2">Year 3: The Trap</span>
+                        <p class="text-[10px] text-slate-400">"Costs grew to meet the plan. Income didn't."</p>
+                    </div>
+                    <div class="mt-2 text-center text-red-500 text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="bg-red-900/20 p-2 rounded border border-red-500/50 text-center">
+                        <span class="text-[10px] text-red-400 font-bold">Result: Structural Crisis</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 mt-8 italic">
+                "We solved a solvency problem with a spreadsheet forecast."
+            </p>
+        </div>
+
+        <!-- Section 2: The Prestige Disconnect (Scatter Plot) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-purple-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Prestige Disconnect</h3>
+            <p class="text-xs text-slate-400 mb-4">Capital Spend vs. Student Satisfaction</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="prestigeChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                Spending on iconic buildings does not guarantee happy students.
+            </p>
+        </div>
+
+        <!-- Section 3: The Debt Trap (Visual) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The Debt Trap</h3>
+            <p class="text-xs text-slate-400 mb-6">Rigid Liabilities vs. Fluid Income</p>
+
+            <div class="flex-grow flex flex-col justify-center space-y-6 relative">
+                
+                <!-- The Bond -->
+                <div class="bg-slate-800 p-3 rounded border-2 border-slate-600 w-[90%] relative">
+                    <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 text-slate-500"><i class="fa-solid fa-lock text-2xl"></i></div>
+                    <h4 class="text-xs text-white font-bold uppercase">Private Placement / Bond</h4>
+                    <p class="text-[10px] text-slate-400">Fixed Interest. Covenants. 30 Years.</p>
+                    <div class="mt-2 w-full bg-slate-700 h-2 rounded overflow-hidden">
+                        <div class="bg-red-500 h-full w-full"></div>
+                    </div>
+                    <span class="text-[9px] text-red-400 font-bold block mt-1">MUST BE PAID</span>
+                </div>
+
+                <!-- The Connection -->
+                <div class="h-8 border-l-2 border-dashed border-slate-600 ml-8"></div>
+
+                <!-- The Income -->
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 w-[70%] relative opacity-80">
+                    <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 text-blue-400"><i class="fa-solid fa-water text-xl"></i></div>
+                    <h4 class="text-xs text-white font-bold uppercase">Student Intake</h4>
+                    <p class="text-[10px] text-slate-400">Volatile. Policy-dependent.</p>
+                    <div class="mt-2 w-full bg-slate-700 h-2 rounded overflow-hidden">
+                        <div class="bg-blue-500 h-full w-[60%]"></div> <!-- Shortfall -->
+                    </div>
+                    <span class="text-[9px] text-blue-400 font-bold block mt-1">VARIES WILDLY</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Governance Blindspot -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700 bg-slate-900">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">The Governance Blindspot</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- What Boards Saw -->
+                <div class="border border-green-500/30 p-4 rounded bg-green-900/10">
+                    <h4 class="text-green-400 font-bold text-sm uppercase mb-2"><i class="fa-solid fa-clipboard-check mr-2"></i> The Risk Register</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li>• "Cyber Security" <span class="text-green-400 font-bold float-right">MANAGED</span></li>
+                        <li>• "UKVI Audit" <span class="text-green-400 font-bold float-right">MANAGED</span></li>
+                        <li>• "Inflation" <span class="text-yellow-400 font-bold float-right">MONITORED</span></li>
+                    </ul>
+                    <p class="mt-4 text-[10px] text-slate-400 italic">"We have a process. The traffic lights are green."</p>
+                </div>
+
+                <!-- What Was Happening -->
+                <div class="border border-red-500/30 p-4 rounded bg-red-900/10">
+                    <h4 class="text-red-400 font-bold text-sm uppercase mb-2"><i class="fa-solid fa-eye-slash mr-2"></i> The Reality</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li>• <strong>Correlation Risk:</strong> All income sources falling at once.</li>
+                        <li>• <strong>Optimism Bias:</strong> Budgets assumed 5% growth forever.</li>
+                        <li>• <strong>Liquidity:</strong> Cash days < 30.</li>
+                    </ul>
+                    <p class="mt-4 text-[10px] text-slate-400 italic">"The process measured the wrong things."</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Kahneman, D. & Tversky, A. (1979). <em>Prospect Theory: An Analysis of Decision under Risk</em>. Econometrica, 47(2).</li>
+            <li>[2] Flyvbjerg, B. (2011). <em>Over Budget, Over Time, Over and Over Again</em>. Oxford Handbook of Project Management.</li>
+            <li>[3] Regulated To Fail Project (2025). <em>Strategic Missteps Behind the UK University Financial Crisis</em>. Internal Working Paper.</li>
+            <li>[4] Kaplan, R.S. & Mikes, A. (2012). <em>Managing Risks: A New Framework</em>. Harvard Business Review.</li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxPrestige = document.getElementById('prestigeChart').getContext('2d');
+        
+        // Conceptual data showing weak correlation
+        // X = Capital Spend (Millions), Y = NSS Satisfaction
+        const scatterData = [
+            { x: 10, y: 75 }, { x: 20, y: 76 }, { x: 50, y: 74 }, 
+            { x: 80, y: 72 }, { x: 100, y: 77 }, { x: 150, y: 73 },
+            { x: 15, y: 82 }, { x: 30, y: 80 }, { x: 60, y: 71 }
+        ];
+
+        new Chart(ctxPrestige, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Universities (Spend vs Satisfaction)',
+                    data: scatterData,
+                    backgroundColor: '#a855f7' // Purple
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: { display: true, text: 'Capital Spend (£m)', color: '#94a3b8' },
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        min: 60,
+                        max: 90,
+                        title: { display: true, text: 'Student Satisfaction (NSS)', color: '#94a3b8' },
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Spend: £${context.parsed.x}m, NSS: ${context.parsed.y}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

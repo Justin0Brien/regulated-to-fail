@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Failure Case Studies (and One Near Miss)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .cliff-edge {
+            border-right: 2px dashed #ef4444;
+        }
+        .hazard-text {
+            color: #ef4444;
+            text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 26.0: FAILURE_MODES
+        </div>
+        <div class="inline-block border border-red-500/30 bg-red-500/10 px-3 py-1 rounded-full text-xs text-red-400 font-bold mb-4 uppercase tracking-wider">
+            Anatomy of Collapse
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Failure Autopsy</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Fragility is manufactured, one decision at a time."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 26: How optimistic forecasting, sunk-cost logic, and governance blindness turn manageable pressure into institutional failure.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Case 1: The Recruitment Curve -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-purple-500">
+            <h3 class="text-lg font-bold text-white mb-2">Case 1: The Forecast Trap</h3>
+            <p class="text-xs text-slate-400 mb-4">"We just need one more good year."</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="recruitmentChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                The "Hockey Stick" forecast covers the deficit. The reality exposes it.
+            </p>
+        </div>
+
+        <!-- Case 2: The Sunk Cost Trap -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">Case 2: The Building That Ate the Budget</h3>
+            <p class="text-xs text-slate-400 mb-6">Why projects don't stop when they should.</p>
+
+            <div class="flex-grow space-y-4 relative pl-6 border-l-2 border-slate-600">
+                <!-- Stage 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[29px] top-0 w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <span class="text-xs font-bold text-white">Approval</span>
+                    <p class="text-[10px] text-slate-400">"Transformative project. £50m."</p>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[29px] top-0 w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <span class="text-xs font-bold text-yellow-400">Delay & Inflation</span>
+                    <p class="text-[10px] text-slate-400">"Costs up to £65m. Too late to stop."</p>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="relative">
+                    <div class="absolute -left-[29px] top-0 w-3 h-3 bg-orange-500 rounded-full"></div>
+                    <span class="text-xs font-bold text-orange-400">The Sunk Cost Trap</span>
+                    <p class="text-[10px] text-slate-400">"We've spent £20m. Stopping wastes it."</p>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="relative">
+                    <div class="absolute -left-[29px] top-0 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-bold text-red-400">The Outcome</span>
+                    <p class="text-[10px] text-slate-400">"A £90m building we can't afford to heat."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case 3: Governance Blindness -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700 bg-slate-900">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">Case 3: The Dashboard Illusion</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- The Board Pack -->
+                <div class="bg-slate-800 p-4 rounded border border-green-500/30 text-center relative">
+                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-900 px-2 text-[10px] text-slate-400 border border-slate-700 rounded">WHAT THE BOARD SAW</span>
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <div class="bg-green-500/20 p-2 rounded text-green-400 font-bold text-xs">Covenant: OK</div>
+                        <div class="bg-green-500/20 p-2 rounded text-green-400 font-bold text-xs">Applications: OK</div>
+                        <div class="bg-green-500/20 p-2 rounded text-green-400 font-bold text-xs">Deficit: < 3%</div>
+                        <div class="bg-yellow-500/20 p-2 rounded text-yellow-400 font-bold text-xs">Cash: 40 days</div>
+                    </div>
+                </div>
+
+                <!-- The Reality -->
+                <div class="bg-slate-800 p-4 rounded border border-red-500/30 text-center relative">
+                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-900 px-2 text-[10px] text-red-400 border border-slate-700 rounded font-bold">THE REALITY</span>
+                    <ul class="text-xs text-left text-slate-300 space-y-2 mt-2 pl-4 list-disc marker:text-red-500">
+                        <li><strong>Cash</strong> is artificially high due to prepayments.</li>
+                        <li><strong>Covenant</strong> headroom vanishes if recruitment drops 2%.</li>
+                        <li><strong>Deficit</strong> excludes backlog maintenance.</li>
+                        <li><strong>Risk:</strong> The buffer is imaginary.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-6 italic">
+                "The traffic lights were green until the engine fell out."
+            </p>
+        </div>
+
+        <!-- Case 4: The Near Miss (Pivot) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-green-500">
+            <h3 class="text-lg font-bold text-white mb-4">Case 4: The Near Miss (How to Survive)</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-center">
+                
+                <div class="w-1/3">
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <i class="fa-solid fa-triangle-exclamation text-yellow-500 text-2xl mb-2"></i>
+                        <h4 class="text-white font-bold text-sm">The Signal</h4>
+                        <p class="text-[10px] text-slate-400">"Early data shows we will miss target."</p>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-500"></i>
+
+                <div class="w-1/3">
+                    <div class="bg-green-900/20 p-4 rounded border border-green-500">
+                        <i class="fa-solid fa-scissors text-green-400 text-2xl mb-2"></i>
+                        <h4 class="text-white font-bold text-sm">The "Pain Now" Choice</h4>
+                        <p class="text-[10px] text-slate-400">Freeze posts immediately. Stop the project. Reprice.</p>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-arrow-right text-slate-500"></i>
+
+                <div class="w-1/3">
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <i class="fa-solid fa-heart-pulse text-blue-400 text-2xl mb-2"></i>
+                        <h4 class="text-white font-bold text-sm">Survival</h4>
+                        <p class="text-[10px] text-slate-400">Ugly year, but cash remains positive. Control retained.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Regulated To Fail Project (2025). <em>Strategic Missteps Behind the UK University Financial Crisis</em>. Internal Working Paper.</li>
+            <li>[2] Regulated To Fail Project (2025). <em>University Income: Myths, Cross-Subsidies, and Volatility</em>. Internal Working Paper.</li>
+            <li>[3] Lovallo, D. & Kahneman, D. (2003). <em>Delusions of Success: How Optimism Undermines Executives' Decisions</em>. Harvard Business Review.</li>
+            <li>[4] Flyvbjerg, B. (2011). <em>Over Budget, Over Time, Over and Over Again</em>. Oxford Handbook of Project Management.</li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxRecruitment = document.getElementById('recruitmentChart').getContext('2d');
+        
+        new Chart(ctxRecruitment, {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023', '2024 (Forecast)', '2024 (Actual)'],
+                datasets: [
+                    {
+                        label: 'The "Hope" Strategy (Forecast)',
+                        data: [100, 105, 110, 125, null],
+                        borderColor: '#a855f7', // Purple
+                        borderDash: [5, 5],
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Reality (Policy Shock)',
+                        data: [100, 105, 110, null, 95], // Drop
+                        borderColor: '#ef4444', // Red
+                        tension: 0.1,
+                        pointRadius: 6,
+                        pointBackgroundColor: '#ef4444'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    }
+                },
+                scales: {
+                    y: {
+                        display: false,
+                        min: 80,
+                        max: 140
+                    },
+                    x: {
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

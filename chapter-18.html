@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensions & Workforce Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .divergence-arrow {
+            position: relative;
+        }
+        .tier-separator {
+            border-top: 2px dashed #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 17.0: PENSION_DYNAMICS
+        </div>
+        <div class="inline-block border border-pink-500/30 bg-pink-500/10 px-3 py-1 rounded-full text-xs text-pink-400 font-bold mb-4 uppercase tracking-wider">
+            The Structural Squeeze
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Pension Trap</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"A Workforce Strategy Inside a Pension Crisis"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 17: How pension volatility (USS) and cost spikes (TPS) force universities to redesign their workforce, trading financial risk for industrial unrest.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Great Divergence (Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-8 border-l-4 border-l-pink-500">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h3 class="text-lg font-bold text-white">The Great Divergence</h3>
+                    <p class="text-xs text-slate-400">Employer Contribution Rates (2022-2024)</p>
+                </div>
+                <div class="bg-slate-900 px-3 py-1 rounded text-right">
+                    <span class="block text-xs text-slate-400">Gap Impact</span>
+                    <span class="text-pink-400 font-bold">Competitive Asymmetry</span>
+                </div>
+            </div>
+
+            <div class="h-64 w-full">
+                <canvas id="pensionChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                TPS costs spiked while USS costs fell, creating a huge disparity between Post-92 and Pre-92 cost bases.
+            </p>
+        </div>
+
+        <!-- Section 2: The TPS "Tax" (Visual) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-4 border-t-4 border-t-red-500 flex flex-col justify-between">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">The TPS Spike</h3>
+                <p class="text-xs text-slate-400 mb-4">April 2024 Revaluation</p>
+                
+                <div class="bg-red-900/20 border border-red-500/50 p-4 rounded text-center mb-4">
+                    <span class="block text-4xl font-bold text-white">+5%</span>
+                    <span class="text-xs text-red-400 uppercase tracking-widest">Employer Hike</span>
+                </div>
+                
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Caused by the Treasury's "SCAPE" discount rate change.
+                    <br><br>
+                    <strong>Impact:</strong> For a £100m payroll, this adds <strong>£5m/year</strong> in unfunded cost.
+                </p>
+            </div>
+            <div class="mt-4 text-[10px] text-slate-500 text-center border-t border-slate-700 pt-2">
+                "A cost spike you cannot opt out of."
+            </div>
+        </div>
+
+        <!-- Section 3: The Subsidiary Switch (Diagram) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">Workforce Architecture: The "De-risking" Strategy</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
+                
+                <!-- Stage 1: The University (Old) -->
+                <div class="bg-slate-800 p-6 rounded-l-lg border-r border-slate-700 relative z-10 opacity-60">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-building-columns text-3xl text-slate-400"></i>
+                        <h4 class="font-bold text-white mt-2">The University</h4>
+                        <span class="text-[10px] text-slate-400 uppercase">Legacy Model</span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Direct Employment</li>
+                        <li><i class="fa-solid fa-lock text-red-500 mr-2"></i> DB Pension (TPS/LGPS)</li>
+                        <li><i class="fa-solid fa-scale-unbalanced text-red-500 mr-2"></i> Employer carries Risk</li>
+                    </ul>
+                </div>
+
+                <!-- The Pivot Point (Arrow) -->
+                <div class="hidden md:flex absolute top-1/2 left-1/3 transform -translate-y-1/2 -translate-x-1/2 z-20 bg-slate-900 p-2 rounded-full border border-slate-600">
+                    <i class="fa-solid fa-arrow-right text-white"></i>
+                </div>
+                <div class="hidden md:flex absolute top-1/2 right-1/3 transform -translate-y-1/2 translate-x-1/2 z-20 bg-slate-900 p-2 rounded-full border border-slate-600">
+                    <i class="fa-solid fa-arrow-right text-white"></i>
+                </div>
+
+                <!-- Stage 2: The Subsidiary (New) -->
+                <div class="bg-slate-900 p-6 border-y border-slate-700 relative z-10 border-t-4 border-t-blue-500">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-building text-3xl text-blue-400"></i>
+                        <h4 class="font-bold text-white mt-2">The Subsidiary</h4>
+                        <span class="text-[10px] text-blue-400 uppercase">New Vehicle</span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-file-contract text-blue-400 mr-2"></i> New Legal Entity</li>
+                        <li><i class="fa-solid fa-piggy-bank text-green-500 mr-2"></i> DC Pension (Flexible)</li>
+                        <li><i class="fa-solid fa-user-shield text-green-500 mr-2"></i> Employee carries Risk</li>
+                    </ul>
+                </div>
+
+                <!-- Stage 3: The Result (Risk) -->
+                <div class="bg-slate-800 p-6 rounded-r-lg border-l border-slate-700 relative z-10">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-people-arrows text-3xl text-orange-400"></i>
+                        <h4 class="font-bold text-white mt-2">The Consequence</h4>
+                        <span class="text-[10px] text-orange-400 uppercase">Social Cost</span>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-layer-group text-orange-500 mr-2"></i> Two-Tier Workforce</li>
+                        <li><i class="fa-solid fa-bullhorn text-red-500 mr-2"></i> Union Conflict</li>
+                        <li><i class="fa-solid fa-heart-crack text-orange-500 mr-2"></i> Cohesion Failure</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section 4: The Risk Transfer Cycle -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-l-4 border-l-yellow-500">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">The Law of Conservation of Risk</h3>
+                <p class="text-sm text-slate-400 mb-4">You cannot destroy pension risk; you can only move it.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="bg-blue-500/10 p-2 rounded text-blue-400"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Financial Risk</h4>
+                            <p class="text-xs text-slate-400">Moved from Balance Sheet to Employee (via DC schemes).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-arrow-down text-slate-600"></i>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-red-500/10 p-2 rounded text-red-400"><i class="fa-solid fa-fire"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Operational Risk</h4>
+                            <p class="text-xs text-slate-400">Reappears as strikes, recruitment struggles, and "reputational drag".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-900 p-6 rounded border border-slate-700 flex flex-col justify-center">
+                <blockquote class="text-slate-400 italic text-sm text-center">
+                    "When pension costs spike, institutions reach for structural solutions because they feel controllable. But structural change is never value-neutral. It trades financial volatility for industrial conflict."
+                </blockquote>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Teachers' Pensions (2024). <em>Updates to contribution rates</em>. Available at: <a href="https://www.teacherspensions.co.uk" class="text-blue-400 hover:underline">teacherspensions.co.uk</a></li>
+            <li>[2] USS (2024). <em>Your statutory notice of changes to USS</em>. Available at: <a href="https://www.uss.co.uk" class="text-blue-400 hover:underline">uss.co.uk</a></li>
+            <li>[3] UCEA (2023). <em>Concern over lack of funding for TPS increase</em>. Available at: <a href="https://www.ucea.ac.uk" class="text-blue-400 hover:underline">ucea.ac.uk</a></li>
+            <li>[4] Financial Times (2025). <em>Pension burden on post-1992 universities risks job cuts</em>. Available at: <a href="https://www.ft.com" class="text-blue-400 hover:underline">ft.com</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxPension = document.getElementById('pensionChart').getContext('2d');
+        
+        new Chart(ctxPension, {
+            type: 'line',
+            data: {
+                labels: ['2022', '2023', 'Jan 2024', 'Apr 2024'],
+                datasets: [
+                    {
+                        label: 'TPS (Post-92 Employer Rate)',
+                        data: [23.68, 23.68, 23.68, 28.68],
+                        borderColor: '#ef4444', // Red
+                        backgroundColor: '#ef4444',
+                        borderWidth: 3,
+                        tension: 0.1,
+                        stepped: 'after'
+                    },
+                    {
+                        label: 'USS (Pre-92 Employer Rate)',
+                        data: [21.6, 21.6, 14.5, 14.5],
+                        borderColor: '#22c55e', // Green
+                        backgroundColor: '#22c55e',
+                        borderWidth: 3,
+                        tension: 0.1,
+                        stepped: 'after'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 10,
+                        max: 30,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8', callback: function(value) { return value + '%'; } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

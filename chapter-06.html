@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Triumph of the Fixed Price - Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .eroded-bar {
+            background-image: repeating-linear-gradient(
+                45deg,
+                #334155,
+                #334155 10px,
+                #1e293b 10px,
+                #1e293b 20px
+            );
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 5.0: VALUE_EROSION_METRICS
+        </div>
+        <div class="inline-block border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 rounded-full text-xs text-yellow-500 font-bold mb-4 uppercase tracking-wider">
+            £9,000 ERA
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Erosion of Value</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"A Fixed Price in an Inflationary World"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 5: How a politically convenient fixed fee cap became a structural trap, eroding the unit of resource by 37% in real terms.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Divergence Chart (Nominal vs Real) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-8 border-l-4 border-l-orange-500">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h3 class="text-lg font-bold text-white">The Great Divergence (2012–2025)</h3>
+                    <p class="text-xs text-slate-400">Nominal Fee Cap vs. Real Purchasing Power (2012 Prices)</p>
+                </div>
+                <div class="text-right">
+                    <span class="block text-2xl font-bold text-red-500">-37%</span>
+                    <span class="text-[10px] text-slate-400 uppercase">Real Value Drop</span>
+                </div>
+            </div>
+
+            <div class="h-64 w-full">
+                <canvas id="divergenceChart"></canvas>
+            </div>
+            
+            <p class="text-xs text-slate-400 mt-4 italic text-center">
+                Data sources: DfE Impact Assessment (2025) & Universities UK Analysis.
+            </p>
+        </div>
+
+        <!-- Section 2: The Price Tag Metaphor -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-4 border-t-4 border-t-yellow-500 flex flex-col justify-between">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">The "Price Tag" Trap</h3>
+                <p class="text-sm text-slate-400 mb-6">Why the number stuck.</p>
+                
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative mb-4">
+                    <div class="absolute -top-3 -right-3 bg-yellow-500 text-slate-900 font-bold text-xs px-2 py-1 rounded shadow-lg transform rotate-12">
+                        STUCK!
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-4xl font-bold text-white mono">£9,000</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">2012 - 2017</span>
+                    </div>
+                </div>
+                
+                 <div class="bg-slate-900 p-4 rounded border border-slate-700 relative">
+                    <div class="text-center">
+                        <span class="block text-4xl font-bold text-slate-300 mono">£9,250</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">2017 - 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 border-l-2 border-yellow-500 mt-4">
+                "It had the pleasing rhetorical shape of a step-change... once you had said £9,000, you could spend the next decade not saying anything else."
+            </div>
+        </div>
+
+        <!-- Section 3: The 2025 Uplift (Stabilisation vs Restoration) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">The 2025 Uplift: Stabilisation, Not Restoration</h3>
+            
+            <!-- Visual Bar Comparison -->
+            <div class="flex flex-col md:flex-row items-end gap-4 h-48 justify-center mb-6 px-4 md:px-20">
+                
+                <!-- Bar 1: 2012 Baseline -->
+                <div class="w-full md:w-1/4 flex flex-col items-center group">
+                    <div class="text-xs text-slate-400 mb-2">2012 Value</div>
+                    <div class="w-full bg-blue-500 rounded-t h-40 relative flex items-center justify-center border-t border-x border-blue-400">
+                        <span class="text-white font-bold">100%</span>
+                    </div>
+                    <div class="text-xs font-bold text-white mt-2">Baseline</div>
+                </div>
+
+                <!-- Bar 2: 2024 Reality -->
+                <div class="w-full md:w-1/4 flex flex-col items-center group">
+                    <div class="text-xs text-slate-400 mb-2">2024 Reality</div>
+                    <div class="w-full bg-slate-800 relative h-40 rounded-t overflow-hidden border border-slate-600">
+                        <div class="absolute bottom-0 w-full bg-red-500 h-[63%] flex items-center justify-center">
+                            <span class="text-white font-bold">63%</span>
+                        </div>
+                        <div class="absolute top-0 w-full h-[37%] eroded-bar flex items-center justify-center">
+                            <span class="text-slate-500 text-[10px] uppercase font-bold transform -rotate-45">Lost Value</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-red-500 mt-2">The Erosion</div>
+                </div>
+
+                <!-- Bar 3: 2025 Uplift -->
+                <div class="w-full md:w-1/4 flex flex-col items-center group">
+                    <div class="text-xs text-slate-400 mb-2">2025 Uplift</div>
+                    <div class="w-full bg-slate-800 relative h-40 rounded-t overflow-hidden border border-slate-600">
+                         <div class="absolute bottom-0 w-full bg-orange-500 h-[63%] border-t-2 border-white flex items-center justify-center">
+                             <span class="text-white font-bold">63%</span>
+                         </div>
+                         <div class="absolute top-[35%] w-full flex justify-center">
+                             <span class="text-[10px] text-green-400 bg-slate-900 px-2 rounded border border-green-500">+3.1% (Stabilises)</span>
+                         </div>
+                    </div>
+                    <div class="text-xs font-bold text-orange-500 mt-2">The "Patch"</div>
+                </div>
+
+            </div>
+
+            <p class="text-center text-sm text-slate-400 max-w-3xl mx-auto">
+                The 2025 cap rise to <strong>£9,535</strong> represents an attempt to stop the bleeding, not a restoration of funding. 
+                <br><span class="text-slate-500 italic">(Source: IFS 2025 Annual Report & DfE Fee Limits IA)</span>
+            </p>
+        </div>
+
+        <!-- Section 4: The Strategic Consequence (Grid) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6 border-l-4 border-l-blue-500">
+            <div class="col-span-1 md:col-span-3 mb-2">
+                <h3 class="text-lg font-bold text-white">Consequence: The Treadmill</h3>
+                <p class="text-sm text-slate-400">Because indexation was missing, institutions were forced to:</p>
+            </div>
+
+            <!-- Strategy 1 -->
+            <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                <div class="text-blue-400 text-xl mb-2"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+                <h4 class="font-bold text-slate-200 text-sm">Chase Volume</h4>
+                <p class="text-xs text-slate-400 mt-1">If unit price is fixed, revenue can only grow by recruiting more students.</p>
+            </div>
+
+            <!-- Strategy 2 -->
+            <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                <div class="text-green-400 text-xl mb-2"><i class="fa-solid fa-earth-americas"></i></div>
+                <h4 class="font-bold text-slate-200 text-sm">Target International</h4>
+                <p class="text-xs text-slate-400 mt-1">Pursue the only revenue stream that wasn't capped (the "plug in the bath").</p>
+            </div>
+
+            <!-- Strategy 3 -->
+            <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                <div class="text-red-400 text-xl mb-2"><i class="fa-solid fa-scissors"></i></div>
+                <h4 class="font-bold text-slate-200 text-sm">Permanent Austerity</h4>
+                <p class="text-xs text-slate-400 mt-1">"Efficiency" stopped being about improvement and became a routine survival necessity.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Department for Education (2025). <em>Impact Assessment: The Higher Education (Fee Limits) Regulations 2025</em>. Available at: <a href="https://www.legislation.gov.uk/ukia/2025/12/pdfs/ukia_20250012_en.pdf" class="text-blue-400 hover:underline">legislation.gov.uk</a></li>
+            <li>[2] Institute for Fiscal Studies (2025). <em>Annual report on education spending in England: 2024–25</em>. Available at: <a href="https://ifs.org.uk/publications/annual-report-education-spending-england-2024-25" class="text-blue-400 hover:underline">ifs.org.uk</a></li>
+            <li>[3] Universities UK (2024). <em>Tuition fee rise: What does it mean?</em>. Available at: <a href="https://www.universitiesuk.ac.uk" class="text-blue-400 hover:underline">universitiesuk.ac.uk</a></li>
+            <li>[4] Department for Education (2024). <em>Changes to tuition fees: 2025 to 2026 academic year</em>. Available at: <a href="https://www.gov.uk" class="text-blue-400 hover:underline">gov.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctxDivergence = document.getElementById('divergenceChart').getContext('2d');
+        
+        // Data approximation based on Chapter 5 text (DfE IA & UUK figures)
+        // 2012: 9000 vs 9000
+        // 2017: 9250 (Nominal) vs ~8000 (Real - approx)
+        // 2024: 9250 (Nominal) vs ~5860 (Real - 37% drop)
+        // 2025: 9535 (Nominal) vs ~5860 (Real - stabilised)
+
+        new Chart(ctxDivergence, {
+            type: 'line',
+            data: {
+                labels: ['2012', '2014', '2016', '2018', '2020', '2022', '2024', '2025'],
+                datasets: [
+                    {
+                        label: 'Nominal Fee Cap (£ Cash)',
+                        data: [9000, 9000, 9000, 9250, 9250, 9250, 9250, 9535],
+                        borderColor: '#fbbf24', // Amber/Gold
+                        backgroundColor: '#fbbf24',
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Real Value (2012 Prices)',
+                        data: [9000, 8700, 8400, 8100, 7500, 6800, 5860, 5860], // Smooth curve down to 5860
+                        borderColor: '#ef4444', // Red
+                        backgroundColor: '#ef4444',
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        borderDash: [5, 5], // Dashed line for "Real"
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumSignificantDigits: 4 }).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 4000,
+                        max: 10000,
+                        grid: { color: '#334155' },
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: function(value) { return '£' + value; }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cost Shock - Structural Exposure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .border-blue { border-color: #3b82f6; }
+        .border-red { border-color: #ef4444; }
+        .border-yellow { border-color: #eab308; }
+        
+        /* Custom Grid Background for "Blueprint" feel */
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .cycle-arrow {
+            position: relative;
+        }
+        .cycle-arrow::after {
+            content: '';
+            position: absolute;
+            border: solid #64748b;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 left-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 3.0: COST_STRUCTURE_ANALYSIS
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2 mt-6">The Cost Shock</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"The bill arrived."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 3: How soaring non-pay inflation and expanding compliance duties exposed the fragility of the university business model.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: Non-Pay Inflation (The Surge) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-8 border-l-4 border-l-red-500">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h3 class="text-lg font-bold text-white">The Surge in Non-Pay Costs</h3>
+                    <p class="text-xs text-slate-400">Estates Management Report Data (2022-23)</p>
+                </div>
+                <div class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-xs font-bold uppercase">
+                    Critical Impact
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Chart -->
+                <div class="w-full md:w-1/2 h-56">
+                    <canvas id="inflationChart"></canvas>
+                </div>
+                
+                <!-- Key Stats -->
+                <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="bg-slate-900/50 p-4 rounded border border-slate-700">
+                        <span class="block text-3xl font-bold text-red-500">+107%</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Energy Costs</span>
+                        <p class="text-[10px] text-slate-500 mt-1">Over 2 years</p>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border border-slate-700">
+                        <span class="block text-3xl font-bold text-orange-500">+45%</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Insurance</span>
+                        <p class="text-[10px] text-slate-500 mt-1">Single year rise</p>
+                    </div>
+                    <div class="col-span-2 text-sm text-slate-300 italic mt-2">
+                        "Energy ceased to behave like a stable background cost and started behaving like a shock."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Compliance Weight -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-4 border-l-4 border-l-blue-500 flex flex-col">
+            <div class="mb-4">
+                <h3 class="text-lg font-bold text-white">The Compliance Overhead</h3>
+                <p class="text-xs text-slate-400">"The work around the work"</p>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center items-center text-center space-y-6">
+                <!-- Icon Viz -->
+                <div class="relative">
+                    <i class="fa-solid fa-scale-unbalanced text-6xl text-blue-500/20"></i>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fa-solid fa-file-contract text-3xl text-blue-400"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="block text-4xl font-bold text-white">17.6</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-widest">FTE Staff</span>
+                    <p class="text-xs text-slate-500 mt-2 px-4">
+                        Average dedicated solely to regulatory compliance per institution.
+                    </p>
+                </div>
+
+                <div class="w-full bg-slate-900/50 p-3 rounded border border-slate-700 text-left">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-yellow-500 text-xs mt-1"></i>
+                        <p class="text-[10px] text-slate-400">
+                            <strong>New Burden Example:</strong> Retaining 5 years of assessment data could cost 
+                            <span class="text-white">£270k - £1m</span> per institution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Maintenance Trap (Cycle) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-t border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-8 text-center">The Maintenance Trap: A Vicious Cycle</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center relative">
+                
+                <!-- Hidden Line for Desktop -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-700 -z-10 transform -translate-y-1/2"></div>
+
+                <!-- Step 1 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-red-500/30 text-center h-40 flex flex-col justify-center relative z-10">
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-sm">1</div>
+                    <h4 class="text-red-400 font-bold text-sm">Operating Costs Spike</h4>
+                    <p class="text-xs text-slate-400 mt-2">Energy & insurance bills must be paid immediately.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-600 text-center h-40 flex flex-col justify-center relative z-10">
+                    <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-sm">2</div>
+                    <h4 class="text-slate-200 font-bold text-sm">Capital Investment Cut</h4>
+                    <p class="text-xs text-slate-400 mt-2">Money is diverted from planned works to survival.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-600 text-center h-40 flex flex-col justify-center relative z-10">
+                    <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-sm">3</div>
+                    <h4 class="text-slate-200 font-bold text-sm">Deferred Maintenance</h4>
+                    <p class="text-xs text-slate-400 mt-2">Preventative work stops. "Wait until it breaks."</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-orange-500/30 text-center h-40 flex flex-col justify-center relative z-10">
+                    <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-sm">4</div>
+                    <h4 class="text-orange-400 font-bold text-sm">Critical Failure</h4>
+                    <p class="text-xs text-slate-400 mt-2">Buildings fail unexpectedly. Emergency repairs cost more.</p>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-sm text-slate-400 mt-8 italic">
+                "You do not remove the cost; you shift it into the future, often making it larger."
+            </p>
+        </div>
+
+        <!-- Section 4: The Myth of Staff Cuts -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-l-4 border-l-purple-500">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Why You Cannot Simply "Cut Staff"</h3>
+                <p class="text-sm text-slate-400 mb-4">The structural reality of cost reduction.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                        <span class="text-sm text-slate-300"><strong>Non-Pay is Stubborn:</strong> Firing staff does not lower energy bills, software licences, or compliance fees.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-lock text-purple-400 mt-1"></i>
+                        <span class="text-sm text-slate-300"><strong>Fixed Costs Remain:</strong> Security, utilities, and debt service must be paid regardless of headcount.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-rotate-left text-orange-400 mt-1"></i>
+                        <span class="text-sm text-slate-300"><strong>The Spiral:</strong> Cutting academic staff damages the product -> recruitment falls -> revenue drops further.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-slate-900 rounded-lg p-6 border border-slate-700">
+                <h4 class="text-xs text-slate-500 uppercase tracking-widest mb-4 text-center">The "Delivery Floor" Concept</h4>
+                <div class="relative w-full h-32 bg-slate-800 rounded-lg overflow-hidden flex items-end">
+                    <div class="w-full bg-blue-500/20 absolute bottom-0 h-[60%] border-t border-blue-500/50 flex items-center justify-center">
+                        <span class="text-xs text-blue-300 font-mono">Min. Viable Delivery</span>
+                    </div>
+                    <div class="w-1/3 mx-auto bg-purple-500 h-[80%] z-10 relative group">
+                        <div class="absolute -top-8 w-full text-center text-xs text-white bg-slate-700 px-1 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                            Current Staffing
+                        </div>
+                    </div>
+                    <div class="absolute bottom-[60%] w-full border-t-2 border-dashed border-red-500"></div>
+                    <span class="absolute right-2 bottom-[62%] text-[10px] text-red-400">Break Point</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Association of University Directors of Estates (2025). <em>EMR Report 2024</em>. Available at: <a href="https://www.aude.ac.uk/knowledge-hub/emr-report/" class="text-blue-400 hover:underline">aude.ac.uk</a></li>
+            <li>[2] Office for Students (2025). <em>Financial sustainability: November 2025 update</em>. Available at: <a href="https://www.officeforstudents.org.uk" class="text-blue-400 hover:underline">officeforstudents.org.uk</a></li>
+            <li>[3] Universities UK (2025). <em>The challenge of regulatory burden</em>. Available at: <a href="https://www.universitiesuk.ac.uk/what-we-do/policy-and-research/publications/challenge-regulatory-burden" class="text-blue-400 hover:underline">universitiesuk.ac.uk</a></li>
+            <li>[4] Office for National Statistics (2023). <em>Consumer price inflation, UK: April 2023</em>. Available at: <a href="https://www.ons.gov.uk" class="text-blue-400 hover:underline">ons.gov.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // Inflation Chart (Bar)
+        const ctxInflation = document.getElementById('inflationChart').getContext('2d');
+        new Chart(ctxInflation, {
+            type: 'bar',
+            data: {
+                labels: ['Energy Costs', 'Insurance', 'Property Ops'],
+                datasets: [{
+                    label: 'Cost Increase (%)',
+                    data: [107, 45, 35],
+                    backgroundColor: [
+                        '#ef4444', // Red for Energy
+                        '#f97316', // Orange for Insurance
+                        '#3b82f6'  // Blue for Property
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bar chart
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return '+' + context.parsed.x + '% Increase';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

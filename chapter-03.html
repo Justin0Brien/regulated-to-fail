@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cross-Subsidy Bargain - Anatomy of a Breakdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .highlight-green { color: #10b981; } /* Emerald 500 */
+        .highlight-red { color: #ef4444; } /* Red 500 */
+        .highlight-yellow { color: #eab308; } /* Yellow 500 */
+        
+        .flow-arrow {
+            position: relative;
+            height: 2px;
+            background: #475569;
+        }
+        .flow-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0; 
+            height: 0; 
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid #475569;
+        }
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Cross-Subsidy Bargain</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"It is the plug in the bath."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 2: How international fee surpluses underwrite the UK higher education model—and why the mechanism broke.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Mechanism (Visual Diagram) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-emerald-500">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white">The "Invisible" Business Model</h3>
+                    <p class="text-sm text-slate-400">How the money actually moves</p>
+                </div>
+                <div class="bg-emerald-900/30 text-emerald-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-emerald-500/20">
+                    System Status: Destabilised
+                </div>
+            </div>
+
+            <!-- The Flow Visualization -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 py-8">
+                
+                <!-- Source -->
+                <div class="text-center w-full md:w-1/3">
+                    <div class="bg-emerald-500/10 border border-emerald-500 p-6 rounded-lg mb-3">
+                        <i class="fa-solid fa-earth-americas text-4xl text-emerald-400 mb-2"></i>
+                        <h4 class="font-bold text-emerald-400">International Fees</h4>
+                        <span class="text-xs text-emerald-200/70">Uncapped Income</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Generates the primary operating surplus.</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden md:flex flex-col items-center w-12">
+                    <div class="h-1 w-full bg-slate-600"></div>
+                    <i class="fa-solid fa-caret-right text-slate-600 text-xl -mr-1"></i>
+                    <span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">Subsidises</span>
+                </div>
+                <div class="md:hidden text-slate-600 text-2xl my-2">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+
+                <!-- Sinks -->
+                <div class="w-full md:w-1/3 space-y-4">
+                    <!-- Sink 1 -->
+                    <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-lg flex items-center gap-4">
+                        <div class="bg-red-500/20 p-2 rounded">
+                            <i class="fa-solid fa-graduation-cap text-red-400"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-200">Domestic Teaching</h5>
+                            <span class="text-xs text-red-300">Systemic Deficit (Capped Fees)</span>
+                        </div>
+                    </div>
+                    <!-- Sink 2 -->
+                    <div class="bg-orange-500/10 border border-orange-500/30 p-4 rounded-lg flex items-center gap-4">
+                        <div class="bg-orange-500/20 p-2 rounded">
+                            <i class="fa-solid fa-flask text-orange-400"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-200">Research Activity</h5>
+                            <span class="text-xs text-orange-300">Structural Deficit (80% Funding)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Research Gap Data -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-5 border-l-4 border-l-orange-500">
+            <h3 class="text-lg font-semibold text-white mb-2">The Research Gap</h3>
+            <p class="text-xs text-slate-400 mb-6">UKRI Full Economic Cost (fEC) Funding Model</p>
+            
+            <div class="relative h-48 w-full">
+                <canvas id="researchChart"></canvas>
+                <!-- Center Text Overlay -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span class="text-3xl font-bold text-orange-500">20%</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-widest">Shortfall</span>
+                </div>
+            </div>
+            
+            <p class="mt-6 text-sm text-slate-300 leading-relaxed">
+                <i class="fa-solid fa-quote-left text-slate-600 mr-2"></i>
+                UKRI grants typically cover only 80% of full economic costs. The institution must find the remaining balance from other resources.
+            </p>
+        </div>
+
+        <!-- Section 3: The Visa Cliff (Policy Shock) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-7 border-l-4 border-l-red-500">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">The Policy Shock</h3>
+                    <p class="text-xs text-slate-400">Impact of Jan 2024 Dependant Rules</p>
+                </div>
+                <div class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    2024 DATA
+                </div>
+            </div>
+
+            <div class="flex items-end gap-4 h-48 mt-8 px-4 border-b border-slate-700 pb-4">
+                <!-- Before Bar (Stylized) -->
+                <div class="w-1/2 h-full flex flex-col justify-end group">
+                    <div class="w-full bg-slate-600 rounded-t-lg relative hover:bg-slate-500 transition-all h-[90%]">
+                        <div class="absolute -top-6 w-full text-center text-xs text-slate-400">Pre-2024 Trend</div>
+                    </div>
+                </div>
+                
+                <!-- After Bar (Stylized) -->
+                <div class="w-1/2 h-full flex flex-col justify-end group">
+                    <div class="w-full bg-red-500 rounded-t-lg relative hover:bg-red-400 transition-all h-[15%]">
+                        <span class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-2xl font-bold text-red-500">-85%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between px-4 mt-2 text-xs text-slate-400 font-mono">
+                <span>Baseline</span>
+                <span>2024 Actuals</span>
+            </div>
+
+            <p class="mt-4 text-sm text-slate-300">
+                Analysis noted an <strong>85% fall</strong> in visas issued to student dependants in 2024. "Not a minor parameter tweak; a direct hit."
+            </p>
+        </div>
+
+        <!-- Section 4: Why it Stopped Working (Grid) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-t border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6">Why the Bargain Broke</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Factor 1 -->
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                    <div class="text-blue-400 text-2xl mb-3"><i class="fa-solid fa-gavel"></i></div>
+                    <h4 class="font-bold text-slate-200 text-sm mb-2">Policy Risk</h4>
+                    <p class="text-xs text-slate-400">Migration policy became volatile. Changes to dependant rules removed the stability required for long-term planning.</p>
+                </div>
+
+                <!-- Factor 2 -->
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                    <div class="text-purple-400 text-2xl mb-3"><i class="fa-solid fa-globe"></i></div>
+                    <h4 class="font-bold text-slate-200 text-sm mb-2">Correlation</h4>
+                    <p class="text-xs text-slate-400">Risks are no longer diversified. Currency shocks and geopolitics now move multiple markets in the same direction.</p>
+                </div>
+
+                <!-- Factor 3 -->
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                    <div class="text-yellow-400 text-2xl mb-3"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h4 class="font-bold text-slate-200 text-sm mb-2">Visibility</h4>
+                    <p class="text-xs text-slate-400">The "quiet workaround" became public. International income is now seen as a policy target for caps or levies.</p>
+                </div>
+
+                <!-- Factor 4 -->
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                    <div class="text-pink-400 text-2xl mb-3"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h4 class="font-bold text-slate-200 text-sm mb-2">Over-Reliance</h4>
+                    <p class="text-xs text-slate-400">Every institution chased the same surplus, increasing acquisition costs just as the market tightened.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Office for Students (2025). <em>Financial sustainability of higher education providers in England: November 2025 update</em>. Available at: <a href="https://www.officeforstudents.org.uk/media/uzshqf13/financial-sustainability-of-higher-education-providers-in-england-november-2025-update.pdf" class="text-blue-400 hover:underline">ofs.org.uk</a></li>
+            <li>[2] UK Research and Innovation (2025). <em>Principles of full economic costing (fEC)</em>. Available at: <a href="https://www.ukri.org/councils/epsrc/guidance-for-applicants/costs-you-can-apply-for/principles-of-full-economic-costing-fec/" class="text-blue-400 hover:underline">ukri.org</a></li>
+            <li>[3] The Migration Observatory (2025). <em>Student Migration to the UK</em>. Available at: <a href="https://migrationobservatory.ox.ac.uk/resources/briefings/student-migration-to-the-uk/" class="text-blue-400 hover:underline">migrationobservatory.ox.ac.uk</a></li>
+            <li>[4] Russell Group (2023). <em>Understanding a research-intensive university's business model</em>. Available at: <a href="https://www.russellgroup.ac.uk" class="text-blue-400 hover:underline">russellgroup.ac.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // Research Funding Gap Chart (Doughnut)
+        const ctxResearch = document.getElementById('researchChart').getContext('2d');
+        new Chart(ctxResearch, {
+            type: 'doughnut',
+            data: {
+                labels: ['Funded (UKRI)', 'Deficit (Institution Pays)'],
+                datasets: [{
+                    data: [80, 20],
+                    backgroundColor: ['#334155', '#f97316'], // Slate for funded, Orange for deficit
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter', size: 10 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                },
+                cutout: '75%'
+            }
+        });
+    </script>
+</body>
+</html>

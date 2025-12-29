@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insolvency: The Disorderly Exit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .hazard-text {
+            color: #ef4444;
+            text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+        }
+        .legal-wall {
+            background-image: repeating-linear-gradient(
+                -45deg,
+                #334155,
+                #334155 10px,
+                #475569 10px,
+                #475569 20px
+            );
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 21.0: INSOLVENCY_RISK
+        </div>
+        <div class="inline-block border border-red-500/30 bg-red-500/10 px-3 py-1 rounded-full text-xs text-red-400 font-bold mb-4 uppercase tracking-wider">
+            Systemic Risk Warning
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Disorderly Exit</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Planning for a Crisis that Law Cannot Manage"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 21: Why the lack of a Special Administration Regime (SAR) means university failure puts creditors ahead of students.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Plan vs. Reality Clash -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-red-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">The Plan Meets The Law</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 relative">
+                
+                <!-- The Plan -->
+                <div class="w-64 bg-slate-900 border border-blue-500 p-4 rounded text-center opacity-70">
+                    <h4 class="text-blue-400 font-bold text-sm mb-2">OfS Student Protection Plan</h4>
+                    <ul class="text-[10px] text-slate-400 space-y-2 text-left">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Orderly Teach-out</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Refunds protected</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Smooth transfer</li>
+                    </ul>
+                    <div class="mt-4 text-[10px] bg-blue-900/30 text-blue-300 p-1 rounded">Assuming Solvency</div>
+                </div>
+
+                <!-- The Clash Point -->
+                <div class="text-4xl text-red-500 animate-pulse"><i class="fa-solid fa-gavel"></i></div>
+
+                <!-- The Reality -->
+                <div class="w-64 bg-slate-800 border-2 border-red-500 p-4 rounded text-center relative shadow-xl">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-[10px] px-2 rounded font-bold">INSOLVENCY ACT 1986</div>
+                    <h4 class="text-white font-bold text-sm mb-2 mt-2">The Liquidator's Duty</h4>
+                    <p class="text-[10px] text-slate-300 mb-2">"My duty is to the creditors."</p>
+                    <ul class="text-[10px] text-red-300 space-y-2 text-left">
+                        <li><i class="fa-solid fa-xmark mr-2"></i> Plan is not binding</li>
+                        <li><i class="fa-solid fa-xmark mr-2"></i> Assets sold for cash</li>
+                        <li><i class="fa-solid fa-xmark mr-2"></i> Operations cease</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 mt-6 italic">
+                "Insolvency law does not care about your Student Protection Plan."
+            </p>
+        </div>
+
+        <!-- Section 2: The Missing Regime (Comparative) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-purple-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Missing Safety Net</h3>
+            <p class="text-xs text-slate-400 mb-4">Higher Education is the exception.</p>
+
+            <div class="space-y-4">
+                <!-- FE Colleges -->
+                <div class="bg-slate-900/50 p-3 rounded border border-green-500/30">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-white">Further Education (FE)</span>
+                        <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded border border-green-500">PROTECTED</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400">
+                        Has a <strong>Special Administration Regime (SAR)</strong>. Administrator must prioritise learner continuity over creditors.
+                    </p>
+                </div>
+
+                <!-- Higher Education -->
+                <div class="bg-slate-900/50 p-3 rounded border border-red-500/30">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-white">Higher Education (HE)</span>
+                        <span class="text-[10px] bg-red-500/20 text-red-400 px-2 py-1 rounded border border-red-500">EXPOSED</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400">
+                        <strong>No SAR.</strong> Standard corporate insolvency applies. Students are unsecured creditors.
+                    </p>
+                </div>
+                
+                <div class="text-[10px] text-purple-400 text-center mt-2">
+                    <i class="fa-solid fa-triangle-exclamation mr-1"></i>
+                    "The state has solved this for colleges, but not for universities."
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Hierarchy of Claims (Visual Stack) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-orange-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">Who Gets Paid First?</h3>
+            <p class="text-xs text-slate-400 mb-4">The Insolvency "Waterfall"</p>
+
+            <div class="flex-grow flex flex-col justify-end space-y-1">
+                <!-- Secured -->
+                <div class="bg-green-600 h-10 w-full rounded flex items-center px-4 justify-between">
+                    <span class="text-xs font-bold text-white">1. Fixed Charge Holders</span>
+                    <i class="fa-solid fa-lock text-white/50"></i>
+                </div>
+                
+                <!-- Preferential -->
+                <div class="bg-green-500 h-8 w-[95%] mx-auto rounded flex items-center px-4 justify-between opacity-80">
+                    <span class="text-xs font-bold text-white">2. Preferential (HMRC/Staff)</span>
+                </div>
+
+                <!-- Floating Charge -->
+                <div class="bg-yellow-500 h-8 w-[90%] mx-auto rounded flex items-center px-4 justify-between opacity-80">
+                    <span class="text-xs font-bold text-slate-900">3. Floating Charge Holders</span>
+                </div>
+
+                <!-- Unsecured (The Gap) -->
+                <div class="bg-red-500 h-16 w-[85%] mx-auto rounded flex flex-col justify-center px-4 relative overflow-hidden">
+                    <div class="absolute inset-0 legal-wall opacity-20"></div>
+                    <span class="text-xs font-bold text-white relative z-10">4. Unsecured Creditors</span>
+                    <div class="flex gap-2 mt-1 relative z-10">
+                        <span class="text-[10px] bg-red-900/50 px-2 rounded text-white">Students (Refunds)</span>
+                        <span class="text-[10px] bg-red-900/50 px-2 rounded text-white">Trade Suppliers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Contagion Blast Radius -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700 bg-slate-900">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">Why Failure is a "System Event"</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                
+                <!-- Impact 1 -->
+                <div class="group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-3 border border-slate-600 group-hover:border-red-500 transition-colors">
+                        <i class="fa-solid fa-graduation-cap text-2xl text-slate-400 group-hover:text-red-500"></i>
+                    </div>
+                    <h4 class="text-white text-sm font-bold">Students</h4>
+                    <p class="text-[10px] text-slate-500">Mid-year disruption. Degrees uncompleted. Life plans broken.</p>
+                </div>
+
+                <!-- Impact 2 -->
+                <div class="group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-3 border border-slate-600 group-hover:border-orange-500 transition-colors">
+                        <i class="fa-solid fa-handshake text-2xl text-slate-400 group-hover:text-orange-500"></i>
+                    </div>
+                    <h4 class="text-white text-sm font-bold">Partners</h4>
+                    <p class="text-[10px] text-slate-500">Validating partners liable. FE colleges impacted. Research halts.</p>
+                </div>
+
+                <!-- Impact 3 -->
+                <div class="group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-3 border border-slate-600 group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-city text-2xl text-slate-400 group-hover:text-blue-500"></i>
+                    </div>
+                    <h4 class="text-white text-sm font-bold">Region</h4>
+                    <p class="text-[10px] text-slate-500">Local employment shock. Housing market disruption. Supply chain.</p>
+                </div>
+
+                <!-- Impact 4 -->
+                <div class="group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-3 border border-slate-600 group-hover:border-green-500 transition-colors">
+                        <i class="fa-solid fa-piggy-bank text-2xl text-slate-400 group-hover:text-green-500"></i>
+                    </div>
+                    <h4 class="text-white text-sm font-bold">Sector Credit</h4>
+                    <p class="text-[10px] text-slate-500">Lenders re-price risk for <em>everyone</em>. Covenants tighten.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Office for Students (2025). <em>Provider closure: Our role and regulatory expectations</em>. Available at: <a href="https://www.officeforstudents.org.uk" class="text-blue-400 hover:underline">officeforstudents.org.uk</a></li>
+            <li>[2] OIA / SUMS Consulting (2025). <em>Managing the Impact of Higher Education Provider Closure</em>. Available at: <a href="https://www.oiahe.org.uk" class="text-blue-400 hover:underline">oiahe.org.uk</a></li>
+            <li>[3] Technical and Further Education Act 2017. <em>Education Administration</em>. Available at: <a href="https://www.legislation.gov.uk/ukpga/2017/19/contents" class="text-blue-400 hover:underline">legislation.gov.uk</a></li>
+            <li>[4] Wonkhe (2024). <em>Higher education in England needs a special administration regime</em>. Available at: <a href="https://wonkhe.com" class="text-blue-400 hover:underline">wonkhe.com</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

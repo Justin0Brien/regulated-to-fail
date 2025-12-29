@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Requires Government Action (Small Changes, Big Effects)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .toggle-track {
+            width: 48px;
+            height: 24px;
+            background-color: #334155;
+            border-radius: 999px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .toggle-track.active {
+            background-color: #22c55e;
+        }
+        .toggle-thumb {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .toggle-track.active .toggle-thumb {
+            transform: translateX(24px);
+        }
+        .slider-track {
+            height: 6px;
+            background: #475569;
+            border-radius: 3px;
+            position: relative;
+        }
+        .slider-fill {
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 3px;
+        }
+        .slider-thumb {
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 29.0: POLICY_STABILISERS
+        </div>
+        <div class="inline-block border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full text-xs text-blue-400 font-bold mb-4 uppercase tracking-wider">
+            Technical Fixes, Strategic Impact
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Stabiliser Protocol</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"Small changes that dampen the shocks."</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 29: The handful of technical policy adjustments—Indexation, SAR, Sandbox—that would stabilise the sector without a new Act of Parliament.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: The Indexation Switch (Visual Comparison) -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-green-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">Stabiliser 1: Automatic Indexation</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                
+                <!-- Current State -->
+                <div class="bg-slate-900 border border-slate-700 p-6 rounded-lg w-64 text-center opacity-60">
+                    <div class="text-xs text-red-400 font-bold uppercase mb-2">Current: "Political Pain"</div>
+                    <div class="toggle-track mx-auto mb-4"><div class="toggle-thumb"></div></div>
+                    <ul class="text-[10px] text-slate-400 text-left space-y-2">
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Inflation happens.</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Minister must <em>choose</em> to raise fee.</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Result: Freeze (Real-terms cut).</li>
+                    </ul>
+                </div>
+
+                <div class="text-2xl text-slate-600"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <!-- Proposed State -->
+                <div class="bg-slate-900 border-2 border-green-500 p-6 rounded-lg w-64 text-center shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+                    <div class="text-xs text-green-400 font-bold uppercase mb-2">Proposed: "Automatic"</div>
+                    <div class="toggle-track active mx-auto mb-4"><div class="toggle-thumb" style="transform: translateX(24px);"></div></div>
+                    <ul class="text-[10px] text-slate-300 text-left space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Inflation happens.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Formula applies uplift.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Result: Stability (No headline).</li>
+                    </ul>
+                </div>
+
+            </div>
+            <p class="text-center text-xs text-slate-400 mt-6 italic">
+                "It removes the need for a Minister to expend political capital just to stand still."
+            </p>
+        </div>
+
+        <!-- Section 2: The Research Truth (Chart/Slider) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-blue-500">
+            <h3 class="text-lg font-bold text-white mb-2">Stabiliser 2: Honest Research Funding</h3>
+            <p class="text-xs text-slate-400 mb-6">"Fund what you require."</p>
+
+            <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                <!-- Concept 1 -->
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                        <span>Current: Low Price, High Volume</span>
+                        <span class="text-red-400 font-bold">80% fEC</span>
+                    </div>
+                    <div class="slider-track">
+                        <div class="slider-fill w-[80%] bg-red-500"></div>
+                        <div class="slider-thumb left-[80%]"></div>
+                    </div>
+                    <p class="text-[9px] text-red-400 mt-1 text-right">Requires Cross-Subsidy</p>
+                </div>
+
+                <!-- Concept 2 -->
+                <div>
+                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                        <span>Proposed: True Price, Lower Volume</span>
+                        <span class="text-green-400 font-bold">100% fEC</span>
+                    </div>
+                    <div class="slider-track">
+                        <div class="slider-fill w-[100%] bg-green-500"></div>
+                        <div class="slider-thumb left-[100%]"></div>
+                    </div>
+                    <p class="text-[9px] text-green-400 mt-1 text-right">Self-Sustaining</p>
+                </div>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-4 text-center italic">
+                The trade-off: If the budget is fixed, paying the true cost means funding fewer projects.
+            </p>
+        </div>
+
+        <!-- Section 3: The Safety Net (Diagram) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-6 border-t-4 border-t-red-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">Stabiliser 3: Orderly Exit (SAR)</h3>
+            <p class="text-xs text-slate-400 mb-4">A Special Administration Regime for HE.</p>
+
+            <div class="flex-grow flex flex-col justify-center gap-4">
+                <!-- Without SAR -->
+                <div class="flex items-center gap-3 opacity-50">
+                    <div class="w-8 h-8 rounded bg-red-500 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="bg-slate-900 border border-slate-700 p-2 rounded flex-grow">
+                        <span class="text-xs text-red-400 font-bold block">Current Law (Insolvency Act)</span>
+                        <span class="text-[10px] text-slate-400">Administrator's duty is to <strong>Creditors</strong>. Students are unsecured. Asset fire-sale.</span>
+                    </div>
+                </div>
+
+                <!-- With SAR -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-green-500 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-check"></i></div>
+                    <div class="bg-slate-900 border border-green-500 p-2 rounded flex-grow shadow-lg">
+                        <span class="text-xs text-green-400 font-bold block">Proposed (SAR)</span>
+                        <span class="text-[10px] text-slate-300">Administrator's duty is to <strong>Learner Continuity</strong>. Protected teach-out. Managed transfer.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: The Innovation Sandbox -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700 bg-slate-900">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">Stabiliser 4: The Innovation Sandbox</h3>
+            
+            <div class="relative w-full max-w-2xl mx-auto h-32 border-2 border-dashed border-yellow-500 rounded-xl bg-yellow-900/10 flex items-center justify-center">
+                <div class="absolute -top-3 bg-slate-900 px-2 text-yellow-500 text-xs font-bold border border-yellow-500 rounded">SAFE ZONE</div>
+                
+                <div class="grid grid-cols-3 gap-8 text-center w-full px-8">
+                    <div>
+                        <i class="fa-solid fa-cube text-yellow-400 text-2xl mb-1"></i>
+                        <span class="block text-xs text-white font-bold">Micro-creds</span>
+                        <span class="block text-[9px] text-slate-400">Light-touch QA</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-clock text-yellow-400 text-2xl mb-1"></i>
+                        <span class="block text-xs text-white font-bold">2-Year Degrees</span>
+                        <span class="block text-[9px] text-slate-400">Flexible Funding</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-laptop-code text-yellow-400 text-2xl mb-1"></i>
+                        <span class="block text-xs text-white font-bold">Online Only</span>
+                        <span class="block text-[9px] text-slate-400">Data Pilot</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 mt-4 italic">
+                "Suspend the full weight of regulation for specific, low-risk pilots to prove they work."
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Regulated To Fail Project (2025). <em>Government Policy and the UK University Funding Crisis</em>. Internal Working Paper.</li>
+            <li>[2] Regulated To Fail Project (2025). <em>GPT Legislation Note</em>. Internal Working Paper.</li>
+            <li>[3] Regulated To Fail Project (2025). <em>UK HE Financial Situation GPT Deep Research</em>. Internal Working Paper.</li>
+            <li>[4] Regulated To Fail Project (2025). <em>Strategic Missteps Behind the UK University Financial Crisis</em>. Internal Working Paper.</li>
+        </ul>
+    </footer>
+
+</body>
+</html>

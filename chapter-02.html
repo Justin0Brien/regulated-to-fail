@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Year the Spreadsheets Caught Fire - Sector Status 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .highlight-red {
+            color: #ef4444;
+        }
+        .highlight-orange {
+            color: #f97316;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+        .blink {
+            animation: blinker 2s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4">
+
+    <!-- Header Section -->
+    <header class="max-w-5xl w-full mb-12 text-center border-b border-slate-700 pb-8">
+        <div class="flex justify-center items-center gap-3 mb-4">
+            <i class="fa-solid fa-fire text-red-500 text-3xl blink"></i>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase">Sector Status Report</h1>
+            <i class="fa-solid fa-fire text-red-500 text-3xl blink"></i>
+        </div>
+        <h2 class="text-xl text-slate-400 font-light">"The Year the Spreadsheets Caught Fire"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Data Source: Office for Students (Nov 2025 Update) & Russell Group Analysis.
+            <br>Status: <span class="text-red-500 font-bold">CRITICAL FINANCIAL STRESS</span>
+        </p>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Card 1: The Deficit Spread -->
+        <div class="card-bg rounded-xl p-6 shadow-lg shadow-red-900/10 border-l-4 border-l-red-500">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Projected Sector Deficits</h3>
+                    <p class="text-sm text-slate-400">Forecast for 2025–26</p>
+                </div>
+                <i class="fa-solid fa-chart-pie text-slate-600 text-xl"></i>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-full md:w-1/2 h-48">
+                    <canvas id="deficitChart"></canvas>
+                </div>
+                <div class="w-full md:w-1/2 space-y-4">
+                    <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                        <span class="block text-3xl font-bold text-red-500">45%</span>
+                        <span class="text-sm text-red-200">of providers forecast to be in deficit without mitigation.</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        "The share of providers forecasting a deficit in 2024–25 had risen sharply... That is not a fringe phenomenon. That is a sector whose default state has drifted from modest surplus to structural shortfall."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Liquidity (Oxygen Meter) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg border-l-4 border-l-orange-500">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Liquidity Warning</h3>
+                    <p class="text-sm text-slate-400">The "Oxygen Meter"</p>
+                </div>
+                <i class="fa-solid fa-droplet text-slate-600 text-xl"></i>
+            </div>
+
+            <div class="mt-6">
+                <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium text-orange-400">Critical Threshold (< 30 Days)</span>
+                    <span class="text-sm font-bold text-white">45 Providers</span>
+                </div>
+                <!-- Custom Progress Bar -->
+                <div class="w-full bg-slate-700 rounded-full h-6 mb-6 relative overflow-hidden">
+                    <div class="bg-orange-500 h-6 rounded-full striped-bar" style="width: 35%"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-white shadow-sm">
+                        AT RISK
+                    </div>
+                </div>
+                <p class="text-sm text-slate-300 mb-4">
+                    <i class="fa-solid fa-triangle-exclamation text-orange-500 mr-2"></i>
+                    OfS modelling suggests 45 providers could hold fewer than 30 days' liquidity in 2025–26.
+                </p>
+                <div class="bg-slate-900 p-3 rounded border border-slate-700">
+                    <p class="text-xs text-slate-500 italic">
+                        "When cash is plentiful, you can argue about strategy. When cash is tight, you argue about timing. Strategic choices become hostage to payroll runs."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: The Income Shortfall -->
+        <div class="card-bg rounded-xl p-6 shadow-lg border-l-4 border-l-yellow-500 md:col-span-2 lg:col-span-1">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Net Tuition Income Impact</h3>
+                    <p class="text-sm text-slate-400">Autumn 2025 Variance</p>
+                </div>
+                <i class="fa-solid fa-money-bill-wave text-slate-600 text-xl"></i>
+            </div>
+            
+            <div class="flex flex-col items-center justify-center h-48">
+                <span class="text-5xl md:text-6xl font-bold text-red-500 mono tracking-tighter">
+                    -£437.8M
+                </span>
+                <span class="mt-2 text-sm text-slate-400 uppercase tracking-widest">Projected Reduction</span>
+                <p class="mt-4 text-center text-sm text-slate-300 max-w-xs">
+                    Reduction in annual tuition fee income compared with provider forecasts (OfS Nov 2025).
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 4: Value Erosion -->
+        <div class="card-bg rounded-xl p-6 shadow-lg border-l-4 border-l-blue-500 md:col-span-2 lg:col-span-1">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">The Real-Terms Erosion</h3>
+                    <p class="text-sm text-slate-400">Buying power of tuition fees</p>
+                </div>
+                <i class="fa-solid fa-arrow-trend-down text-slate-600 text-xl"></i>
+            </div>
+            <div class="chart-container">
+                <canvas id="valueChart"></canvas>
+            </div>
+            <p class="text-xs text-slate-400 mt-2 text-center">
+                Russell Group analysis (2025) suggests fees are worth approx. 2/3 of earlier value.
+            </p>
+        </div>
+
+        <!-- Narrative Section: The Speed Mismatch -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-2 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-2">The Core Problem: Speed Mismatch</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-400">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h4 class="font-bold text-blue-400">Institutional Commitments</h4>
+                    </div>
+                    <p class="text-sm text-slate-300">
+                        <strong>Slow to change.</strong> Includes long-term staff contracts, Victorian buildings requiring heating, pension obligations, and "teach-out" promises to students.
+                    </p>
+                    <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full w-1/4"></div> <!-- Slow speed -->
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-red-900/50 flex items-center justify-center text-red-400">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="font-bold text-red-400">Financial Reality</h4>
+                    </div>
+                    <p class="text-sm text-slate-300">
+                        <strong>Fast deterioration.</strong> Driven by sharp drops in international enrolment, inflation, and immediate cash-flow gaps.
+                    </p>
+                    <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                        <div class="bg-red-500 h-full w-3/4"></div> <!-- Fast speed -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-slate-900 p-4 rounded border-l-2 border-slate-500">
+                <p class="text-slate-400 italic font-serif text-lg">
+                    "A fire is what happens when a system that was designed for incremental adjustment discovers that it needs structural change."
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- References Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] Office for Students (2025). <em>Financial sustainability of higher education providers in England 2025</em>. Available at: <a href="https://www.officeforstudents.org.uk/media/upycgog5/ofs-2025_26_1.pdf" class="text-blue-400 hover:underline">ofs-2025_26_1.pdf</a></li>
+            <li>[2] Office for Students (2025). <em>Financial sustainability of higher education providers in England: November 2025 update</em>. Available at: <a href="https://www.officeforstudents.org.uk/media/uzshqf13/financial-sustainability-of-higher-education-providers-in-england-november-2025-update.pdf" class="text-blue-400 hover:underline">november-2025-update.pdf</a></li>
+            <li>[3] Russell Group (2025). <em>University tuition fees now worth just two-thirds of their value in real terms</em>. Available at: <a href="https://www.russellgroup.ac.uk" class="text-blue-400 hover:underline">russellgroup.ac.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // Chart 1: Deficit Spread
+        const ctxDeficit = document.getElementById('deficitChart').getContext('2d');
+        new Chart(ctxDeficit, {
+            type: 'doughnut',
+            data: {
+                labels: ['In Deficit', 'Surplus/Breakeven'],
+                datasets: [{
+                    data: [45, 55],
+                    backgroundColor: ['#ef4444', '#334155'], // Red for deficit, Slate for surplus
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+
+        // Chart 2: Value Erosion (Bar Chart)
+        const ctxValue = document.getElementById('valueChart').getContext('2d');
+        new Chart(ctxValue, {
+            type: 'bar',
+            data: {
+                labels: ['Historical Baseline', '2025 Real Value'],
+                datasets: [{
+                    label: 'Relative Value of Tuition Fee',
+                    data: [100, 66],
+                    backgroundColor: ['#3b82f6', '#1e40af'], // Blue shades
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', font: { family: 'Inter' } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + '% of original value';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

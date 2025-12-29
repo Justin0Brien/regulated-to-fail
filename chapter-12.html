@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third-Stream Fantasies & Realities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .card-bg {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .reality-check-icon {
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.3));
+        }
+        .myth-strike {
+            position: relative;
+            display: inline-block;
+        }
+        .myth-strike::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 110%;
+            height: 2px;
+            background: #ef4444;
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 blueprint-grid">
+
+    <!-- Header -->
+    <header class="max-w-5xl w-full mb-10 text-center border-b border-slate-700 pb-8 relative">
+        <div class="absolute top-0 right-0 text-slate-600 text-[10px] mono border border-slate-700 px-2 py-1 rounded hidden md:block">
+            FIG 11.0: DIVERSIFICATION_REALITY
+        </div>
+        <div class="inline-block border border-purple-500/30 bg-purple-500/10 px-3 py-1 rounded-full text-xs text-purple-400 font-bold mb-4 uppercase tracking-wider">
+            Myth: "We Will Just Diversify"
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white uppercase mb-2">The Third-Stream Reality</h1>
+        <h2 class="text-xl text-slate-400 font-light italic">"A Portfolio of Difficult Businesses"</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-500 text-sm">
+            Analysis of Chapter 11: Why philanthropy, commercialisation, and partnerships are valuable strategic assets but dangerous financial fantasies.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Section 1: Fantasy vs Reality Matrix -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border-l-4 border-l-purple-500">
+            <h3 class="text-lg font-bold text-white mb-6 text-center">Fantasy vs. Reality</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Card 1: Philanthropy -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative group hover:border-purple-500 transition-colors">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-hand-holding-heart text-3xl text-purple-400 mb-2"></i>
+                        <h4 class="font-bold text-white text-sm uppercase">Philanthropy</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="bg-red-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-red-400 font-bold block">FANTASY</span>
+                            <span class="text-xs text-slate-300 myth-strike">An ATM Machine</span>
+                        </div>
+                        <div class="bg-green-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-green-400 font-bold block">REALITY</span>
+                            <span class="text-xs text-slate-300">Slow Relationship Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Commercialisation -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative group hover:border-purple-500 transition-colors">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-flask text-3xl text-blue-400 mb-2"></i>
+                        <h4 class="font-bold text-white text-sm uppercase">Commercialisation</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="bg-red-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-red-400 font-bold block">FANTASY</span>
+                            <span class="text-xs text-slate-300 myth-strike">Hidden Goldmine</span>
+                        </div>
+                        <div class="bg-green-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-green-400 font-bold block">REALITY</span>
+                            <span class="text-xs text-slate-300">Power Law (Most Fail)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Short Courses -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative group hover:border-purple-500 transition-colors">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-laptop-code text-3xl text-yellow-400 mb-2"></i>
+                        <h4 class="font-bold text-white text-sm uppercase">Short Courses</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="bg-red-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-red-400 font-bold block">FANTASY</span>
+                            <span class="text-xs text-slate-300 myth-strike">Free Revenue</span>
+                        </div>
+                        <div class="bg-green-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-green-400 font-bold block">REALITY</span>
+                            <span class="text-xs text-slate-300">High-Cost Product Biz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: TNE -->
+                <div class="bg-slate-900 p-4 rounded border border-slate-700 relative group hover:border-purple-500 transition-colors">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-globe text-3xl text-cyan-400 mb-2"></i>
+                        <h4 class="font-bold text-white text-sm uppercase">TNE (Offshore)</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="bg-red-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-red-400 font-bold block">FANTASY</span>
+                            <span class="text-xs text-slate-300 myth-strike">Quick Export</span>
+                        </div>
+                        <div class="bg-green-500/10 p-2 rounded text-center">
+                            <span class="text-[10px] text-green-400 font-bold block">REALITY</span>
+                            <span class="text-xs text-slate-300">Slow Risk Hedge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Scale Mismatch (Bar Chart) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-8 border-t-4 border-t-slate-500">
+            <h3 class="text-lg font-bold text-white mb-2">The Scale Mismatch</h3>
+            <p class="text-xs text-slate-400 mb-4">Why Third-Stream cannot easily replace Tuition</p>
+            
+            <div class="h-64 w-full">
+                <canvas id="scaleChart"></canvas>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-2 text-center italic">
+                "For most institutions, the fee line is not a habit but the load-bearing wall."
+            </p>
+        </div>
+
+        <!-- Section 3: The TNE Hedge (Diagram) -->
+        <div class="card-bg rounded-xl p-6 shadow-lg md:col-span-4 border-t-4 border-t-cyan-500 flex flex-col">
+            <h3 class="text-lg font-bold text-white mb-2">The TNE Hedge</h3>
+            <p class="text-xs text-slate-400 mb-4">Insurance against Policy Risk</p>
+
+            <div class="flex-grow flex flex-col justify-center gap-6 relative">
+                <!-- UK Campus Flow -->
+                <div class="relative bg-slate-900 p-3 rounded border border-slate-700 opacity-50">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-slate-400 font-bold">Onshore Recruitment</span>
+                        <i class="fa-solid fa-ban text-red-500 text-xl"></i>
+                    </div>
+                    <div class="text-[10px] text-red-400 mt-1">Blocked by Visa Policy</div>
+                </div>
+
+                <!-- The Hedge Shield -->
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-slate-800 p-2 rounded-full border-2 border-cyan-500">
+                    <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl"></i>
+                </div>
+
+                <!-- TNE Flow -->
+                <div class="relative bg-cyan-900/20 p-3 rounded border border-cyan-500">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-white font-bold">TNE / Offshore</span>
+                        <i class="fa-solid fa-check text-green-500 text-xl"></i>
+                    </div>
+                    <div class="text-[10px] text-cyan-200 mt-1">Bypasses Visa Barriers</div>
+                </div>
+            </div>
+            
+            <p class="text-[10px] text-slate-500 mt-4 text-center">
+                "Transnational Education (TNE) acts as an insurance policy, not a jackpot."
+            </p>
+        </div>
+
+        <!-- Section 4: The Commercialisation Power Law -->
+        <div class="card-bg rounded-xl p-8 shadow-lg md:col-span-12 border border-slate-700">
+            <h3 class="text-xl font-bold text-white mb-6 text-center">The "Power Law" of Innovation</h3>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-2/3 h-48">
+                    <canvas id="powerLawChart"></canvas>
+                </div>
+                <div class="w-full md:w-1/3 space-y-4">
+                    <div class="bg-slate-900 p-4 rounded border-l-2 border-blue-500">
+                        <h4 class="text-blue-400 font-bold text-sm mb-1">Most Institutions</h4>
+                        <p class="text-xs text-slate-400">Minimal net income. Costs of technology transfer often exceed returns.</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded border-l-2 border-yellow-500">
+                        <h4 class="text-yellow-400 font-bold text-sm mb-1">The Lucky Few</h4>
+                        <p class="text-xs text-slate-400">"Blockbuster" returns (Oxford, Cambridge, Imperial). Rare outliers.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-slate-400 mt-4 italic">
+                "Commercialisation is an investment portfolio, not a budget fix."
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl w-full mt-12 border-t border-slate-800 pt-8 pb-12 text-slate-500 text-xs">
+        <h4 class="uppercase tracking-widest font-bold mb-4 text-slate-400">References</h4>
+        <ul class="space-y-2 mono">
+            <li>[1] CASE (2025). <em>Insights on Philanthropy: UK & Ireland Key Findings</em>. Available at: <a href="https://www.case.org" class="text-blue-400 hover:underline">case.org</a></li>
+            <li>[2] UK Research and Innovation (2025). <em>HE-BCI IP-Related Activities Update</em>. Available at: <a href="https://www.ukri.org" class="text-blue-400 hover:underline">ukri.org</a></li>
+            <li>[3] HESA (2025). <em>Student open data: Transnational education</em>. Available at: <a href="https://www.hesa.ac.uk" class="text-blue-400 hover:underline">hesa.ac.uk</a></li>
+            <li>[4] Universities UK (2025). <em>The scale of UK higher education transnational education</em>. Available at: <a href="https://www.universitiesuk.ac.uk" class="text-blue-400 hover:underline">universitiesuk.ac.uk</a></li>
+        </ul>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // 1. Scale Mismatch Chart
+        const ctxScale = document.getElementById('scaleChart').getContext('2d');
+        new Chart(ctxScale, {
+            type: 'bar',
+            data: {
+                labels: ['Tuition Fees (The Load Bearing Wall)', 'Research Grants', 'Philanthropy', 'IP Income'],
+                datasets: [{
+                    label: 'Sector Aggregate Income (Illustrative Scale)',
+                    data: [100, 30, 5, 2], // Conceptual scale: Tuition is massive compared to IP
+                    backgroundColor: [
+                        '#3b82f6', // Blue (Tuition)
+                        '#64748b', // Slate (Research)
+                        '#a855f7', // Purple (Philanthropy)
+                        '#eab308'  // Yellow (IP)
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#334155' },
+                        ticks: { display: false } // Hiding numbers to emphasise relative scale
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0', font: { family: 'Inter', weight: 'bold' } }
+                    }
+                }
+            }
+        });
+
+        // 2. Power Law Chart (Line)
+        const ctxPower = document.getElementById('powerLawChart').getContext('2d');
+        
+        // Generating a power law curve
+        const labels = Array.from({length: 20}, (_, i) => i + 1);
+        const data = labels.map(x => 100 / Math.pow(x, 2)); // 1/x^2 decay
+
+        new Chart(ctxPower, {
+            type: 'line',
+            data: {
+                labels: ['Top 1 (Oxbridge)', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Rank 150'],
+                datasets: [{
+                    label: 'Commercialisation Income',
+                    data: data,
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
