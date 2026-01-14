@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK University Expenditure Projections 2026-2035</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 1.5rem; border: 1px solid #e2e8f0; }
+        .badge-risk { background-color: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <header class="mb-10 text-center max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-3">University Cost Pressures</h1>
+        <p class="text-slate-500 font-medium text-lg">Expenditure Forecasts 2026 &ndash; 2035 (Index 2026 = 100)</p>
+        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+            This dashboard models the relative growth in operating costs for UK universities. 
+            Projections account for the recent rise in Employer National Insurance, the "Net Zero" retrofit burden, and persistent "techflation" in administrative services.
+            <br><em>Shaded areas indicate the margin of uncertainty between high and low cost scenarios.</em>
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Chart 1: Staff Costs -->
+        <div class="card border-l-4 border-l-rose-500">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-lg font-bold text-slate-800">1. Workforce (Staff & Pensions)</h2>
+                <span class="badge-risk">High Impact</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4 h-10">
+                Accounts for ~55-60% of total expenditure. Driven by wage settlements, NI hikes, and volatile pension valuations (USS/TPS).
+            </p>
+            <div class="chart-container">
+                <canvas id="staffChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 2: Estates & Energy -->
+        <div class="card border-l-4 border-l-amber-500">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-lg font-bold text-slate-800">2. Estates & Energy</h2>
+                <span class="badge-risk">High Volatility</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4 h-10">
+                Energy prices have stabilised but remain high. The major driver post-2028 is the capital cost of decarbonising ageing campuses (Net Zero).
+            </p>
+            <div class="chart-container">
+                <canvas id="estatesChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 3: IT & Administration -->
+        <div class="card border-l-4 border-l-cyan-500">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-lg font-bold text-slate-800">3. Digital & Admin Services</h2>
+                <span class="badge-risk">Structural Inflation</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4 h-10">
+                "Techflation": Software licensing (often USD-pegged), cybersecurity insurance, and AI integration costs outpacing CPI.
+            </p>
+            <div class="chart-container">
+                <canvas id="digitalChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 4: Financing & Debt -->
+        <div class="card border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-lg font-bold text-slate-800">4. Financing & Capital Cost</h2>
+                <span class="badge-risk">Variable Risk</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4 h-10">
+                Cost of servicing debt. Low scenario assumes interest rate cuts; High scenario assumes refinancing 'cliffs' for existing bond/loans.
+            </p>
+            <div class="chart-container">
+                <canvas id="financeChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Summary & Methodology -->
+    <footer class="mt-10 bg-white p-6 rounded-xl border border-slate-200 text-xs text-slate-500">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="font-bold text-slate-700 mb-2">Drivers & Assumptions</h3>
+                <ul class="list-disc pl-4 space-y-1">
+                    <li><strong>Workforce:</strong> Central forecast assumes CPI+1% wage growth. <em>High Scenario</em> models a return to high inflation (4%+) and a 3% increase in employer pension contributions (TPS/USS) by 2030.</li>
+                    <li><strong>Estates:</strong> The "Net Zero Kink" in 2028 represents the start of massive retrofitting projects required to meet 2035 targets.</li>
+                    <li><strong>Techflation:</strong> Assumes software/SaaS costs rise at 1.5x CPI due to vendor lock-in and USD/GBP exchange rate risks.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-700 mb-2">Key Sources</h3>
+                <ul class="list-disc pl-4 space-y-1">
+                    <li><strong>UCEA (2024):</strong> Financial health reports on pay and pensions.</li>
+                    <li><strong>AUDE (2024/25):</strong> Estates management reports on decarbonisation costs.</li>
+                    <li><strong>Jisc (2024):</strong> Analysis of rising digital infrastructure costs.</li>
+                    <li><strong>Office for Students (OfS):</strong> Financial sustainability data.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const labels = Array.from({length: 10}, (_, i) => 2026 + i);
+        const chartFont = { family: "'Inter', sans-serif", size: 10 };
+
+        // Helper for consistent chart options
+        const createOptions = (title, yAxisTitle) => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 6 } },
+                tooltip: { mode: 'index', intersect: false },
+                annotation: { annotations: {} }
+            },
+            scales: {
+                y: { 
+                    title: { display: true, text: yAxisTitle },
+                    grid: { borderDash: [4, 4], color: '#f1f5f9' },
+                    suggestedMin: 90
+                },
+                x: { grid: { display: false } }
+            }
+        });
+
+        // ==========================================
+        // DATASETS
+        // ==========================================
+
+        // 1. WORKFORCE (The big steady climber with shock risks)
+        // High: Inflation spirals + Pension deficit contributions return
+        // Central: CPI (~2.5%) + NI drift
+        // Low: Austerity pay awards (sub-inflation)
+        const staffHigh = [100, 105, 110, 116, 122, 129, 136, 144, 153, 162];
+        const staffCentral = [100, 103, 106, 109, 112, 115, 118, 121, 124, 128];
+        const staffLow = [100, 102, 103, 104, 105, 106, 107, 108, 109, 110];
+
+        // 2. ESTATES (The Net Zero Curve)
+        // High: Energy spike + Aggressive Retrofit costs
+        // Central: Energy stable, steady retrofit
+        // Low: Min maintenance only (kicking the can down the road)
+        const estHigh = [100, 104, 110, 118, 128, 138, 148, 155, 162, 170];
+        const estCentral = [100, 102, 104, 107, 111, 115, 119, 123, 127, 131];
+        const estLow = [100, 98, 97, 98, 99, 100, 101, 102, 103, 104];
+
+        // 3. DIGITAL/ADMIN (Techflation)
+        // High: FX crisis (weak pound) + AI licensing boom
+        // Central: Standard SaaS inflation (5-7%)
+        // Low: Open source/Efficiency savings
+        const techHigh = [100, 107, 114, 122, 130, 139, 148, 158, 168, 179];
+        const techCentral = [100, 104, 108, 112, 116, 120, 124, 128, 132, 136];
+        const techLow = [100, 102, 103, 104, 105, 106, 106, 107, 107, 108];
+
+        // 4. FINANCING (Interest Rates)
+        // High: Refinancing at 6-7% rates
+        // Central: Rates settle ~3.5-4%
+        // Low: Rates drop to ~2.5%
+        const finHigh = [100, 105, 110, 115, 120, 130, 140, 145, 150, 155]; // Jump in 2031 (bond maturity wall)
+        const finCentral = [100, 100, 100, 101, 102, 103, 104, 105, 106, 107];
+        const finLow = [100, 98, 96, 94, 92, 90, 89, 88, 87, 86];
+
+
+        // ==========================================
+        // CHART RENDERING
+        // ==========================================
+
+        // Chart 1: Staff
+        const ctxStaff = document.getElementById('staffChart');
+        new Chart(ctxStaff, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Inflation + Pension Spike)', data: staffHigh, borderColor: 'transparent', backgroundColor: 'rgba(244, 63, 94, 0.15)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Pay Restraint)', data: staffLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: staffCentral, borderColor: '#e11d48', borderWidth: 2, pointRadius: 2, pointBackgroundColor: '#fff', tension: 0.4 }
+                ]
+            },
+            options: createOptions('Workforce', 'Cost Index (2026=100)')
+        });
+
+        // Chart 2: Estates
+        const ctxEst = document.getElementById('estatesChart');
+        new Chart(ctxEst, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Aggressive Net Zero)', data: estHigh, borderColor: 'transparent', backgroundColor: 'rgba(245, 158, 11, 0.15)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Min Maintenance)', data: estLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: estCentral, borderColor: '#d97706', borderWidth: 2, pointRadius: 2, pointBackgroundColor: '#fff', tension: 0.4 }
+                ]
+            },
+            options: {
+                ...createOptions('Estates', 'Cost Index (2026=100)'),
+                plugins: {
+                    legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 6 } },
+                    tooltip: { mode: 'index', intersect: false },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                xMin: 2, xMax: 2, // 2028
+                                borderColor: '#d97706', borderWidth: 1, borderDash: [4, 4],
+                                label: { content: 'Net Zero Retrofit Start', display: true, position: 'start', color: '#b45309', font: {size: 9}, backgroundColor: 'rgba(255,255,255,0.8)' }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Digital
+        const ctxDig = document.getElementById('digitalChart');
+        new Chart(ctxDig, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Techflation/FX Risk)', data: techHigh, borderColor: 'transparent', backgroundColor: 'rgba(6, 182, 212, 0.15)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Efficiency Gains)', data: techLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: techCentral, borderColor: '#0891b2', borderWidth: 2, pointRadius: 2, pointBackgroundColor: '#fff', tension: 0.4 }
+                ]
+            },
+            options: createOptions('Digital', 'Cost Index (2026=100)')
+        });
+
+        // Chart 4: Finance
+        const ctxFin = document.getElementById('financeChart');
+        new Chart(ctxFin, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Refinancing Cliff)', data: finHigh, borderColor: 'transparent', backgroundColor: 'rgba(99, 102, 241, 0.15)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Rate Cuts)', data: finLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: finCentral, borderColor: '#4f46e5', borderWidth: 2, pointRadius: 2, pointBackgroundColor: '#fff', tension: 0.4 }
+                ]
+            },
+            options: createOptions('Financing', 'Cost Index (2026=100)')
+        });
+    </script>
+</body>
+</html>

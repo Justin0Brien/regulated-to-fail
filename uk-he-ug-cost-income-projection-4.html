@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Higher Education Projections 2026-2035</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; height: 350px; width: 100%; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 1.5rem; margin-bottom: 2rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .badge-real { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+        .badge-nominal { background-color: #ecfdf5; color: #047857; border: 1px solid #6ee7b7; }
+        .badge-emerging { background-color: #fff7ed; color: #c2410c; border: 1px solid #fdba74; }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">UK Higher Education Projections</h1>
+        <p class="text-slate-500 font-medium">2026 &ndash; 2035</p>
+    </header>
+
+    <!-- Context Section -->
+    <section class="mb-8 prose prose-slate max-w-none text-slate-600 bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+        <h3 class="text-lg font-bold text-slate-800 mt-0">Executive Summary</h3>
+        <p>
+            This dashboard models the complex financial future of UK universities. While domestic demand (Chart 1) and teaching income (Chart 2) face structural rigidity, and research income (Chart 3) risks stagnation, the international picture is splitting.
+        </p>
+        <p>
+            <strong>New Insight:</strong> Chart 5 (Transnational Education) reveals a strategic pivot. While onshore international recruitment (Chart 4) is volatile due to visa politics, "offshore" income—where the university goes to the student—is projected to grow robustly, acting as a hedge against UK migration policy.
+        </p>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Chart 1: Student Demographics -->
+        <div class="card">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-slate-800">1. Domestic Demographics</h2>
+                <span class="badge badge-real">Volume Index</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6 h-12">
+                Projected 18-year-old population demand. A "demographic bulge" peaks in 2030 before a sharp 7% decline.
+            </p>
+            <div class="chart-container">
+                <canvas id="studentChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 2: Financial Projections -->
+        <div class="card">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-slate-800">2. Teaching Income</h2>
+                <span class="badge badge-nominal">Nominal Income</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6 h-12">
+                Projected tuition fee income (indexed). Even with inflation-linked rises, uncertainty over RPI creates a widening revenue gap.
+            </p>
+            <div class="chart-container">
+                <canvas id="financeChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 3: Research Income -->
+        <div class="card">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-slate-800">3. Research Income</h2>
+                <span class="badge badge-real">Real Terms</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6 h-12">
+                Government grants rise slowly to 2030, but lack of private diversification risks a long-term real-terms decline.
+            </p>
+            <div class="chart-container">
+                <canvas id="researchChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 4: International Income (Onshore) -->
+        <div class="card">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-indigo-900">4. International Income (Onshore)</h2>
+                <span class="badge badge-real text-indigo-700 bg-indigo-50 border-indigo-200">Real Terms</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6 h-12">
+                <strong>High Volatility:</strong> Income from students coming <em>to</em> the UK. Highly sensitive to visa levies and global competition.
+            </p>
+            <div class="chart-container">
+                <canvas id="intlChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 5: TNE Income (Offshore) -->
+        <div class="card lg:col-span-2 border-2 border-orange-100">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-orange-900">5. Transnational Education (TNE) Income</h2>
+                <span class="badge badge-emerging">Emerging Growth</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">
+                <strong>The Strategic Hedge:</strong> Income from overseas campuses, franchise partners, and distance learning. 
+                Currently smaller than onshore fees (~£3.5bn base), but projected to grow faster as universities bypass UK visa restrictions by delivering degrees in students' home countries (e.g., India, Nigeria, China).
+            </p>
+            <div class="chart-container">
+                <canvas id="tneChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Methodology & Sources -->
+    <footer class="text-xs text-slate-400 border-t border-slate-200 pt-6 mt-12 pb-8">
+        <h3 class="font-bold text-slate-500 mb-2">Data Sources & Assumptions</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul class="list-disc pl-4 space-y-1">
+                <li><strong>Chart 1 (ONS/HEPI):</strong> Tracks the 18-year-old population curve. Peak 2030, fall to 2035.</li>
+                <li><strong>Chart 2 (OBR/DfE):</strong> Nominal income assuming fees track RPI. Uncertainty wedge based on 1.5% vs 4.5% inflation variance.</li>
+                <li><strong>Chart 3 (DSIT/UKRI):</strong> Real terms projection. Central forecast assumes government spending review commitments are met to 2030, then flatline.</li>
+            </ul>
+            <ul class="list-disc pl-4 space-y-1">
+                <li><strong>Chart 4 (British Council/QS):</strong> Real terms. <em>Low:</em> Models impact of visa restrictions/levies. <em>High:</em> UK captures demand displaced from Canada/Aus.</li>
+                <li><strong>Chart 5 (HESA/UUKi):</strong> Based on HESA Aggregate Offshore Record. <em>High Scenario (The Pivot):</em> 8% annual growth driven by "in-country" delivery in India/Nigeria bypassing UK migration caps. <em>Low Scenario:</em> Host country regulatory crackdowns (e.g., China).</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // --- Data Configuration ---
+        const labels = Array.from({length: 10}, (_, i) => 2026 + i);
+
+        // --- Chart 1 Data: Students ---
+        const studentData = [100, 101.5, 103.0, 104.2, 105.0, 104.0, 102.5, 100.5, 98.5, 97.0];
+
+        // --- Chart 2 Data: Teaching Finance (Nominal) ---
+        const rpiLow = 0.015, rpiCentral = 0.028, rpiHigh = 0.045;    
+        const incomeCentral = [], incomeLow = [], incomeHigh = [];
+        let cfC = 1.0, cfL = 1.0, cfH = 1.0;
+
+        for (let i = 0; i < studentData.length; i++) {
+            let volume = studentData[i] / 100;
+            incomeCentral.push((volume * cfC * 100).toFixed(1));
+            incomeLow.push((volume * cfL * 100).toFixed(1));
+            incomeHigh.push((volume * cfH * 100).toFixed(1));
+            cfC *= (1 + rpiCentral); cfL *= (1 + rpiLow); cfH *= (1 + rpiHigh);
+        }
+
+        // --- Chart 3 Data: Research (Real Terms) ---
+        const researchCentral = [100, 100.8, 101.5, 102.2, 103.0, 102.5, 102.0, 101.5, 101.0, 100.5];
+        const researchLow =     [100, 99.5,  99.0,  98.0,  97.0,  96.0,  95.0,  94.0,  93.0,  92.0];
+        const researchHigh =    [100, 102.0, 104.0, 106.0, 108.0, 109.0, 110.0, 111.0, 112.0, 113.0];
+
+        // --- Chart 4 Data: International Income (Real Terms) ---
+        const intlHigh =    [100, 103.0, 106.1, 109.3, 112.6, 115.9, 119.4, 123.0, 126.7, 130.5];
+        const intlCentral = [100, 100.5, 101.0, 101.5, 102.0, 102.5, 103.0, 103.5, 104.0, 104.5]; 
+        const intlLow =     [100, 98.0,  96.0,  90.0,  88.2,  86.4,  84.7,  83.0,  81.3,  79.7];
+
+        // --- Chart 5 Data: TNE Income (Real Terms) ---
+        // Base Assumptions (Source: HESA TNE data, UUKi Scale Report):
+        // TNE is smaller base (approx £3.5bn) but faster growth.
+        // High (The Pivot): Universities aggressively franchise to bypass visa caps. 8% CAGR.
+        // Central (Organic): Matches global GDP/HE demand growth. 4% CAGR.
+        // Low (Regulation): Host countries (China/India) tighten rules on foreign providers. 1% CAGR.
+        
+        const tneHigh = [];
+        const tneCentral = [];
+        const tneLow = [];
+        
+        let tneH_val = 100, tneC_val = 100, tneL_val = 100;
+
+        for (let i = 0; i < 10; i++) {
+            tneHigh.push(tneH_val.toFixed(1));
+            tneCentral.push(tneC_val.toFixed(1));
+            tneLow.push(tneL_val.toFixed(1));
+            
+            tneH_val *= 1.08; // +8%
+            tneC_val *= 1.04; // +4%
+            tneL_val *= 1.01; // +1%
+        }
+
+        // --- Shared Options ---
+        const commonOptions = (title, unit) => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+                y: { grid: { borderDash: [4, 4], color: '#e2e8f0' }, title: { display: true, text: unit } },
+                x: { grid: { display: false } }
+            }
+        });
+
+        // --- Render Charts ---
+
+        // 1. Demographics
+        new Chart(document.getElementById('studentChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Student Volume Index',
+                    data: studentData,
+                    borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3, pointRadius: 3, fill: true, tension: 0.4
+                }]
+            },
+            options: {
+                ...commonOptions('Demographics', 'Index (2026=100)'),
+                plugins: {
+                    ...commonOptions().plugins,
+                    legend: { display: false },
+                    annotation: {
+                        annotations: {
+                            line1: { type: 'line', xMin: 4, xMax: 4, borderColor: '#ef4444', borderWidth: 1, borderDash: [4, 4], label: { content: 'Peak', display: true, color: '#ef4444', position: 'start', font: {size:10} } }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 2. Finance (Nominal)
+        new Chart(document.getElementById('financeChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High Inflation (4.5%)', data: incomeHigh, borderColor: 'transparent', backgroundColor: 'rgba(16, 185, 129, 0.25)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low Inflation (1.5%)', data: incomeLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: incomeCentral, borderColor: '#0f766e', borderWidth: 3, pointRadius: 3, pointBackgroundColor: '#fff', zIndex: 10, tension: 0.4 }
+                ]
+            },
+            options: commonOptions('Teaching Income', 'Nominal Income Index')
+        });
+
+        // 3. Research (Real)
+        new Chart(document.getElementById('researchChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High Scenario', data: researchHigh, borderColor: 'transparent', backgroundColor: 'rgba(249, 115, 22, 0.25)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low Scenario', data: researchLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central Forecast', data: researchCentral, borderColor: '#c2410c', borderWidth: 3, pointRadius: 3, pointBackgroundColor: '#fff', zIndex: 10, tension: 0.4 }
+                ]
+            },
+            options: commonOptions('Research Income', 'Real Terms Index')
+        });
+
+        // 4. International (Real)
+        new Chart(document.getElementById('intlChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Canada/Aus Caps Benefit)', data: intlHigh, borderColor: 'transparent', backgroundColor: 'rgba(99, 102, 241, 0.25)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Levy/Visa Impact)', data: intlLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central (Status Quo)', data: intlCentral, borderColor: '#4338ca', borderWidth: 3, pointRadius: 3, pointBackgroundColor: '#fff', zIndex: 10, tension: 0.4 }
+                ]
+            },
+            options: {
+                ...commonOptions('International Income', 'Real Terms Index'),
+                plugins: {
+                    ...commonOptions().plugins,
+                    annotation: {
+                        annotations: {
+                            levy: {
+                                type: 'label',
+                                xValue: 3, 
+                                yValue: 88,
+                                content: ['Risk: Proposed', 'Intl Student Levy'],
+                                color: '#991b1b', 
+                                font: { size: 10, weight: 'bold' },
+                                backgroundColor: 'rgba(254, 226, 226, 0.8)',
+                                borderRadius: 4,
+                                padding: 4
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 5. TNE Income (Real)
+        new Chart(document.getElementById('tneChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'High (Strategic Pivot)', data: tneHigh, borderColor: 'transparent', backgroundColor: 'rgba(245, 158, 11, 0.25)', fill: 1, pointRadius: 0, tension: 0.4 },
+                    { label: 'Low (Regulatory Headwinds)', data: tneLow, borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: 0, tension: 0.4 },
+                    { label: 'Central (Organic Growth)', data: tneCentral, borderColor: '#d97706', borderWidth: 3, pointRadius: 3, pointBackgroundColor: '#fff', zIndex: 10, tension: 0.4 }
+                ]
+            },
+            options: {
+                ...commonOptions('TNE Income', 'Real Terms Index (2026=100)'),
+                plugins: {
+                    ...commonOptions().plugins,
+                    annotation: {
+                        annotations: {
+                            note: {
+                                type: 'label',
+                                xValue: 6, 
+                                yValue: 135, // Positioned near the high growth line
+                                content: ['Double-digit growth', 'potential via', 'franchise models'],
+                                color: '#d97706', 
+                                font: { size: 10 },
+                                backgroundColor: 'rgba(255, 251, 235, 0.8)',
+                                borderRadius: 4,
+                                padding: 4
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

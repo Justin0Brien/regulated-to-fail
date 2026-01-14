@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Uncapped University: Market Rate Projections</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f5f6fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --highlight-purple: #8e44ad;
+            --highlight-blue: #2980b9;
+            --highlight-grey: #95a5a6;
+            --highlight-red: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-size: 2.5rem;
+        }
+
+        p.intro {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* TIER CARDS */
+        .tiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tier-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #ccc;
+            text-align: center;
+        }
+
+        .tier-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .price-tag {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 10px 0;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CHART SECTION */
+        .chart-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        /* EXPLAINER BOXES */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .insight-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--highlight-blue);
+        }
+
+        @media (max-width: 768px) {
+            .insight-grid { grid-template-columns: 1fr; }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>The "True Market" Price</h1>
+        <p class="intro">
+            If the government cap were removed, fees would likely diverge based on reputation and demand. 
+            Estimates below use "International Fees" (unregulated) and "Cost of Delivery" as proxies for market value.
+        </p>
+    </header>
+
+    <!-- CHART SECTION -->
+    <div class="chart-section">
+        <h2 style="text-align:center; margin-bottom:10px;">The Great Divergence</h2>
+        <p style="text-align:center; color:#7f8c8d; margin-bottom:30px;">
+            Comparing the current capped fee against the "Break-Even" cost and the "Market Rate" (International Fee).
+        </p>
+        <div class="chart-wrapper">
+            <canvas id="marketChart"></canvas>
+        </div>
+        
+        <div class="insight-grid">
+            <div class="insight-box">
+                <strong>The "Elite" Premium</strong><br>
+                Top institutions like Oxford, Cambridge, and Imperial could command fees 3x higher than the current cap. Their "market rate" is driven by global brand power, not just teaching costs.
+            </div>
+            <div class="insight-box" style="border-left-color: var(--highlight-red);">
+                <strong>The "Deficit" Reality</strong><br>
+                Even mid-tier Russell Group universities lose money on domestic students. The "Break-Even" fee (to cover actual teaching/research costs) is approx £13,500—significantly above the current cap.
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER CARDS -->
+    <div class="tiers-container">
+        <!-- TIER 1 -->
+        <div class="tier-card" style="border-top-color: var(--highlight-purple);">
+            <div class="tier-title">Global Elite<br><span style="font-size:0.9rem; font-weight:normal; color:#666;">(Oxbridge, Imperial, LSE)</span></div>
+            <div class="price-tag">£33,000+</div>
+            <div class="price-label">Estimated Market Rate</div>
+            <p style="font-size:0.9rem; color:#666; margin-top:15px;">
+                Based on average international fees for lab/classroom blend. Pure science courses can reach £45k.
+            </p>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-card" style="border-top-color: var(--highlight-blue);">
+            <div class="tier-title">Russell Group<br><span style="font-size:0.9rem; font-weight:normal; color:#666;">(Manchester, Bristol, Leeds)</span></div>
+            <div class="price-tag">£24,500</div>
+            <div class="price-label">Estimated Market Rate</div>
+            <p style="font-size:0.9rem; color:#666; margin-top:15px;">
+                High demand allows for significant pricing power. International fees standardise around this band.
+            </p>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-card" style="border-top-color: var(--highlight-grey);">
+            <div class="tier-title">Modern / Post-92<br><span style="font-size:0.9rem; font-weight:normal; color:#666;">(Teesside, Coventry, UWE)</span></div>
+            <div class="price-tag">£14,500</div>
+            <div class="price-label">Estimated Market Rate</div>
+            <p style="font-size:0.9rem; color:#666; margin-top:15px;">
+                Closer to the actual "cost of delivery". While fees are lower, they are still above the current domestic cap.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>Data Sources:</strong> Russell Group (Analysis of Deficits, 2024); Complete University Guide (International Tuition Fees 2024/25); Higher Education Policy Institute (HEPI).
+        <br><em>*Current Cap estimated at £9,535 for 2025/26 (indexed).</em>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    
+    // Data Preparation
+    const labels = ['Global Elite (Oxbridge)', 'Russell Group (Avg)', 'Modern / Post-92'];
+    const currentCap = [9535, 9535, 9535]; // Current Capped Fee
+    const breakEven = [16000, 13500, 11500]; // Est cost to teach (Russell Group deficit analysis)
+    const marketRate = [35000, 24500, 14500]; // International Fee proxy
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Current Domestic Cap (2025/26 Est)',
+                    data: currentCap,
+                    backgroundColor: '#95a5a6',
+                    order: 3
+                },
+                {
+                    label: 'Break-Even Cost (Zero Profit)',
+                    data: breakEven,
+                    backgroundColor: '#e67e22',
+                    order: 2
+                },
+                {
+                    label: 'True Market Rate (International Proxy)',
+                    data: marketRate,
+                    backgroundColor: '#8e44ad',
+                    order: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) { return '£' + value.toLocaleString(); }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Annual Tuition Fee (£)'
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) { label += ': '; }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumSignificantDigits: 3 }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

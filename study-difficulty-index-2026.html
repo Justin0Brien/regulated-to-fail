@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Student Visa Difficulty Index (Expanded)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #e0e0e0;
+            /* Difficulty Colors */
+            --diff-low: #27ae60;   /* Green */
+            --diff-med: #f1c40f;   /* Yellow */
+            --diff-high: #e67e22;  /* Orange */
+            --diff-ext: #c0392b;   /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        p.subtitle {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* HEATMAP SECTION */
+        .heatmap-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        table.heatmap {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #eee;
+            color: #7f8c8d;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .country-name {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-cell {
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+            color: #fff;
+            width: 50px;
+        }
+
+        /* Score Colors */
+        .sc-low { background-color: var(--diff-low); opacity: 0.8; }
+        .sc-med { background-color: var(--diff-med); color: #444; }
+        .sc-high { background-color: var(--diff-high); opacity: 0.9; }
+        .sc-ext { background-color: var(--diff-ext); opacity: 0.9; }
+
+        /* CARD GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .stat-label { color: var(--text-light); }
+        .stat-val { font-weight: 600; }
+
+        .verdict {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #444;
+            margin-top: auto; /* Pushes to bottom */
+            border-left: 4px solid #ccc;
+        }
+
+        /* Dynamic Border Colors */
+        .b-ext { border-left-color: var(--diff-ext); }
+        .b-high { border-left-color: var(--diff-high); }
+        .b-med { border-left-color: var(--diff-med); }
+        .b-low { border-left-color: var(--diff-low); }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Study Difficulty Index 2026</h1>
+        <p class="subtitle">Comparing barriers to entry for international students across 9 major destinations. <br>Scores (1-10) indicate higher difficulty.</p>
+    </header>
+
+    <!-- HEATMAP SECTION -->
+    <div class="heatmap-container">
+        <h3>Quick Comparison Matrix</h3>
+        <table class="heatmap">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th style="text-align:center">Financial Cost</th>
+                    <th style="text-align:center">Refusal Risk</th>
+                    <th style="text-align:center">Policy Hostility</th>
+                    <th style="text-align:center">Bureaucracy</th>
+                    <th>Primary Barrier</th>
+                </tr>
+            </thead>
+            <tbody id="heatmap-body">
+                <!-- Javascript will populate this -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CARDS SECTION -->
+    <div class="grid" id="cards-grid">
+        <!-- Javascript will populate this -->
+    </div>
+
+    <footer style="margin-top: 50px; text-align: center; color: #7f8c8d; font-size: 0.9rem;">
+        <p><strong>Sources:</strong> Official immigration portals (INZ, IND, Campus France, StudyKorea, etc.) active Jan 2026.</p>
+        <p><em>*Netherlands Policy Score reflects severe housing shortages and active political reduction of English-taught courses.</em></p>
+    </footer>
+</div>
+
+<script>
+    // --- DATA ---
+    // Scale 1 (Easy) to 10 (Hard)
+    const countries = [
+        {
+            name: "Australia",
+            flag: "🇦🇺",
+            scores: [10, 8, 9, 7], // Cost, Refusal, Policy, Bureaucracy
+            stats: { fee: "~AUD 2,000", funds: "AUD 30k/yr" },
+            verdict: "Highest fees globally. Strict caps on enrolment.",
+            level: "b-ext"
+        },
+        {
+            name: "Canada",
+            flag: "🇨🇦",
+            scores: [7, 9, 8, 9],
+            stats: { fee: "CAD 150", funds: "CAD 20k+" },
+            verdict: "Complex Provincial Attestation (PAL) process.",
+            level: "b-high"
+        },
+        {
+            name: "United Kingdom",
+            flag: "🇬🇧",
+            scores: [8, 4, 7, 5],
+            stats: { fee: "£490 + IHS", funds: "£1,334/mo" },
+            verdict: "Costly Health Surcharge. Ban on dependents.",
+            level: "b-high"
+        },
+        {
+            name: "Netherlands",
+            flag: "🇳🇱",
+            scores: [7, 4, 9, 6],
+            stats: { fee: "€228", funds: "€1,200/mo" },
+            verdict: "Severe housing crisis + caps on English degrees.",
+            level: "b-high"
+        },
+        {
+            name: "New Zealand",
+            flag: "🇳🇿",
+            scores: [8, 7, 6, 7],
+            stats: { fee: "~NZD 750", funds: "NZD 20k/yr" },
+            verdict: "Aligning with Australia. High rejection for non-uni sectors.",
+            level: "b-high"
+        },
+        {
+            name: "USA",
+            flag: "🇺🇸",
+            scores: [6, 8, 5, 6],
+            stats: { fee: "USD 185", funds: "Varies" },
+            verdict: "Subjective visa interviews remain the main hurdle.",
+            level: "b-med"
+        },
+        {
+            name: "France",
+            flag: "🇫🇷",
+            scores: [4, 5, 3, 8],
+            stats: { fee: "€50-99", funds: "€615/mo" },
+            verdict: "Low cost, but 'Campus France' paperwork is heavy.",
+            level: "b-med"
+        },
+        {
+            name: "Germany",
+            flag: "🇩🇪",
+            scores: [6, 3, 2, 8],
+            stats: { fee: "€75", funds: "€11.9k Blocked" },
+            verdict: "Welcoming policy, but bureaucratic bottlenecks.",
+            level: "b-med"
+        },
+        {
+            name: "South Korea",
+            flag: "🇰🇷",
+            scores: [5, 3, 2, 5],
+            stats: { fee: "~$60-90", funds: "$20k" },
+            verdict: "Fast-tracking visas to combat population decline.",
+            level: "b-low"
+        }
+    ];
+
+    const labels = ['Financial Cost', 'Refusal Risk', 'Policy Hostility', 'Bureaucracy'];
+
+    // --- RENDER HEATMAP ---
+    const heatmapBody = document.getElementById('heatmap-body');
+    
+    function getScoreClass(score) {
+        if (score >= 9) return 'sc-ext';
+        if (score >= 7) return 'sc-high';
+        if (score >= 5) return 'sc-med';
+        return 'sc-low';
+    }
+
+    countries.forEach(c => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><span class="country-name"><span style="font-size:1.4rem">${c.flag}</span> ${c.name}</span></td>
+            <td style="text-align:center"><div class="score-cell ${getScoreClass(c.scores[0])}">${c.scores[0]}</div></td>
+            <td style="text-align:center"><div class="score-cell ${getScoreClass(c.scores[1])}">${c.scores[1]}</div></td>
+            <td style="text-align:center"><div class="score-cell ${getScoreClass(c.scores[2])}">${c.scores[2]}</div></td>
+            <td style="text-align:center"><div class="score-cell ${getScoreClass(c.scores[3])}">${c.scores[3]}</div></td>
+            <td style="font-size:0.85rem; color:#666;">${c.verdict.split('.')[0]}</td>
+        `;
+        heatmapBody.appendChild(tr);
+    });
+
+    // --- RENDER CARDS & CHARTS ---
+    const grid = document.getElementById('cards-grid');
+
+    countries.forEach((c, index) => {
+        // Create Card HTML
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="card-header">
+                <h3>${c.flag} ${c.name}</h3>
+            </div>
+            <div class="chart-container">
+                <canvas id="chart-${index}"></canvas>
+            </div>
+            <div class="stats">
+                <div class="stat-row">
+                    <span class="stat-label">Visa Fee</span>
+                    <span class="stat-val">${c.stats.fee}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Est. Funds</span>
+                    <span class="stat-val">${c.stats.funds}</span>
+                </div>
+            </div>
+            <div class="verdict ${c.level}">
+                <strong>Verdict:</strong> ${c.verdict}
+            </div>
+        `;
+        grid.appendChild(card);
+
+        // Generate Chart
+        const ctx = document.getElementById(`chart-${index}`).getContext('2d');
+        
+        // Dynamic color based on average severity
+        const avg = c.scores.reduce((a,b)=>a+b,0) / 4;
+        let color = 'rgba(39, 174, 96, 1)'; // Green
+        let bg = 'rgba(39, 174, 96, 0.2)';
+        
+        if (avg > 7.5) { color = 'rgba(192, 57, 43, 1)'; bg = 'rgba(192, 57, 43, 0.2)'; } // Red
+        else if (avg > 5.5) { color = 'rgba(230, 126, 34, 1)'; bg = 'rgba(230, 126, 34, 0.2)'; } // Orange
+        else if (avg > 4) { color = 'rgba(241, 196, 15, 1)'; bg = 'rgba(241, 196, 15, 0.2)'; } // Yellow
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Difficulty Score',
+                    data: c.scores,
+                    borderColor: color,
+                    backgroundColor: bg,
+                    borderWidth: 2,
+                    pointBackgroundColor: color
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 10,
+                        ticks: { display: false }, // Hide internal tick numbers for cleanliness
+                        pointLabels: {
+                            font: { size: 11, family: 'Segoe UI' },
+                            color: '#666'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false } // Hide legend as title does the job
+                }
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global International Student Flows (Expanded)</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #6c757d;
+            --accent: #2980b9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 1400px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+            height: 800px; 
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        #sankey_basic {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            max-width: 800px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Global International Student Movements (Expanded)</h1>
+        <p class="subtitle">
+            Visualising the flow of students from major origin countries to global study hubs. 
+            This chart aggregates the "European Union" and includes key Asian destinations (Japan, South Korea).
+        </p>
+    </header>
+
+    <div class="chart-container">
+        <div id="sankey_basic"></div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Sources:</strong> USA: IIE Open Doors (2023/24); UK: HESA (2022/23); Australia: Dept. of Education (2023); Japan: JASSO (2024); Germany: DAAD (2024); France: Campus France (2024).</p>
+        <p><em>Note: "European Union" (Dest) aggregates major EU hosts like Germany and France. "EU Students" (Source) represents EU nationals studying abroad. "North Africa" combines Morocco and Algeria.</em></p>
+    </div>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['sankey']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Origin');
+            data.addColumn('string', 'Destination');
+            data.addColumn('number', 'Students');
+            data.addColumn({type: 'string', role: 'tooltip'});
+
+            data.addRows([
+                // -- Destination: United States (The Giant) --
+                ['India', 'United States', 331602, 'India -> USA: 331,602'],
+                ['China', 'United States', 277398, 'China -> USA: 277,398'],
+                ['South Korea', 'United States', 43149, 'South Korea -> USA: 43,149'],
+                ['Vietnam', 'United States', 22000, 'Vietnam -> USA: ~22,000'],
+                ['EU Students', 'United States', 50000, 'EU Nationals -> USA: ~50,000'],
+                ['Canadian Students', 'United States', 28998, 'Canada -> USA: 28,998'],
+
+                // -- Destination: United Kingdom --
+                ['India', 'United Kingdom', 173190, 'India -> UK: 173,190'],
+                ['China', 'United Kingdom', 154260, 'China -> UK: 154,260'],
+                ['Nigeria', 'United Kingdom', 72355, 'Nigeria -> UK: 72,355'],
+                ['Pakistan', 'United Kingdom', 34690, 'Pakistan -> UK: 34,690'],
+                ['EU Students', 'United Kingdom', 95505, 'EU Nationals -> UK: 95,505'],
+
+                // -- Destination: European Union (Aggregated: Germany, France, etc.) --
+                ['China', 'European Union', 85000, 'China -> EU (Est): ~85,000'],
+                ['India', 'European Union', 65000, 'India -> EU (Est): ~65,000'],
+                ['North Africa', 'European Union', 80000, 'Morocco/Algeria -> EU: ~80,000'],
+                // Add a smaller flow to show global appeal
+                ['South Korea', 'European Union', 12000, 'South Korea -> EU: ~12,000'],
+
+                // -- Destination: Australia --
+                ['China', 'Australia', 166420, 'China -> Australia: 166,420'],
+                ['India', 'Australia', 126487, 'India -> Australia: 126,487'],
+                ['Nepal', 'Australia', 62379, 'Nepal -> Australia: 62,379'],
+                ['Vietnam', 'Australia', 33000, 'Vietnam -> Australia: 33,000'],
+                ['Colombia', 'Australia', 39724, 'Colombia -> Australia: 39,724'],
+
+                // -- Destination: Canada --
+                ['India', 'Canada', 319130, 'India -> Canada: 319,130'],
+                ['China', 'Canada', 100000, 'China -> Canada: ~100,000'],
+                ['Philippines', 'Canada', 32455, 'Philippines -> Canada: 32,455'],
+                ['Nigeria', 'Canada', 21660, 'Nigeria -> Canada: 21,660'],
+                ['Vietnam', 'Canada', 17100, 'Vietnam -> Canada: 17,100'],
+
+                // -- Destination: Japan (New Major Player) --
+                ['China', 'Japan', 123485, 'China -> Japan: 123,485'],
+                ['Vietnam', 'Japan', 40323, 'Vietnam -> Japan: 40,323'],
+                ['Nepal', 'Japan', 64816, 'Nepal -> Japan: 64,816'],
+                ['South Korea', 'Japan', 14500, 'S. Korea -> Japan: 14,500'],
+
+                // -- Destination: South Korea (Regional Hub) --
+                ['Vietnam', 'South Korea', 43300, 'Vietnam -> S. Korea: 43,300'],
+                ['China', 'South Korea', 60000, 'China -> S. Korea: ~60,000']
+            ]);
+
+            var options = {
+                sankey: {
+                    node: {
+                        label: { 
+                            fontName: 'Segoe UI',
+                            fontSize: 13,
+                            color: '#2c3e50',
+                            bold: true
+                        },
+                        nodePadding: 20,
+                        width: 20
+                    },
+                    link: {
+                        colorMode: 'gradient',
+                        fillOpacity: 0.5
+                    },
+                    tooltip: {
+                        textStyle: { fontName: 'Segoe UI', fontSize: 13 }
+                    }
+                }
+            };
+
+            var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+            chart.draw(data, options);
+
+            window.addEventListener('resize', function() {
+                chart.draw(data, options);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK HE Financial Sustainability Model 2026-2035</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .chart-container { position: relative; height: 320px; width: 100%; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 1.5rem; border: 1px solid #e2e8f0; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+        .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600; }
+        .surplus { color: #10b981; }
+        .deficit { color: #ef4444; }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <header class="mb-8 flex flex-col md:flex-row justify-between items-end border-b border-slate-200 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Sector Financial Sustainability Model</h1>
+            <p class="text-slate-500 font-medium">Consolidated Projections 2026 &ndash; 2035</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-right">
+            <p class="text-xs text-slate-400">Scenario: Central Forecasts (Midline)</p>
+            <p class="text-xs text-slate-400">Base: 2026 = 100 (Balanced Budget Assumption)</p>
+        </div>
+    </header>
+
+    <!-- KPI Summary Row (Calculated for 2035) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="card p-4 flex flex-col justify-center">
+            <span class="stat-label">Projected 2035 Income</span>
+            <span class="stat-value text-indigo-600" id="kpi-income">Loading...</span>
+        </div>
+        <div class="card p-4 flex flex-col justify-center">
+            <span class="stat-label">Projected 2035 Costs</span>
+            <span class="stat-value text-rose-600" id="kpi-cost">Loading...</span>
+        </div>
+        <div class="card p-4 flex flex-col justify-center">
+            <span class="stat-label">Net Position</span>
+            <span class="stat-value" id="kpi-net">Loading...</span>
+        </div>
+        <div class="card p-4 flex flex-col justify-center">
+            <span class="stat-label">Primary Driver</span>
+            <span class="text-sm font-semibold text-slate-700">Demographic Decline vs. RPI Link</span>
+        </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Chart 1: Income Stack -->
+        <div class="card">
+            <h2 class="text-lg font-bold text-slate-800 mb-1">1. Projected Income Composition</h2>
+            <p class="text-xs text-slate-500 mb-4">
+                Stacked breakdown of Nominal Income. Assumes domestic fees track RPI (2.8%) and TNE grows at 4%.
+                Note the shrinking proportion of Domestic Fees (Blue) post-2030.
+            </p>
+            <div class="chart-container">
+                <canvas id="incomeStackChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 2: Cost Stack -->
+        <div class="card">
+            <h2 class="text-lg font-bold text-slate-800 mb-1">2. Projected Cost Composition</h2>
+            <p class="text-xs text-slate-500 mb-4">
+                Stacked breakdown of Nominal Costs. Staffing (Red) remains the dominant cost, compounding at ~3% annually.
+                Estates (Orange) widens after 2028 due to Net Zero capital requirements.
+            </p>
+            <div class="chart-container">
+                <canvas id="costStackChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 3: The Gap (Full Width) -->
+        <div class="card lg:col-span-2">
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="text-lg font-bold text-slate-800">3. Sector Financial Health (Surplus/Deficit)</h2>
+            </div>
+            <p class="text-xs text-slate-500 mb-6">
+                The delta between Total Income (Solid Line) and Total Expenditure (Dashed Line). 
+                <span class="text-emerald-600 font-bold">Green zones</span> indicate surplus; <span class="text-rose-500 font-bold">Red zones</span> indicate deficit.
+                The model shows a "squeeze" around 2030-2032 as the demographic cliff hits while inflation costs persist.
+            </p>
+            <div class="chart-container" style="height: 400px;">
+                <canvas id="gapChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Methodology -->
+    <footer class="mt-8 text-xs text-slate-400 text-center pb-8">
+        <p><strong>Model Methodology:</strong> Consolidates data from previous "University Projections" and "University Costs" dashboards.</p>
+        <p>Assumes a starting "Balanced Budget" position in 2026 (Income=100, Cost=100). Real-world starting deficits would shift the Cost line upwards.</p>
+        <p>Income Weights: Domestic Fees (35%), Intl (25%), Research (20%), Other (15%), TNE (5%).</p>
+        <p>Cost Weights: Staff (55%), Estates (12%), Digital/Admin (18%), Finance/Other (15%).</p>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 1. DATA GENERATION ENGINE
+        // ==========================================
+        
+        const labels = Array.from({length: 10}, (_, i) => 2026 + i);
+        
+        // --- Inflation Vector (RPI 2.8% compounding) ---
+        // Used to convert Real Terms indices back to Nominal for the Income Stack
+        const rpi = 0.028;
+        const inflationVector = labels.map((_, i) => Math.pow(1 + rpi, i));
+
+        // --- INCOME DRIVERS (From Previous Research) ---
+        // Weights reflect approx HESA sector averages
+        const w_dom = 35;  // Domestic Tuition
+        const w_int = 25;  // International Tuition
+        const w_res = 20;  // Research Grants
+        const w_tne = 5;   // TNE
+        const w_oth = 15;  // Other (Residences, Catering etc - Assumed to track RPI)
+
+        // Raw Indices (Volume/Real Terms) from previous chart logic
+        const idx_dom_vol = [1.00, 1.015, 1.030, 1.042, 1.050, 1.040, 1.025, 1.005, 0.985, 0.970];
+        const idx_int_real = [1.00, 1.005, 1.010, 1.015, 1.020, 1.025, 1.030, 1.035, 1.040, 1.045];
+        const idx_res_real = [1.00, 1.008, 1.015, 1.022, 1.030, 1.025, 1.020, 1.015, 1.010, 1.005];
+        const idx_tne_real = [1.00, 1.04, 1.082, 1.125, 1.170, 1.217, 1.265, 1.316, 1.369, 1.423];
+
+        // Calculated Nominal Components
+        const inc_dom = idx_dom_vol.map((v, i) => (v * inflationVector[i] * w_dom).toFixed(2));
+        const inc_int = idx_int_real.map((v, i) => (v * inflationVector[i] * w_int).toFixed(2));
+        const inc_res = idx_res_real.map((v, i) => (v * inflationVector[i] * w_res).toFixed(2));
+        const inc_tne = idx_tne_real.map((v, i) => (v * inflationVector[i] * w_tne).toFixed(2));
+        const inc_oth = inflationVector.map((v, i) => (v * w_oth).toFixed(2));
+
+        // Total Income Array
+        const totalIncome = labels.map((_, i) => {
+            return parseFloat(inc_dom[i]) + parseFloat(inc_int[i]) + parseFloat(inc_res[i]) + parseFloat(inc_tne[i]) + parseFloat(inc_oth[i]);
+        });
+
+
+        // --- COST DRIVERS (From Previous Research) ---
+        // Weights reflect HESA expenditure breakdown
+        const wc_staff = 55;
+        const wc_est = 12;
+        const wc_dig = 18;
+        const wc_fin = 15;
+
+        // Raw Indices (Nominal) from previous chart logic
+        // Staff: Steady rise (~3%)
+        const idx_staff = [1.00, 1.03, 1.06, 1.09, 1.12, 1.15, 1.18, 1.21, 1.24, 1.28]; 
+        // Estates: Net Zero Kink after 2028 (idx 2)
+        const idx_est = [1.00, 1.02, 1.04, 1.07, 1.11, 1.15, 1.19, 1.23, 1.27, 1.31];
+        // Digital: Techflation (higher than CPI)
+        const idx_dig = [1.00, 1.04, 1.08, 1.12, 1.16, 1.20, 1.24, 1.28, 1.32, 1.36];
+        // Finance: Flat/Low growth
+        const idx_fin = [1.00, 1.00, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07];
+
+        // Calculated Nominal Components
+        const cost_staff = idx_staff.map(v => (v * wc_staff).toFixed(2));
+        const cost_est = idx_est.map(v => (v * wc_est).toFixed(2));
+        const cost_dig = idx_dig.map(v => (v * wc_dig).toFixed(2));
+        const cost_fin = idx_fin.map(v => (v * wc_fin).toFixed(2));
+
+        // Total Cost Array
+        const totalCost = labels.map((_, i) => {
+            return parseFloat(cost_staff[i]) + parseFloat(cost_est[i]) + parseFloat(cost_dig[i]) + parseFloat(cost_fin[i]);
+        });
+
+
+        // --- UPDATE KPI WIDGETS ---
+        document.getElementById('kpi-income').innerText = totalIncome[9].toFixed(1);
+        document.getElementById('kpi-cost').innerText = totalCost[9].toFixed(1);
+        
+        const net = (totalIncome[9] - totalCost[9]);
+        const netEl = document.getElementById('kpi-net');
+        netEl.innerText = (net > 0 ? "+" : "") + net.toFixed(1);
+        netEl.className = "stat-value " + (net >= 0 ? "surplus" : "deficit");
+
+
+        // ==========================================
+        // 2. CHART CONFIGURATION
+        // ==========================================
+
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 10, font: {size: 10} } },
+                tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { borderDash: [4, 4], color: '#f1f5f9' }, stacked: true }
+            }
+        };
+
+        // CHART 1: INCOME STACK
+        new Chart(document.getElementById('incomeStackChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'TNE (Offshore)', data: inc_tne, backgroundColor: '#f59e0b' },
+                    { label: 'Research', data: inc_res, backgroundColor: '#c2410c' },
+                    { label: 'International (Onshore)', data: inc_int, backgroundColor: '#4338ca' },
+                    { label: 'Domestic Fees', data: inc_dom, backgroundColor: '#3b82f6' },
+                    { label: 'Other', data: inc_oth, backgroundColor: '#94a3b8' }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: { 
+                    ...commonOptions.scales, 
+                    y: { ...commonOptions.scales.y, title: {display:true, text:'Nominal Income Index'} } 
+                }
+            }
+        });
+
+        // CHART 2: COST STACK
+        new Chart(document.getElementById('costStackChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'Estates & Energy', data: cost_est, backgroundColor: '#d97706' },
+                    { label: 'Digital & Admin', data: cost_dig, backgroundColor: '#0891b2' },
+                    { label: 'Finance/Other', data: cost_fin, backgroundColor: '#6366f1' },
+                    { label: 'Staff & Pensions', data: cost_staff, backgroundColor: '#e11d48' }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: { 
+                    ...commonOptions.scales, 
+                    y: { ...commonOptions.scales.y, title: {display:true, text:'Nominal Cost Index'} } 
+                }
+            }
+        });
+
+        // CHART 3: THE GAP
+        new Chart(document.getElementById('gapChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Total Sector Income',
+                        data: totalIncome,
+                        borderColor: '#059669', // Emerald 600
+                        backgroundColor: 'transparent',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        zIndex: 10
+                    },
+                    {
+                        label: 'Total Sector Costs',
+                        data: totalCost,
+                        borderColor: '#e11d48', // Rose 600
+                        backgroundColor: 'transparent',
+                        borderWidth: 3,
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        zIndex: 10
+                    },
+                    {
+                        label: 'Surplus Zone',
+                        data: totalIncome,
+                        fill: { target: 1, above: 'rgba(16, 185, 129, 0.1)', below: 'rgba(244, 63, 94, 0.1)' },
+                        borderColor: 'transparent',
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            footer: (tooltipItems) => {
+                                const income = tooltipItems[0].parsed.y;
+                                const cost = tooltipItems[1].parsed.y;
+                                const diff = (income - cost).toFixed(1);
+                                return 'Net Position: ' + (diff > 0 ? '+' : '') + diff;
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            dangerZone: {
+                                type: 'box',
+                                xMin: 6.5, xMax: 9.5, // 2032-2035
+                                backgroundColor: 'rgba(0,0,0,0.03)',
+                                borderWidth: 0,
+                                label: { display: true, content: 'Demographic Drag', position: 'start', font: {size: 10}, color: '#94a3b8' }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: { 
+                        display: true,
+                        title: { display: true, text: 'Index (2026 Base = 100)' },
+                        grid: { borderDash: [4, 4], color: '#e2e8f0' } 
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

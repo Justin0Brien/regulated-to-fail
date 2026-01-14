@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Student Visa Difficulty Index (2026)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-sub: #555;
+            --accent-blue: #2c3e50;
+            --accent-red: #e74c3c;
+            --accent-green: #27ae60;
+            --accent-gold: #f1c40f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Grid Layout for Country Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            border-top: 5px solid var(--accent-blue);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--accent-blue);
+        }
+
+        .flag {
+            font-size: 1.5rem;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .diff-extreme { background: #ffebee; color: #c0392b; border: 1px solid #c0392b; }
+        .diff-high { background: #fff3e0; color: #e67e22; border: 1px solid #e67e22; }
+        .diff-med { background: #e3f2fd; color: #2980b9; border: 1px solid #2980b9; }
+        .diff-low { background: #e8f5e9; color: #27ae60; border: 1px solid #27ae60; }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .stat-label { font-weight: 600; color: var(--text-sub); }
+        .stat-value { font-weight: 400; color: var(--text-main); text-align: right; }
+
+        .analysis {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #444;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Global Visa Difficulty Index (2026)</h1>
+        <p class="subtitle">
+            Comparing the barriers to entry for international students across major destinations.
+            Scores are based on financial cost, refusal risk, and bureaucratic complexity.
+        </p>
+    </header>
+
+    <!-- Chart Section -->
+    <div class="chart-section">
+        <h2 style="text-align: center; margin-bottom: 20px;">Barrier to Entry Analysis</h2>
+        <p style="text-align: center; max-width: 600px; color: #666; margin-bottom: 30px;">
+            Higher scores indicate higher difficulty. <br>
+            <strong>Financial Barrier:</strong> Cost of visa + mandatory funds. <br>
+            <strong>Refusal Risk:</strong> Based on recent rejection rates. <br>
+            <strong>Policy Hostility:</strong> Impact of caps, bans on dependents, or interview strictness.
+        </p>
+        <div class="chart-wrapper">
+            <canvas id="visaRadarChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Country Cards -->
+    <div class="grid">
+        
+        <!-- AUSTRALIA -->
+        <div class="card" style="border-top-color: #c0392b;">
+            <h2>Australia <span class="flag">🇦🇺</span></h2>
+            <span class="difficulty-badge diff-extreme">Extreme Difficulty</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee</span>
+                <span class="stat-value">~AUD 2,000 (£1,050)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">~AUD 30,000/yr</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">Caps & Genuine Student Test</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> The most expensive option. Following the 2025 fee hike and the introduction of the National Planning Level (cap), entry is highly restricted, especially for vocational (VET) sectors.
+            </div>
+        </div>
+
+        <!-- CANADA -->
+        <div class="card" style="border-top-color: #e67e22;">
+            <h2>Canada <span class="flag">🇨🇦</span></h2>
+            <span class="difficulty-badge diff-high">High Difficulty</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee</span>
+                <span class="stat-value">CAD 150 + Biometrics</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">CAD 20,635/yr + Tuition</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">Provincial Attestation (PAL)</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> Bureaucratically complex. The hard cap on student numbers and the requirement for a "Provincial Attestation Letter" (PAL) caused approval rates to drop by nearly 50% in 2024/25.
+            </div>
+        </div>
+
+        <!-- UK -->
+        <div class="card" style="border-top-color: #f39c12;">
+            <h2>United Kingdom <span class="flag">🇬🇧</span></h2>
+            <span class="difficulty-badge diff-high">High Difficulty</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee + IHS</span>
+                <span class="stat-value">£490 + £776/yr (Health)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">£1,334/mo (London)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">Dependents Ban</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> Socially restrictive. While the application is streamlined, the upfront cost (Visa + Health Surcharge) is high, and the inability to bring family (for most masters) is a major deterrent.
+            </div>
+        </div>
+
+        <!-- USA -->
+        <div class="card" style="border-top-color: #2980b9;">
+            <h2>United States <span class="flag">🇺🇸</span></h2>
+            <span class="difficulty-badge diff-med">Medium-High</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee</span>
+                <span class="stat-value">USD 185</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">Varies (I-20 Amount)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">In-Person Interview</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> High refusal risk. The US has no "cap", but the mandatory interview creates a high subjective refusal rate (36% in 2023). However, rules have remained stable compared to competitors.
+            </div>
+        </div>
+
+        <!-- GERMANY -->
+        <div class="card" style="border-top-color: #27ae60;">
+            <h2>Germany (EU) <span class="flag">🇩🇪</span></h2>
+            <span class="difficulty-badge diff-med">Moderate</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee</span>
+                <span class="stat-value">€75</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">€11,904 (Blocked Acct)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">Bureaucracy / Appointments</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> Financially rigid but welcoming. The "Blocked Account" requires a large upfront deposit (€11,904), but tuition is often free. Bureaucracy (getting appointments) is the main pain point.
+            </div>
+        </div>
+
+        <!-- JAPAN -->
+        <div class="card" style="border-top-color: #27ae60;">
+            <h2>Japan <span class="flag">🇯🇵</span></h2>
+            <span class="difficulty-badge diff-low">Low Difficulty</span>
+            
+            <div class="stat-row">
+                <span class="stat-label">Visa Fee</span>
+                <span class="stat-value">Varies (~3,000 JPY)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Financial Proof</span>
+                <span class="stat-value">~2M JPY/yr (Flexible)</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Key Hurdle</span>
+                <span class="stat-value">Language / COE Process</span>
+            </div>
+
+            <div class="analysis">
+                <strong>Verdict:</strong> Actively recruiting. With a target of 400k students by 2033, Japan is lowering barriers. The Certificate of Eligibility (COE) process is thorough but predictable.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><strong>Sources:</strong> Official government immigration websites (Home Affairs Australia, IRCC Canada, UKVI, US State Dept, German Federal Foreign Office) as of Jan 2026.</p>
+    </footer>
+</div>
+
+<script>
+    const ctx = document.getElementById('visaRadarChart').getContext('2d');
+    
+    // Data represents a "Difficulty Score" out of 10
+    const visaData = {
+        labels: ['Financial Cost (Fees + Funds)', 'Refusal Risk', 'Policy Hostility', 'Bureaucracy/Paperwork'],
+        datasets: [
+            {
+                label: 'Australia',
+                data: [10, 8, 9, 7], // Very expensive, capped, hostile policy
+                borderColor: 'rgba(192, 57, 43, 1)',
+                backgroundColor: 'rgba(192, 57, 43, 0.2)',
+                borderWidth: 2
+            },
+            {
+                label: 'Canada',
+                data: [7, 9, 8, 9], // High refusal, capped, complex PAL paperwork
+                borderColor: 'rgba(230, 126, 34, 1)',
+                backgroundColor: 'rgba(230, 126, 34, 0.2)',
+                borderWidth: 2
+            },
+            {
+                label: 'United Kingdom',
+                data: [8, 4, 7, 5], // Expensive fees, but efficient process. Hostile on dependents.
+                borderColor: 'rgba(243, 156, 18, 1)',
+                backgroundColor: 'rgba(243, 156, 18, 0.2)',
+                borderWidth: 2
+            },
+            {
+                label: 'Germany',
+                data: [6, 3, 2, 8], // High upfront blocked account cost, but welcoming policy. High bureaucracy.
+                borderColor: 'rgba(39, 174, 96, 1)',
+                backgroundColor: 'rgba(39, 174, 96, 0.2)',
+                borderWidth: 2
+            },
+            {
+                label: 'USA',
+                data: [6, 8, 5, 6], // Moderate cost, high refusal risk (interviews), stable policy.
+                borderColor: 'rgba(41, 128, 185, 1)',
+                backgroundColor: 'rgba(41, 128, 185, 0.2)',
+                borderWidth: 2
+            }
+        ]
+    };
+
+    const config = {
+        type: 'radar',
+        data: visaData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: {
+                        display: true
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    pointLabels: {
+                        font: {
+                            size: 14,
+                            family: "'Segoe UI', sans-serif"
+                        }
+                    },
+                    ticks: {
+                        backdropColor: 'transparent'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    };
+
+    new Chart(ctx, config);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Higher Education Projections 2026-2035</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; height: 400px; width: 100%; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 1.5rem; margin-bottom: 2rem; }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">UK Higher Education Projections</h1>
+        <p class="text-slate-500 font-medium">2026 &ndash; 2035</p>
+    </header>
+
+    <!-- Context Section -->
+    <section class="mb-8 prose prose-slate max-w-none text-slate-600">
+        <p>
+            This dashboard illustrates the projected "demographic wave" facing UK universities and its financial implications. 
+            The number of 18-year-olds in the UK—the primary driver of undergraduate enrolment—is forecast to rise until 2030 before entering a sharp decline. 
+            Simultaneously, with tuition fees set to rise with inflation (RPI), nominal income appears robust, but high economic uncertainty creates a widening "margin of error" for real-terms university planning.
+        </p>
+    </section>
+
+    <!-- Chart 1: Student Demographics -->
+    <div class="card">
+        <h2 class="text-xl font-bold text-slate-800 mb-4">1. The Demographic Wave</h2>
+        <p class="text-sm text-slate-500 mb-6">
+            Projected relative undergraduate student numbers (indexed, 2026 = 100). 
+            Demand is expected to peak in 2030 due to a population bulge, followed by a decline of approximately 7% by 2035.
+        </p>
+        <div class="chart-container">
+            <canvas id="studentChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart 2: Financial Projections -->
+    <div class="card">
+        <h2 class="text-xl font-bold text-slate-800 mb-4">2. Financial Outlook (Nominal Income)</h2>
+        <p class="text-sm text-slate-500 mb-6">
+            Projected total tuition fee income indexed to 2026 levels. 
+            The central line assumes fees rise with OBR central RPI forecasts (~2.5%). 
+            The shaded area represents the margin of error (uncertainty), ranging from low inflation (1.5%) to high inflation (4.5%).
+        </p>
+        <div class="chart-container">
+            <canvas id="financeChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Methodology & Sources -->
+    <footer class="text-xs text-slate-400 border-t border-slate-200 pt-6 mt-12">
+        <h3 class="font-bold text-slate-500 mb-2">Data Sources & Methodology</h3>
+        <ul class="list-disc pl-4 space-y-1 mb-4">
+            <li><strong>Demographics:</strong> Based on ONS 18-year-old population projections and HEPI analysis showing a peak in 2030 followed by a decline to 2035 levels similar to 2026.</li>
+            <li><strong>Financials:</strong> Assumes a base tuition fee rising annually by RPI. The "Uncertainty Wedge" calculates cumulative compounding differences between low (1.5%) and high (4.5%) RPI scenarios.</li>
+        </ul>
+        <p>This visualisation is for illustrative planning purposes.</p>
+    </footer>
+
+    <script>
+        // --- Data Configuration ---
+        
+        // Years 2026 - 2035
+        const labels = Array.from({length: 10}, (_, i) => 2026 + i);
+
+        // 1. Student Number Projections (Index 2026=100)
+        // Source Logic: Rise to peak 2030 (+5%), then drop (-7% from peak) to 2035.
+        // Approx trend: 100 -> 101.5 -> 103 -> 104.2 -> 105 (Peak) -> 104 -> 102.5 -> 100.5 -> 98.5 -> 97
+        const studentData = [100, 101.5, 103.0, 104.2, 105.0, 104.0, 102.5, 100.5, 98.5, 97.0];
+
+        // 2. Financial Projections (Nominal Income Index)
+        // Formula: Income Index = Student Index * Fee Index
+        // Fee Index compounds by Inflation (RPI)
+        
+        const rpiLow = 0.015;     // 1.5%
+        const rpiCentral = 0.028; // 2.8% (OBR approx)
+        const rpiHigh = 0.045;    // 4.5%
+
+        const incomeCentral = [];
+        const incomeLow = [];
+        const incomeHigh = [];
+
+        let currentFeeIndexCentral = 1.0;
+        let currentFeeIndexLow = 1.0;
+        let currentFeeIndexHigh = 1.0;
+
+        for (let i = 0; i < studentData.length; i++) {
+            // Calculate Income for this year
+            // Note: studentData is percentage (100 = 1.0), so divide by 100
+            let volume = studentData[i] / 100;
+
+            incomeCentral.push((volume * currentFeeIndexCentral * 100).toFixed(1));
+            incomeLow.push((volume * currentFeeIndexLow * 100).toFixed(1));
+            incomeHigh.push((volume * currentFeeIndexHigh * 100).toFixed(1));
+
+            // Compound the fee for NEXT year
+            currentFeeIndexCentral *= (1 + rpiCentral);
+            currentFeeIndexLow *= (1 + rpiLow);
+            currentFeeIndexHigh *= (1 + rpiHigh);
+        }
+
+        // --- Chart 1: Demographics ---
+        const ctxStudents = document.getElementById('studentChart').getContext('2d');
+        new Chart(ctxStudents, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Projected Student Numbers (Index)',
+                    data: studentData,
+                    borderColor: '#3b82f6', // Blue-500
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#3b82f6',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Student Index: ' + context.parsed.y;
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                xMin: 4, // Index 4 is 2030
+                                xMax: 4,
+                                borderColor: '#ef4444',
+                                borderWidth: 1,
+                                borderDash: [6, 6],
+                                label: {
+                                    content: 'Demographic Peak (2030)',
+                                    display: true,
+                                    position: 'start',
+                                    color: '#ef4444',
+                                    font: { size: 10 }
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { borderDash: [4, 4], color: '#e2e8f0' },
+                        title: { display: true, text: 'Index (2026 = 100)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Finance ---
+        const ctxFinance = document.getElementById('financeChart').getContext('2d');
+        new Chart(ctxFinance, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'High Inflation Scenario',
+                        data: incomeHigh,
+                        borderColor: 'transparent',
+                        backgroundColor: 'rgba(16, 185, 129, 0.3)', // Increased opacity slightly for better visibility
+                        pointRadius: 0,
+                        fill: 1, // CORRECTED: Fill to dataset index 1 (Low Inflation)
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Low Inflation Scenario',
+                        data: incomeLow,
+                        borderColor: 'transparent',
+                        backgroundColor: 'transparent',
+                        pointRadius: 0,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Central Forecast (Nominal Income)',
+                        data: incomeCentral,
+                        borderColor: '#0f766e', // Teal-700
+                        borderWidth: 3,
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: '#0f766e',
+                        pointRadius: 4,
+                        tension: 0.4,
+                        zIndex: 10
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { borderDash: [4, 4], color: '#e2e8f0' },
+                        title: { display: true, text: 'Income Index (Nominal)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

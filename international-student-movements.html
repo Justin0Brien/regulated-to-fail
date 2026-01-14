@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global International Student Flows (2023/24)</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #6c757d;
+            --accent: #3498db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 1200px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+            /* Ensure container has height for the chart */
+            height: 600px; 
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        #sankey_basic {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            max-width: 800px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Global International Student Movements</h1>
+        <p class="subtitle">
+            Visualising the flow of students from top origin countries to the "Big Four" study destinations. 
+            Data sourced from 2022/23 and 2023/24 academic reports.
+        </p>
+    </header>
+
+    <div class="chart-container">
+        <div id="sankey_basic"></div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Sources:</strong> USA: IIE Open Doors (2023/24); UK: HESA (2022/23); Australia: Dept. of Education (2023); Canada: CBIE/IRCC (2023).</p>
+        <p><em>Note: Data represents total enrolled students (stock) for the respective periods. "Canada" as a destination refers to inbound international students; "Canadian Students" refers to outbound nationals studying in the USA.</em></p>
+    </div>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['sankey']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Origin');
+            data.addColumn('string', 'Destination');
+            data.addColumn('number', 'Students');
+            data.addColumn({type: 'string', role: 'tooltip'});
+
+            // Data Rows: [Origin, Destination, Number, Tooltip Text]
+            data.addRows([
+                // -- Destination: United States --
+                ['India', 'United States', 331602, 'India -> USA: 331,602'],
+                ['China', 'United States', 277398, 'China -> USA: 277,398'],
+                ['South Korea', 'United States', 43149, 'South Korea -> USA: 43,149'],
+                ['Canadian Students', 'United States', 28998, 'Canadian Students -> USA: 28,998'],
+
+                // -- Destination: United Kingdom --
+                ['India', 'United Kingdom', 173190, 'India -> UK: 173,190'],
+                ['China', 'United Kingdom', 154260, 'China -> UK: 154,260'],
+                ['Nigeria', 'United Kingdom', 72355, 'Nigeria -> UK: 72,355'],
+                ['Pakistan', 'United Kingdom', 34690, 'Pakistan -> UK: 34,690'],
+
+                // -- Destination: Australia --
+                ['China', 'Australia', 166420, 'China -> Australia: 166,420'],
+                ['India', 'Australia', 126487, 'India -> Australia: 126,487'],
+                ['Nepal', 'Australia', 62379, 'Nepal -> Australia: 62,379'],
+                ['Colombia', 'Australia', 39724, 'Colombia -> Australia: 39,724'],
+
+                // -- Destination: Canada --
+                ['India', 'Canada', 319130, 'India -> Canada: 319,130'],
+                ['China', 'Canada', 100000, 'China -> Canada: ~100,000 (Est)'],
+                ['Philippines', 'Canada', 32455, 'Philippines -> Canada: 32,455'],
+                ['Nigeria', 'Canada', 21660, 'Nigeria -> Canada: 21,660']
+            ]);
+
+            // Set chart options
+            var options = {
+                sankey: {
+                    node: {
+                        label: { 
+                            fontName: 'Segoe UI',
+                            fontSize: 14,
+                            color: '#2c3e50',
+                            bold: true
+                        },
+                        nodePadding: 30, // Space between nodes vertically
+                        width: 15        // Thickness of the node bars
+                    },
+                    link: {
+                        colorMode: 'gradient', // Makes the flow fade from source color to dest color
+                        fillOpacity: 0.6
+                    },
+                    tooltip: {
+                        textStyle: { fontName: 'Segoe UI', fontSize: 14 }
+                    }
+                }
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+            chart.draw(data, options);
+
+            // Make chart responsive by redrawing on window resize
+            window.addEventListener('resize', function() {
+                chart.draw(data, options);
+            });
+        }
+    </script>
+</body>
+</html>

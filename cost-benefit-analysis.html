@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Value of Higher Education: A Cost-Benefit Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 60vh;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">The True Value of a Degree</h1>
+            <p class="text-xl md:text-2xl text-slate-300 font-light max-w-3xl mx-auto">
+                Beyond the paycheque: Quantifying the lifetime monetary, health, and societal benefits of higher education against the cost of study.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Introduction Text -->
+        <div class="mb-16 prose prose-lg prose-slate mx-auto text-center">
+            <p>
+                While the cost of higher education is often discussed in terms of debt and tuition fees, the return on investment extends far beyond graduate salaries. 
+                Recent analysis allows us to monetise the "hidden" benefits—from reduced pressure on the NHS to increased personal wellbeing—creating a holistic picture of a degree's value to both the individual and society.
+            </p>
+        </div>
+
+        <!-- The Big Chart Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 mb-16 border border-slate-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2 text-center">The Lifetime Cost-Benefit Analysis</h2>
+            <p class="text-slate-500 text-center mb-8">Comparing the estimated direct cost of a 3-year degree vs. the aggregated lifetime value (Monetary + Non-Monetary).</p>
+            
+            <div class="chart-container">
+                <canvas id="costBenefitChart"></canvas>
+            </div>
+            <div class="mt-6 text-sm text-slate-500 text-center italic">
+                *Values are estimates based on UK averages. See Methodology for details.
+            </div>
+        </div>
+
+        <!-- Detailed Breakdown Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            <!-- Health Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-emerald-500 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-emerald-100 p-3 rounded-full">
+                        <i class="fa-solid fa-heart-pulse text-emerald-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Public Health</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">NHS Savings</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Graduates utilise fewer public healthcare resources. Analysis suggests moving from intermediate to degree-level education is associated with a <strong>~16% reduction</strong> in public healthcare costs.
+                </p>
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-slate-800">£90<span class="text-sm font-normal text-slate-500"> / year</span></p>
+                    <p class="text-sm text-slate-500">Savings per person in direct treatment costs</p>
+                </div>
+            </div>
+
+            <!-- Wellbeing Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-amber-500 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-amber-100 p-3 rounded-full">
+                        <i class="fa-solid fa-face-smile text-amber-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wide">Wellbeing</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">The 'WELLBY' Value</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Higher education correlates with higher life satisfaction. HM Treasury guidance values one "WELLBY" (a one-point change in life satisfaction for one year) at substantial monetary worth.
+                </p>
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-slate-800">£13,000</p>
+                    <p class="text-sm text-slate-500">Monetary value of one WELLBY (2019 prices)</p>
+                </div>
+            </div>
+
+            <!-- Exchequer Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-500 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fa-solid fa-landmark text-blue-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Public Purse</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Exchequer Benefit</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Even after accounting for the costs of funding education, the state receives a massive return on investment through higher tax receipts and lower benefit payments from graduates.
+                </p>
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-slate-800">£75,000</p>
+                    <p class="text-sm text-slate-500">Net benefit to the Exchequer per graduate</p>
+                </div>
+            </div>
+
+             <!-- Crime Card -->
+             <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-indigo-500 card-hover transition-all duration-300 md:col-span-2 lg:col-span-3">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <div class="bg-indigo-100 p-4 rounded-full shrink-0">
+                        <i class="fa-solid fa-gavel text-indigo-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Societal Safety & Crime Reduction</h3>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            A BIS synthesis of evidence indicates that higher education participation contributes significantly to lower crime rates. A 16 percentage point increase in the proportion of the population educated to degree level is estimated to generate over <strong>£1 billion in annual savings</strong> in reduced crime costs across the UK.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                                <p class="text-lg font-bold text-slate-800">£1.3 Billion</p>
+                                <p class="text-sm text-slate-500">Estimated annual savings in wider societal benefits (lower estimate)</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                                <p class="text-lg font-bold text-slate-800">Civic Participation</p>
+                                <p class="text-sm text-slate-500">Higher engagement in democratic processes and community volunteering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="bg-slate-100 rounded-lg p-8 text-sm text-slate-600">
+            <h3 class="text-lg font-bold text-slate-800 mb-4 border-b border-slate-200 pb-2">Methodology & Sources</h3>
+            <p class="mb-2">
+                <strong>Cost Assumptions:</strong> "Total Direct Cost" (~£65,000) comprises average tuition fees for a 3-year course in England (~£27,750) plus estimated maintenance/living costs over three years (~£37,000) [@ImmerseEducation2025Costs].
+            </p>
+            <p class="mb-2">
+                <strong>Private Benefit:</strong> "Individual Net Earnings" (~£115,000) represents the average net lifetime earnings premium for men and women after taxes and student loan repayments, based on IFS estimates [@IFS2020LifetimeEarnings].
+            </p>
+            <p class="mb-2">
+                <strong>Societal Benefit:</strong> "Public/Exchequer Benefit" (~£75,000) is derived from London Economics/Universities UK analysis of tax revenues and benefit savings [@LondonEconomics2024EconomicImpact].
+            </p>
+            <p class="mb-2">
+                <strong>Non-Monetary Valuations:</strong> 
+                "Health Savings" (~£3,600) is a lifetime projection based on the £90/year estimated reduction in NHS costs [@DavillasPudney2019BaselineHealth].
+                "Wellbeing Value" (~£26,000) illustrates a hypothetical sustained 0.05-point increase in life satisfaction over 40 years, valued at £13,000 per WELLBY [@HMT2021WellbeingGuidance].
+            </p>
+            
+            <div class="mt-6 pt-4 border-t border-slate-300">
+                <h4 class="font-bold mb-2">References</h4>
+                <ul class="list-disc pl-5 space-y-2 font-mono text-xs">
+                    <li>
+                        @techreport{DavillasPudney2019BaselineHealth,
+                            author      = {Davillas, Apostolos and Pudney, Stephen},
+                            title       = {Baseline Health and Public Healthcare Costs Five Years On},
+                            institution = {Institute for Social and Economic Research},
+                            year        = {2019},
+                            url         = {https://www.iser.essex.ac.uk/wp-content/uploads/files/working-papers/iser/2019-01.pdf}
+                        }
+                    </li>
+                    <li>
+                        @online{IFS2020LifetimeEarnings,
+                            author = {{Institute for Fiscal Studies}},
+                            title  = {The impact of undergraduate degrees on lifetime earnings},
+                            year   = {2020},
+                            url    = {https://ifs.org.uk/publications/impact-undergraduate-degrees-lifetime-earnings}
+                        }
+                    </li>
+                    <li>
+                        @online{HMT2021WellbeingGuidance,
+                            author = {{HM Treasury}},
+                            title  = {Wellbeing Guidance for Appraisal: Supplementary Green Book Guidance},
+                            year   = {2021},
+                            url    = {https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1005388/Wellbeing_guidance_for_appraisal_-_supplementary_Green_Book_guidance.pdf}
+                        }
+                    </li>
+                    <li>
+                        @techreport{LondonEconomics2024EconomicImpact,
+                            author      = {{London Economics}},
+                            title       = {The economic impact of higher education teaching, research and innovation},
+                            institution = {Universities UK},
+                            year        = {2024},
+                            url         = {https://www.universitiesuk.ac.uk/what-we-do/policy-and-research/publications/economic-impact-higher-education}
+                        }
+                    </li>
+                    <li>
+                        @online{ImmerseEducation2025Costs,
+                            author = {{Immerse Education}},
+                            title  = {How Much Does University Cost in the UK?},
+                            year   = {2025},
+                            url    = {https://www.immerse.education/resources-for-parents/finance-and-loans/how-much-does-university-cost-in-the-uk/}
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script for the Chart -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('costBenefitChart').getContext('2d');
+            
+            // Data Values
+            const directCost = 65000;
+            const privateEarnings = 115000;
+            const exchequerBenefit = 75000;
+            const wellbeingValue = 26000;
+            const healthSavings = 3600;
+
+            const totalBenefit = privateEarnings + exchequerBenefit + wellbeingValue + healthSavings;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Investment (Cost)', 'Total Lifetime Return (Value)'],
+                    datasets: [
+                        {
+                            label: 'Direct Cost (Tuition + Living)',
+                            data: [directCost, 0],
+                            backgroundColor: '#ef4444', // Red
+                            borderRadius: 6,
+                            borderSkipped: false,
+                            stack: 'Stack 0',
+                        },
+                        {
+                            label: 'Private Net Earnings Premium',
+                            data: [0, privateEarnings],
+                            backgroundColor: '#3b82f6', // Blue
+                            borderRadius: 6,
+                            borderSkipped: false,
+                            stack: 'Stack 1',
+                        },
+                        {
+                            label: 'Exchequer Benefit (Tax/Benefits)',
+                            data: [0, exchequerBenefit],
+                            backgroundColor: '#6366f1', // Indigo
+                            borderRadius: 6,
+                            borderSkipped: false,
+                            stack: 'Stack 1',
+                        },
+                        {
+                            label: 'Wellbeing Value (WELLBYs)',
+                            data: [0, wellbeingValue],
+                            backgroundColor: '#f59e0b', // Amber
+                            borderRadius: 6,
+                            borderSkipped: false,
+                            stack: 'Stack 1',
+                        },
+                        {
+                            label: 'NHS Health Savings',
+                            data: [0, healthSavings],
+                            backgroundColor: '#10b981', // Emerald
+                            borderRadius: 6,
+                            borderSkipped: false,
+                            stack: 'Stack 1',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Roboto', sans-serif",
+                                    size: 12
+                                },
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumSignificantDigits: 3 }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            },
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleFont: { family: "'Merriweather', serif" },
+                            bodyFont: { family: "'Roboto', sans-serif" },
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#e2e8f0',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return '£' + value / 1000 + 'k';
+                                },
+                                font: {
+                                    family: "'Roboto', sans-serif",
+                                }
+                            },
+                            stacked: true // Enable stacking
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: "'Merriweather', serif",
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            stacked: true // Enable stacking
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

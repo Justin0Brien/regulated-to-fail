@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compliance Reality: International Student Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --success-green: #00b894;
+            --alert-red: #d63031;
+            --info-blue: #0984e3;
+            --warning-orange: #fdcb6e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* SECTION: The 97% Rule */
+        .highlight-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .big-stat-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .stat-card {
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            border-right: 1px solid #eee;
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .percentage {
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .green-text { color: var(--success-green); }
+        .red-text { color: var(--alert-red); }
+
+        .stat-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        /* CHART GRID */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: var(--text-dark);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        /* NARRATIVE CARDS */
+        .narrative-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--info-blue);
+        }
+
+        .fact-card h4 { margin-top: 0; color: var(--info-blue); }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>The Compliance Reality</h1>
+        <p class="subtitle">
+            Do international students cost the country or contribute to it? <br>
+            Data from the UK, USA, and Australia reveals that the "Overstay Myth" contradicts statistical reality.
+        </p>
+    </header>
+
+    <!-- SECTION 1: THE BIG STAT -->
+    <div class="highlight-section">
+        <h2 style="margin:0;">The "97% Rule" of Global Compliance</h2>
+        <p style="text-align:center; max-width:600px; margin-top:10px; color:#636e72;">
+            Across major Anglophone destinations, the vast majority of students leave or extend their visas legally.
+        </p>
+        
+        <div class="big-stat-row">
+            <div class="stat-card">
+                <span class="percentage green-text">97.5%</span>
+                <span class="stat-desc"><strong>UK Compliance Rate</strong><br>Departed on time or granted legal extension (ONS/Home Office Exit Checks).</span>
+            </div>
+            <div class="stat-card">
+                <span class="percentage green-text">96.4%</span>
+                <span class="stat-desc"><strong>USA Compliance Rate</strong><br>Only 3.6% of F-1/M-1 students overstayed their visa terms (DHS Entry/Exit Data).</span>
+            </div>
+            <div class="stat-card">
+                <span class="percentage green-text">~40%</span>
+                <span class="stat-desc"><strong>Germany's Goal</strong><br>Germany <em>wants</em> students to stay. A 40-50% retention rate is a policy success, not a failure.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: CHARTS -->
+    <div class="chart-grid">
+        
+        <!-- CHART 1: Overstay Rates Comparison -->
+        <div class="chart-box">
+            <h3>Visa Overstay Rates (Estimated)</h3>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">
+                Percentage of students with no record of departure after visa expiry.
+            </p>
+            <div class="chart-container">
+                <canvas id="overstayChart"></canvas>
+            </div>
+        </div>
+
+        <!-- CHART 2: The Economic Balance (UK Focus) -->
+        <div class="chart-box">
+            <h3>The UK Economic Balance Sheet</h3>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">
+                Comparing net economic contribution vs. estimated public cost.
+            </p>
+            <div class="chart-container">
+                <canvas id="economyChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION 3: NARRATIVE FACTS -->
+    <div class="narrative-container">
+        <div class="fact-card">
+            <h4>The "Health Tourist" Myth</h4>
+            <p>In the UK, students pay an <strong>Immigration Health Surcharge (£776/yr)</strong> upfront. In Australia and the USA, mandatory private insurance (OSHC) is required. They are net funders of health systems, not drains.</p>
+        </div>
+        <div class="fact-card" style="border-left-color: var(--warning-orange);">
+            <h4>The Canadian Context</h4>
+            <p>Canada has seen a rise in asylum claims (~1.5% of students), but this remains a small minority. The vast majority use the legal PGWP (Post-Grad Work Permit) route designed by the government to retain talent.</p>
+        </div>
+        <div class="fact-card" style="border-left-color: var(--success-green);">
+            <h4>The "Brain Gain" Strategy</h4>
+            <p>Germany and South Korea actively design visas to keep students. They view the departure of a graduate as a "lost investment," contrasting sharply with the Anglo-Saxon "migration fear" narrative.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Sources:</strong> UK ONS/Home Office (Exit Checks 2024); US DHS (FY 2023 Entry/Exit Overstay Report); Universities UK (Economic Impact 2023); DAAD Germany (2024).</p>
+        <p><em>*Data represents latest available reporting periods as of Jan 2026.</em></p>
+    </footer>
+
+</div>
+
+<script>
+    // --- Chart 1: Overstay Rates ---
+    const ctxOverstay = document.getElementById('overstayChart').getContext('2d');
+    new Chart(ctxOverstay, {
+        type: 'bar',
+        data: {
+            labels: ['United Kingdom', 'United States', 'Schengen Area (Avg)', 'Australia (Est)'],
+            datasets: [
+                {
+                    label: 'Compliance Rate (Legal Departure/Stay)',
+                    data: [97.5, 96.4, 95.0, 98.0],
+                    backgroundColor: '#00b894',
+                    stack: 'Stack 0'
+                },
+                {
+                    label: 'Overstay Rate (No Departure Record)',
+                    data: [2.5, 3.6, 5.0, 2.0], // Estimates based on DHS and HO data
+                    backgroundColor: '#d63031',
+                    stack: 'Stack 0'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.raw + '%';
+                        }
+                    }
+                },
+                legend: { position: 'bottom' }
+            },
+            scales: {
+                x: { stacked: true },
+                y: { 
+                    stacked: true, 
+                    min: 80, // Zoom in to show the gap clearly
+                    max: 100,
+                    ticks: { callback: function(value){return value + "%"} }
+                }
+            }
+        }
+    });
+
+    // --- Chart 2: Economic Balance (UK Example) ---
+    const ctxEco = document.getElementById('economyChart').getContext('2d');
+    new Chart(ctxEco, {
+        type: 'doughnut',
+        data: {
+            labels: ['Net Economic Contribution (£41.9bn)', 'Est. Public Cost (£4.4bn)'],
+            datasets: [{
+                data: [41.9, 4.4],
+                backgroundColor: [
+                    '#0984e3', // Blue for contribution
+                    '#b2bec3'  // Grey for cost
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: {
+                    display: true,
+                    text: 'UK International Student Impact (2021/22 Intake)',
+                    font: { size: 14 }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
