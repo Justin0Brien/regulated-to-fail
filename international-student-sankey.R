@@ -29,11 +29,24 @@ for (pkg in required_packages) {
 }
 
 # ============================================================================
+# OUTPUT DIRECTORY
+# ============================================================================
+
+# Output to fig/ subfolder
+output_dir <- file.path(getwd(), "fig")
+
+# Create directory if it doesn't exist
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# ============================================================================
 # DATA PREPARATION
 # ============================================================================
 
-# Create the student flow dataset
+# Create the student flow dataset with unique flow IDs
 student_flows <- data.frame(
+  flow_id = 1:31,  # Unique identifier for each flow
   origin = c(
     # To United States
     "India", "China", "South Korea", "Vietnam", "EU Nationals", "Canada",
@@ -88,19 +101,46 @@ student_flows <- data.frame(
 # Calculate totals for ordering
 origin_totals <- student_flows %>%
   group_by(origin) %>%
-  summarise(total = sum(students)) %>%
+  summarise(total = sum(students), .groups = "drop") %>%
   arrange(desc(total))
 
 dest_totals <- student_flows %>%
   group_by(destination) %>%
-  summarise(total = sum(students)) %>%
+  summarise(total = sum(students), .groups = "drop") %>%
   arrange(desc(total))
 
-# Set factor levels for proper ordering (largest flows at top)
+# Set factor levels for proper ordering (largest at top when plotted)
 student_flows$origin <- factor(student_flows$origin, 
                                 levels = rev(origin_totals$origin))
 student_flows$destination <- factor(student_flows$destination, 
                                      levels = rev(dest_totals$destination))
+
+# ============================================================================
+# CONVERT TO LODES FORMAT FOR PROPER ALIGNMENT
+# ============================================================================
+
+# The key fix: convert to lodes (long) format for proper flow alignment
+# This ensures each flow connects correctly from origin to destination
+
+lodes_data <- student_flows %>%
+  mutate(alluvium = flow_id) %>%  # Each flow is a unique alluvium
+  pivot_longer(
+    cols = c(origin, destination),
+    names_to = "axis_name",
+    values_to = "stratum"
+  ) %>%
+  mutate(
+    x = case_when(
+      axis_name == "origin" ~ 1L,
+      axis_name == "destination" ~ 2L
+    ),
+    # Preserve the origin for colouring
+    origin_country = student_flows$origin[match(alluvium, student_flows$flow_id)]
+  )
+
+# Ensure stratum is a factor with proper ordering
+all_strata <- c(as.character(origin_totals$origin), as.character(dest_totals$destination))
+lodes_data$stratum <- factor(lodes_data$stratum, levels = rev(unique(all_strata)))
 
 # ============================================================================
 # COLOUR PALETTES
@@ -108,67 +148,53 @@ student_flows$destination <- factor(student_flows$destination,
 
 # Elegant, print-friendly colour palette for origins
 origin_colours <- c(
-  "India"        = "#E63946",  # Warm red
-
-"China"        = "#457B9D",  # Steel blue
-  "Vietnam"      = "#2A9D8F",  # Teal
-  "Nepal"        = "#F4A261",  # Sandy orange
-  "Nigeria"      = "#264653",  # Dark slate
-  "Pakistan"     = "#8338EC",  # Purple
-  "South Korea"  = "#06D6A0",  # Mint green
-  "Philippines"  = "#FB8500",  # Orange
-  "Colombia"     = "#FFBE0B",  # Golden yellow
-  "EU Nationals" = "#3A86FF",  # Bright blue
-  "Canada"       = "#FF006E",  # Magenta
-  "North Africa" = "#BC6C25"   # Sienna brown
-)
-
-# Destination colours (muted, professional)
-dest_colours <- c(
-  "United States"  = "#1D3557",
-  "United Kingdom" = "#14213D",
-  "Canada"         = "#540B0E",
-  "Australia"      = "#023047",
-  "European Union" = "#003049",
-  "Japan"          = "#2B2D42",
-  "South Korea"    = "#3D405B"
+  "India"        = "#E63946",
+  "China"        = "#457B9D",
+  "Vietnam"      = "#2A9D8F",
+  "Nepal"        = "#F4A261",
+  "Nigeria"      = "#264653",
+  "Pakistan"     = "#8338EC",
+  "South Korea"  = "#06D6A0",
+  "Philippines"  = "#FB8500",
+  "Colombia"     = "#FFBE0B",
+  "EU Nationals" = "#3A86FF",
+  "Canada"       = "#FF006E",
+  "North Africa" = "#BC6C25"
 )
 
 # ============================================================================
-# CREATE THE SANKEY DIAGRAM
+# CREATE THE SANKEY DIAGRAM (Using lodes format)
 # ============================================================================
 
-# Convert to alluvial format
-alluvial_data <- student_flows %>%
-  mutate(
-    flow_id = row_number(),
-    students_k = students / 1000  # Convert to thousands for cleaner labels
-  )
-
-# Create the plot
-sankey_plot <- ggplot(alluvial_data,
-                      aes(axis1 = origin, 
-                          axis2 = destination, 
-                          y = students)) +
-  # Draw the flows (stratum connections)
-  geom_alluvium(aes(fill = origin),
-                width = 1/6,
-                alpha = 0.7,
-                decreasing = FALSE) +
-  # Draw the nodes (strata)
-  geom_stratum(width = 1/6, 
-               fill = "grey95", 
-               colour = "grey40",
-               linewidth = 0.3) +
+sankey_plot <- ggplot(lodes_data,
+                      aes(x = x, 
+                          stratum = stratum, 
+                          alluvium = alluvium,
+                          y = students,
+                          fill = origin_country)) +
+  # Draw the flows - geom_flow ensures correct source-destination connection
+  geom_flow(width = 1/5,
+            alpha = 0.65,
+            curve_type = "arctangent",
+            knot.pos = 0.5) +
+  # Draw the strata (nodes)
+  geom_stratum(width = 1/5, 
+               fill = "grey92", 
+               colour = "grey50",
+               linewidth = 0.4) +
   # Add labels to the strata
   geom_text(stat = "stratum",
             aes(label = after_stat(stratum)),
-            size = 3.2,
+            size = 3.0,
             fontface = "bold",
             colour = "#2c3e50") +
   # Apply the colour palette
   scale_fill_manual(values = origin_colours,
                     name = "Origin Country") +
+  # Custom x-axis labels
+  scale_x_continuous(breaks = c(1, 2),
+                     labels = c("Origin", "Destination"),
+                     expand = expansion(mult = c(0.1, 0.1))) +
   # Scale for y-axis (student numbers)
   scale_y_continuous(labels = scales::label_comma(),
                      expand = expansion(mult = c(0.02, 0.02))) +
@@ -178,7 +204,7 @@ sankey_plot <- ggplot(alluvial_data,
     # Remove grid for clean look
     panel.grid = element_blank(),
     # Axis styling
-    axis.text.x = element_blank(),
+    axis.text.x = element_text(face = "bold", size = 12, colour = "#2c3e50"),
     axis.text.y = element_blank(),
     axis.title = element_blank(),
     axis.ticks = element_blank(),
@@ -189,7 +215,7 @@ sankey_plot <- ggplot(alluvial_data,
     legend.key.size = unit(0.5, "cm"),
     legend.box = "horizontal",
     # Plot margins for print
-    plot.margin = margin(t = 15, r = 20, b = 15, l = 20, unit = "pt"),
+    plot.margin = margin(t = 15, r = 25, b = 15, l = 25, unit = "pt"),
     # Title styling
     plot.title = element_text(face = "bold", size = 14, hjust = 0.5,
                               margin = margin(b = 5)),
@@ -218,8 +244,13 @@ sankey_plot <- ggplot(alluvial_data,
 
 sankey_horizontal <- sankey_plot +
   coord_flip() +
+  scale_x_continuous(breaks = c(1, 2),
+                     labels = c("Origin", "Destination"),
+                     expand = expansion(mult = c(0.08, 0.08))) +
   theme(
     legend.position = "right",
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(face = "bold", size = 12, colour = "#2c3e50"),
     plot.caption = element_text(hjust = 1)
   ) +
   guides(fill = guide_legend(ncol = 1))
@@ -227,9 +258,6 @@ sankey_horizontal <- sankey_plot +
 # ============================================================================
 # EXPORT FUNCTIONS
 # ============================================================================
-
-# Output directory (same as script location)
-output_dir <- getwd()
 
 # --- Export Vertical Sankey (Default) ---
 
@@ -249,8 +277,8 @@ pdf(
   width = 12,
   height = 10,
   paper = "special",
-  useDingbats = FALSE,  # Better font embedding
-  compress = FALSE       # Maintain quality
+  useDingbats = FALSE,
+  compress = FALSE
 )
 print(sankey_plot)
 dev.off()
@@ -302,7 +330,7 @@ cat("============================================================\n")
 cat("  INTERNATIONAL STUDENT SANKEY DIAGRAM - EXPORT COMPLETE\n")
 cat("============================================================\n")
 cat("\n")
-cat("Files created:\n")
+cat("Files created in fig/ folder:\n")
 cat("  • international-student-sankey.svg (vector)\n")
 cat("  • international-student-sankey.pdf (print-ready)\n")
 cat("  • international-student-sankey-horizontal.svg (alternative)\n")
