@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='720.00pt' height='432.00pt' viewBox='0 0 720.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='0.00' y='0.00' width='720.00' height='432.00' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMTEyLjk2fDYwMS40M3w4My40MXwzNjcuODY='>
+    <rect x='112.96' y='83.41' width='488.47' height='284.45' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTEyLjk2fDYwMS40M3w4My40MXwzNjcuODY=)'>
+<rect x='112.96' y='83.41' width='488.47' height='284.45' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='112.96,339.42 601.43,339.42 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='112.96,282.53 601.43,282.53 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='112.96,225.64 601.43,225.64 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='112.96,168.75 601.43,168.75 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='112.96,111.86 601.43,111.86 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='174.02,367.86 174.02,83.41 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='296.14,367.86 296.14,83.41 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='418.26,367.86 418.26,83.41 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='540.37,367.86 540.37,83.41 ' style='stroke-width: 0.64; stroke: #E5E5E5; stroke-linecap: butt;' />
+<rect x='112.96' y='83.41' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8E1A0F;' />
+<rect x='235.08' y='83.41' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C93B2D;' />
+<rect x='357.20' y='83.41' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #AB2B1E;' />
+<rect x='479.31' y='83.41' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #E74C3C;' />
+<rect x='112.96' y='140.30' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #E74C3C;' />
+<rect x='235.08' y='140.30' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #AB2B1E;' />
+<rect x='357.20' y='140.30' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C93B2D;' />
+<rect x='479.31' y='140.30' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #AB2B1E;' />
+<rect x='112.96' y='254.08' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C93B2D;' />
+<rect x='235.08' y='254.08' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F1C40F;' />
+<rect x='357.20' y='254.08' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #E74C3C;' />
+<rect x='479.31' y='254.08' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0A029;' />
+<rect x='112.96' y='310.97' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #ED7935;' />
+<rect x='235.08' y='310.97' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C3C93D;' />
+<rect x='357.20' y='310.97' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DCB59;' />
+<rect x='479.31' y='310.97' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C93B2D;' />
+<rect x='112.96' y='197.19' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #ED7935;' />
+<rect x='235.08' y='197.19' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #C93B2D;' />
+<rect x='357.20' y='197.19' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0A029;' />
+<rect x='479.31' y='197.19' width='122.12' height='56.89' style='stroke-width: 4.27; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #ED7935;' />
+<text x='174.02' y='116.95' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='15.81px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='296.14' y='116.95' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='418.26' y='116.95' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>9</text>
+<text x='540.37' y='116.95' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>7</text>
+<text x='174.02' y='173.84' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>7</text>
+<text x='296.14' y='173.84' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>9</text>
+<text x='418.26' y='173.84' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='540.37' y='173.84' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>9</text>
+<text x='174.02' y='287.62' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='296.14' y='287.62' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='418.26' y='287.62' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>7</text>
+<text x='540.37' y='287.62' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='174.02' y='344.51' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='296.14' y='344.51' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='418.26' y='344.51' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='540.37' y='344.51' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='174.02' y='230.73' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='296.14' y='230.73' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='418.26' y='230.73' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='540.37' y='230.73' text-anchor='middle' style='font-size: 14.23px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>6</text>
+</g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='174.02' y='75.71' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='75.22px' lengthAdjust='spacingAndGlyphs'>Financial Cost</text>
+<text x='296.14' y='75.71' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='66.06px' lengthAdjust='spacingAndGlyphs'>Refusal Risk</text>
+<text x='418.26' y='75.71' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='78.91px' lengthAdjust='spacingAndGlyphs'>Policy Hostility</text>
+<text x='540.37' y='75.71' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='66.69px' lengthAdjust='spacingAndGlyphs'>Bureaucracy</text>
+<text x='107.58' y='343.72' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='52.02px' lengthAdjust='spacingAndGlyphs'>Germany</text>
+<text x='107.58' y='286.83' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='92.64px' lengthAdjust='spacingAndGlyphs'>United Kingdom</text>
+<text x='107.58' y='229.94' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='76.67px' lengthAdjust='spacingAndGlyphs'>United States</text>
+<text x='107.58' y='173.05' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='43.34px' lengthAdjust='spacingAndGlyphs'>Canada</text>
+<text x='107.58' y='116.16' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #333333; font-family: "Arial";' textLength='51.34px' lengthAdjust='spacingAndGlyphs'>Australia</text>
+<rect x='613.39' y='105.66' width='86.69' height='239.96' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='619.36' y='120.00' style='font-size: 10.20px; font-weight: bold; font-family: "Arial";' textLength='74.73px' lengthAdjust='spacingAndGlyphs'>Difficulty Score</text>
+<image width='14.17' height='212.60' x='619.36' y='127.04' preserveAspectRatio='none' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAEsCAYAAAACUNnVAAAA1klEQVQ4jZ1QURaDMAhLsgPsf4fegaeWfVRbUNR1P30JCQGK9+tpIgERREVoiCkCBHJFTNHWgfOUoTw23w95/Y7bvD+T/W0DM0gmWw1NO/m/sbnc7oUAkbaiXqvTKoqqa7tW7ZDXzW6DLIDWhkdfkuePsZOOpu7npmsEwd3hNkhqe2p56CHvjMouLfePiqcG1kgZHlChGhVUnCqosFPWoA1xi6ICdWoUGNoy5OiNGYfauunOjGCJQh4Aby7JSP+M1BhqS/R1usRaRueUEpoBaGq1CYA+IL4BAJPBs1hrNwAAAABJRU5ErkJggg=='/>
+<polyline points='630.13,315.74 633.54,315.74 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='630.13,245.11 633.54,245.11 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='630.13,174.48 633.54,174.48 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='622.76,315.74 619.36,315.74 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='622.76,245.11 619.36,245.11 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='622.76,174.48 619.36,174.48 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<text x='639.51' y='319.18' style='font-size: 9.60px; font-family: "Arial";' textLength='17.58px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='639.51' y='248.55' style='font-size: 9.60px; font-family: "Arial";' textLength='34.08px' lengthAdjust='spacingAndGlyphs'>Medium</text>
+<text x='639.51' y='177.92' style='font-size: 9.60px; font-family: "Arial";' textLength='19.70px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='112.96' y='50.50' style='font-size: 11.40px;fill: #666666; font-family: "Arial";' textLength='390.31px' lengthAdjust='spacingAndGlyphs'>Barrier to entry scores by country and dimension (1 = easy, 10 = very difficult)</text>
+<text x='112.96' y='31.09' style='font-size: 15.60px; font-weight: bold;fill: #2C3E50; font-family: "Arial";' textLength='357.53px' lengthAdjust='spacingAndGlyphs'>International Student Visa Difficulty Index (2026)</text>
+<text x='112.96' y='389.25' style='font-size: 9.00px;fill: #7F7F7F; font-family: "Arial";' textLength='623.69px' lengthAdjust='spacingAndGlyphs'>Sources: Home Affairs Australia, IRCC Canada, UKVI, US State Department, German Federal Foreign Office, Japanese Immigration Bureau (January 2026).</text>
+<text x='112.96' y='402.21' style='font-size: 9.00px;fill: #7F7F7F; font-family: "Arial";' textLength='504.00px' lengthAdjust='spacingAndGlyphs'>Financial Cost includes visa fees and mandatory financial proof requirements. Refusal Risk based on published rejection rates.</text>
+<text x='112.96' y='415.17' style='font-size: 9.00px;fill: #7F7F7F; font-family: "Arial";' textLength='594.50px' lengthAdjust='spacingAndGlyphs'>Policy Hostility reflects caps, dependent restrictions, and interview requirements. Bureaucracy measures paperwork complexity and processing times.</text>
+</g>
+</g>
+</svg>
