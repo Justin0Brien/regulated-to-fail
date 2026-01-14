@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='432.00pt' viewBox='0 0 576.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='-0.000000000000064' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ=='>
+    <rect x='59.09' y='72.88' width='496.99' height='289.32' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ==)'>
+<rect x='59.09' y='72.88' width='496.99' height='289.32' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='59.09,362.21 556.07,362.21 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,314.93 556.07,314.93 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,267.66 556.07,267.66 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,220.38 556.07,220.38 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,173.11 556.07,173.11 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,125.83 556.07,125.83 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,78.56 556.07,78.56 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='68.12,244.02 118.32,208.56 168.52,173.11 218.72,144.74 268.93,125.83 319.13,149.47 369.33,184.93 419.53,232.20 469.73,279.47 519.93,314.93 ' style='stroke-width: 2.56; stroke: #3B82F6; stroke-linecap: butt;' />
+<circle cx='68.12' cy='244.02' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='118.32' cy='208.56' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='168.52' cy='173.11' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='218.72' cy='144.74' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='268.93' cy='125.83' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='319.13' cy='149.47' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='369.33' cy='184.93' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='419.53' cy='232.20' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='469.73' cy='279.47' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<circle cx='519.93' cy='314.93' r='3.52' style='stroke-width: 1.70; stroke: #3B82F6; fill: #FFFFFF;' />
+<line x1='268.93' y1='362.21' x2='268.93' y2='72.88' style='stroke-width: 1.07; stroke: #E11D48; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text x='283.99' y='110.92' style='font-size: 8.54px; font-weight: bold;fill: #E11D48; font-family: "Arial";' textLength='19.94px' lengthAdjust='spacingAndGlyphs'>Peak</text>
+<text x='283.99' y='123.22' style='font-size: 8.54px; font-weight: bold;fill: #E11D48; font-family: "Arial";' textLength='19.00px' lengthAdjust='spacingAndGlyphs'>2030</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='54.15' y='365.43' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.00px' lengthAdjust='spacingAndGlyphs'>95</text>
+<text x='54.15' y='318.15' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.00px' lengthAdjust='spacingAndGlyphs'>97</text>
+<text x='54.15' y='270.88' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.00px' lengthAdjust='spacingAndGlyphs'>99</text>
+<text x='54.15' y='223.60' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>101</text>
+<text x='54.15' y='176.33' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>103</text>
+<text x='54.15' y='129.05' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>105</text>
+<text x='54.15' y='81.78' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>107</text>
+<text x='68.12' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2026</text>
+<text x='118.32' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2027</text>
+<text x='168.52' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2028</text>
+<text x='218.72' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2029</text>
+<text x='268.93' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2030</text>
+<text x='319.13' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2031</text>
+<text x='369.33' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2032</text>
+<text x='419.53' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2033</text>
+<text x='469.73' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2034</text>
+<text x='519.93' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2035</text>
+<text x='307.58' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='21.14px' lengthAdjust='spacingAndGlyphs'>Year</text>
+<text transform='translate(27.09,217.54) rotate(-90)' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='124.08px' lengthAdjust='spacingAndGlyphs'>Volume Index (2026 = 100)</text>
+<text x='59.09' y='45.04' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='339.09px' lengthAdjust='spacingAndGlyphs'>Projected 18-year-old population index. A 'demographic bulge' peaks in 2030</text>
+<text x='59.09' y='55.84' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='124.83px' lengthAdjust='spacingAndGlyphs'>before a sharp ~7% decline.</text>
+<text x='59.09' y='29.95' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='220.08px' lengthAdjust='spacingAndGlyphs'>Domestic Student Demographics</text>
+<text x='59.09' y='410.39' style='font-size: 8.00px;fill: #7F7F7F; font-family: "Arial";' textLength='262.55px' lengthAdjust='spacingAndGlyphs'>Source: ONS population projections; HEPI Report 179 (Bekhradnia, 2024)</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='432.00pt' viewBox='0 0 576.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='-0.000000000000064' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ=='>
+    <rect x='59.09' y='72.88' width='496.99' height='289.32' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ==)'>
+<rect x='59.09' y='72.88' width='496.99' height='289.32' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='59.09,342.00 556.07,342.00 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,283.43 556.07,283.43 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,224.87 556.07,224.87 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,166.30 556.07,166.30 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,107.73 556.07,107.73 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polygon points='67.37,342.00 111.90,321.50 156.44,301.00 200.97,277.58 245.50,254.15 290.03,227.79 334.57,201.44 379.10,172.16 423.63,142.87 468.17,110.66 468.17,318.57 423.63,321.50 379.10,321.50 334.57,324.43 290.03,324.43 245.50,327.36 200.97,330.29 156.44,333.21 111.90,336.14 67.37,342.00 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #0891B2; fill-opacity: 0.15;' />
+<polyline points='67.37,342.00 111.90,321.50 156.44,301.00 200.97,277.58 245.50,254.15 290.03,227.79 334.57,201.44 379.10,172.16 423.63,142.87 468.17,110.66 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='468.17,318.57 423.63,321.50 379.10,321.50 334.57,324.43 290.03,324.43 245.50,327.36 200.97,330.29 156.44,333.21 111.90,336.14 67.37,342.00 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='67.37,342.00 111.90,330.29 156.44,318.57 200.97,306.86 245.50,295.15 290.03,283.43 334.57,271.72 379.10,260.01 423.63,248.29 468.17,236.58 ' style='stroke-width: 2.56; stroke: #0891B2; stroke-linecap: butt;' />
+<circle cx='67.37' cy='342.00' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='111.90' cy='330.29' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='156.44' cy='318.57' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='200.97' cy='306.86' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='245.50' cy='295.15' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='290.03' cy='283.43' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='334.57' cy='271.72' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='379.10' cy='260.01' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='423.63' cy='248.29' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<circle cx='468.17' cy='236.58' r='3.52' style='stroke-width: 1.70; stroke: #0891B2; fill: #FFFFFF;' />
+<line x1='59.09' y1='342.00' x2='556.07' y2='342.00' style='stroke-width: 0.64; stroke: #999999; stroke-dasharray: 4.00,4.00; stroke-linecap: butt;' />
+<text x='481.53' y='99.30' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='52.42px' lengthAdjust='spacingAndGlyphs'>High: Techflation</text>
+<text x='481.53' y='109.54' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='28.25px' lengthAdjust='spacingAndGlyphs'>+ FX risk</text>
+<text x='481.53' y='239.12' style='font-size: 7.11px; font-weight: bold;fill: #0891B2; font-family: "Arial";' textLength='24.50px' lengthAdjust='spacingAndGlyphs'>Central</text>
+<text x='481.53' y='326.97' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='66.25px' lengthAdjust='spacingAndGlyphs'>Low: Efficiency gains</text>
+<polygon points='159.42,140.81 244.42,140.81 244.30,140.81 244.78,140.79 245.25,140.69 245.70,140.52 246.12,140.28 246.49,139.98 246.81,139.62 247.07,139.21 247.25,138.77 247.37,138.30 247.41,137.82 247.41,137.82 247.41,106.92 247.41,106.92 247.37,106.44 247.25,105.98 247.07,105.53 246.81,105.13 246.49,104.77 246.12,104.46 245.70,104.22 245.25,104.05 244.78,103.96 244.42,103.93 159.42,103.93 159.78,103.96 159.30,103.94 158.83,104.00 158.36,104.13 157.93,104.34 157.53,104.61 157.19,104.94 156.90,105.33 156.67,105.75 156.52,106.21 156.44,106.68 156.44,106.92 156.44,137.82 156.44,137.58 156.44,138.06 156.52,138.54 156.67,138.99 156.90,139.42 157.19,139.80 157.53,140.14 157.93,140.41 158.36,140.62 158.83,140.75 159.30,140.81 ' style='stroke-width: 0.53; stroke: #0E7490; fill: #ECFEFF;' />
+<text x='158.40' y='110.58' style='font-size: 6.54px; font-style: italic;fill: #0E7490; font-family: "Arial";' textLength='44.86px' lengthAdjust='spacingAndGlyphs'>TECHFLATION</text>
+<text x='158.40' y='120.00' style='font-size: 6.54px; font-style: italic;fill: #0E7490; font-family: "Arial";' textLength='87.05px' lengthAdjust='spacingAndGlyphs'>SaaS licensing (USD-pegged)</text>
+<text x='158.40' y='129.43' style='font-size: 6.54px; font-style: italic;fill: #0E7490; font-family: "Arial";' textLength='69.98px' lengthAdjust='spacingAndGlyphs'>Cybersecurity insurance</text>
+<text x='158.40' y='138.85' style='font-size: 6.54px; font-style: italic;fill: #0E7490; font-family: "Arial";' textLength='55.48px' lengthAdjust='spacingAndGlyphs'>AI integration costs</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='54.15' y='345.22' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='54.15' y='286.65' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>120</text>
+<text x='54.15' y='228.09' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>140</text>
+<text x='54.15' y='169.52' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>160</text>
+<text x='54.15' y='110.95' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>180</text>
+<text x='67.37' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2026</text>
+<text x='111.90' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2027</text>
+<text x='156.44' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2028</text>
+<text x='200.97' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2029</text>
+<text x='245.50' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2030</text>
+<text x='290.03' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2031</text>
+<text x='334.57' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2032</text>
+<text x='379.10' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2033</text>
+<text x='423.63' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2034</text>
+<text x='468.17' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2035</text>
+<text x='307.58' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='21.14px' lengthAdjust='spacingAndGlyphs'>Year</text>
+<text transform='translate(27.09,217.54) rotate(-90)' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='110.91px' lengthAdjust='spacingAndGlyphs'>Cost Index (2026 = 100)</text>
+<text x='59.09' y='45.04' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='322.75px' lengthAdjust='spacingAndGlyphs'>'Techflation': Software licensing, cybersecurity, and AI costs outpace CPI.</text>
+<text x='59.09' y='55.84' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='249.05px' lengthAdjust='spacingAndGlyphs'>Many contracts are USD-pegged, creating FX exposure.</text>
+<text x='59.09' y='29.95' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='201.66px' lengthAdjust='spacingAndGlyphs'>Digital &amp; Administration Costs</text>
+<text x='59.09' y='410.39' style='font-size: 8.00px;fill: #7F7F7F; font-family: "Arial";' textLength='248.27px' lengthAdjust='spacingAndGlyphs'>Source: Jisc Digital Infrastructure Analysis 2024; vendor pricing trends</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='432.00pt' viewBox='0 0 576.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='-0.000000000000064' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ=='>
+    <rect x='59.09' y='72.88' width='496.99' height='289.32' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ==)'>
+<rect x='59.09' y='72.88' width='496.99' height='289.32' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='59.09,338.10 556.07,338.10 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,301.00 556.07,301.00 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,263.91 556.07,263.91 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,226.82 556.07,226.82 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,189.73 556.07,189.73 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,152.63 556.07,152.63 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,115.54 556.07,115.54 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,78.45 556.07,78.45 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polygon points='67.37,338.10 111.90,319.55 156.44,301.00 200.97,278.75 245.50,256.49 290.03,230.53 334.57,204.56 379.10,174.89 423.63,141.51 468.17,108.12 468.17,301.00 423.63,304.71 379.10,308.42 334.57,312.13 290.03,315.84 245.50,319.55 200.97,323.26 156.44,326.97 111.90,330.68 67.37,338.10 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #E11D48; fill-opacity: 0.15;' />
+<polyline points='67.37,338.10 111.90,319.55 156.44,301.00 200.97,278.75 245.50,256.49 290.03,230.53 334.57,204.56 379.10,174.89 423.63,141.51 468.17,108.12 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='468.17,301.00 423.63,304.71 379.10,308.42 334.57,312.13 290.03,315.84 245.50,319.55 200.97,323.26 156.44,326.97 111.90,330.68 67.37,338.10 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='67.37,338.10 111.90,326.97 156.44,315.84 200.97,304.71 245.50,293.58 290.03,282.46 334.57,271.33 379.10,260.20 423.63,249.07 468.17,234.24 ' style='stroke-width: 2.56; stroke: #E11D48; stroke-linecap: butt;' />
+<circle cx='67.37' cy='338.10' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='111.90' cy='326.97' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='156.44' cy='315.84' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='200.97' cy='304.71' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='245.50' cy='293.58' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='290.03' cy='282.46' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='334.57' cy='271.33' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='379.10' cy='260.20' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='423.63' cy='249.07' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<circle cx='468.17' cy='234.24' r='3.52' style='stroke-width: 1.70; stroke: #E11D48; fill: #FFFFFF;' />
+<line x1='59.09' y1='338.10' x2='556.07' y2='338.10' style='stroke-width: 0.64; stroke: #999999; stroke-dasharray: 4.00,4.00; stroke-linecap: butt;' />
+<text x='481.53' y='98.13' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='49.56px' lengthAdjust='spacingAndGlyphs'>High: Inflation +</text>
+<text x='481.53' y='108.37' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='43.48px' lengthAdjust='spacingAndGlyphs'>pension spike</text>
+<text x='481.53' y='236.78' style='font-size: 7.11px; font-weight: bold;fill: #E11D48; font-family: "Arial";' textLength='24.50px' lengthAdjust='spacingAndGlyphs'>Central</text>
+<text x='481.53' y='310.97' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='56.89px' lengthAdjust='spacingAndGlyphs'>Low: Pay restraint</text>
+<polygon points='76.60,125.34 147.20,125.34 147.08,125.34 147.56,125.32 148.03,125.22 148.48,125.05 148.90,124.81 149.27,124.51 149.59,124.15 149.85,123.74 150.04,123.30 150.15,122.83 150.19,122.35 150.19,122.35 150.19,108.73 150.19,108.73 150.15,108.25 150.04,107.78 149.85,107.34 149.59,106.93 149.27,106.57 148.90,106.27 148.48,106.03 148.03,105.86 147.56,105.76 147.20,105.74 76.60,105.74 76.96,105.76 76.48,105.74 76.00,105.80 75.54,105.93 75.11,106.14 74.71,106.41 74.36,106.75 74.07,107.13 73.85,107.56 73.70,108.01 73.62,108.49 73.61,108.73 73.61,122.35 73.62,122.11 73.62,122.59 73.70,123.07 73.85,123.52 74.07,123.95 74.36,124.33 74.71,124.67 75.11,124.94 75.54,125.15 76.00,125.28 76.48,125.34 ' style='stroke-width: 0.53; stroke: #991B1B; fill: #FEF2F2;' />
+<text x='111.90' y='112.96' text-anchor='middle' style='font-size: 7.11px; font-weight: bold;fill: #991B1B; font-family: "Arial";' textLength='46.47px' lengthAdjust='spacingAndGlyphs'>HIGH IMPACT</text>
+<text x='111.90' y='123.21' text-anchor='middle' style='font-size: 7.11px; font-weight: bold;fill: #991B1B; font-family: "Arial";' textLength='72.31px' lengthAdjust='spacingAndGlyphs'>55–60% of total costs</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='54.15' y='341.32' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='54.15' y='304.22' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='14.33px' lengthAdjust='spacingAndGlyphs'>110</text>
+<text x='54.15' y='267.13' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>120</text>
+<text x='54.15' y='230.04' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>130</text>
+<text x='54.15' y='192.95' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>140</text>
+<text x='54.15' y='155.85' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>150</text>
+<text x='54.15' y='118.76' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>160</text>
+<text x='54.15' y='81.67' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>170</text>
+<text x='67.37' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2026</text>
+<text x='111.90' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2027</text>
+<text x='156.44' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2028</text>
+<text x='200.97' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2029</text>
+<text x='245.50' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2030</text>
+<text x='290.03' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2031</text>
+<text x='334.57' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2032</text>
+<text x='379.10' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2033</text>
+<text x='423.63' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2034</text>
+<text x='468.17' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2035</text>
+<text x='307.58' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='21.14px' lengthAdjust='spacingAndGlyphs'>Year</text>
+<text transform='translate(27.09,217.54) rotate(-90)' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='110.91px' lengthAdjust='spacingAndGlyphs'>Cost Index (2026 = 100)</text>
+<text x='59.09' y='45.04' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='390.78px' lengthAdjust='spacingAndGlyphs'>Driven by wage settlements, employer NI increases, and pension valuations (USS/TPS).</text>
+<text x='59.09' y='55.84' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='207.62px' lengthAdjust='spacingAndGlyphs'>Central forecast assumes CPI+1% pay growth.</text>
+<text x='59.09' y='29.95' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='236.14px' lengthAdjust='spacingAndGlyphs'>Workforce Costs (Staff &amp; Pensions)</text>
+<text x='59.09' y='410.39' style='font-size: 8.00px;fill: #7F7F7F; font-family: "Arial";' textLength='270.98px' lengthAdjust='spacingAndGlyphs'>Source: UCEA Financial Health Reports 2024; USS/TPS actuarial valuations</text>
+</g>
+</g>
+</svg>

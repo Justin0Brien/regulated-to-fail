@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='432.00pt' viewBox='0 0 576.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='-0.000000000000064' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ=='>
+    <rect x='59.09' y='72.88' width='496.99' height='289.32' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTkuMDl8NTU2LjA3fDcyLjg4fDM2Mi4yMQ==)'>
+<rect x='59.09' y='72.88' width='496.99' height='289.32' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='59.09,346.34 556.07,346.34 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,305.12 556.07,305.12 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,263.91 556.07,263.91 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,222.70 556.07,222.70 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,181.48 556.07,181.48 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,140.27 556.07,140.27 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='59.09,99.05 556.07,99.05 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polygon points='67.37,346.34 111.90,329.85 156.44,312.05 200.97,292.82 245.50,272.05 290.03,249.62 334.57,225.40 379.10,199.24 423.63,170.99 468.17,140.47 468.17,327.03 423.63,329.26 379.10,331.47 334.57,333.66 290.03,335.83 245.50,337.97 200.97,340.09 156.44,342.20 111.90,344.28 67.37,346.34 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #F59E0B; fill-opacity: 0.25;' />
+<polyline points='67.37,346.34 111.90,329.85 156.44,312.05 200.97,292.82 245.50,272.05 290.03,249.62 334.57,225.40 379.10,199.24 423.63,170.99 468.17,140.47 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='468.17,327.03 423.63,329.26 379.10,331.47 334.57,333.66 290.03,335.83 245.50,337.97 200.97,340.09 156.44,342.20 111.90,344.28 67.37,346.34 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='67.37,346.34 111.90,338.10 156.44,329.52 200.97,320.61 245.50,311.34 290.03,301.69 334.57,291.66 379.10,281.23 423.63,270.39 468.17,259.11 ' style='stroke-width: 2.56; stroke: #F59E0B; stroke-linecap: butt;' />
+<circle cx='67.37' cy='346.34' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='111.90' cy='338.10' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='156.44' cy='329.52' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='200.97' cy='320.61' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='245.50' cy='311.34' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='290.03' cy='301.69' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='334.57' cy='291.66' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='379.10' cy='281.23' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='423.63' cy='270.39' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<circle cx='468.17' cy='259.11' r='3.52' style='stroke-width: 1.70; stroke: #F59E0B; fill: #FFFFFF;' />
+<line x1='59.09' y1='346.34' x2='556.07' y2='346.34' style='stroke-width: 0.64; stroke: #999999; stroke-dasharray: 4.00,4.00; stroke-linecap: butt;' />
+<text x='481.53' y='127.59' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='64.38px' lengthAdjust='spacingAndGlyphs'>High: Strategic Pivot</text>
+<text x='481.53' y='137.84' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='37.55px' lengthAdjust='spacingAndGlyphs'>(8% CAGR)</text>
+<text x='481.53' y='256.53' style='font-size: 7.11px; font-weight: bold;fill: #F59E0B; font-family: "Arial";' textLength='55.70px' lengthAdjust='spacingAndGlyphs'>Central: Organic</text>
+<text x='481.53' y='266.77' style='font-size: 7.11px; font-weight: bold;fill: #F59E0B; font-family: "Arial";' textLength='37.95px' lengthAdjust='spacingAndGlyphs'>(4% CAGR)</text>
+<text x='481.53' y='330.64' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='51.38px' lengthAdjust='spacingAndGlyphs'>Low: Regulatory</text>
+<text x='481.53' y='340.88' style='font-size: 7.11px;fill: #666666; font-family: "Arial";' textLength='51.00px' lengthAdjust='spacingAndGlyphs'>headwinds (1%)</text>
+<polygon points='159.42,210.22 237.90,210.22 237.78,210.22 238.26,210.20 238.74,210.11 239.19,209.94 239.60,209.70 239.97,209.39 240.29,209.03 240.55,208.62 240.74,208.18 240.85,207.72 240.89,207.24 240.89,207.24 240.89,176.34 240.89,176.34 240.85,175.86 240.74,175.39 240.55,174.95 240.29,174.54 239.97,174.18 239.60,173.88 239.19,173.64 238.74,173.47 238.26,173.37 237.90,173.35 159.42,173.35 159.78,173.37 159.30,173.35 158.83,173.41 158.36,173.54 157.93,173.75 157.53,174.02 157.19,174.35 156.90,174.74 156.67,175.16 156.52,175.62 156.44,176.10 156.44,176.34 156.44,207.24 156.44,207.00 156.44,207.48 156.52,207.95 156.67,208.41 156.90,208.83 157.19,209.22 157.53,209.55 157.93,209.82 158.36,210.03 158.83,210.16 159.30,210.22 ' style='stroke-width: 0.53; stroke: #C2410C; fill: #FFF7ED;' />
+<text x='158.40' y='179.99' style='font-size: 6.54px; font-style: italic;fill: #C2410C; font-family: "Arial";' textLength='61.64px' lengthAdjust='spacingAndGlyphs'>The Strategic Hedge:</text>
+<text x='158.40' y='189.41' style='font-size: 6.54px; font-style: italic;fill: #C2410C; font-family: "Arial";' textLength='80.53px' lengthAdjust='spacingAndGlyphs'>Universities bypass UK visa</text>
+<text x='158.40' y='198.84' style='font-size: 6.54px; font-style: italic;fill: #C2410C; font-family: "Arial";' textLength='74.33px' lengthAdjust='spacingAndGlyphs'>caps by taking degrees to</text>
+<text x='158.40' y='208.26' style='font-size: 6.54px; font-style: italic;fill: #C2410C; font-family: "Arial";' textLength='72.31px' lengthAdjust='spacingAndGlyphs'>students' home countries</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='54.15' y='349.56' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='54.15' y='308.35' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>120</text>
+<text x='54.15' y='267.13' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>140</text>
+<text x='54.15' y='225.92' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>160</text>
+<text x='54.15' y='184.70' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>180</text>
+<text x='54.15' y='143.49' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>200</text>
+<text x='54.15' y='102.28' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='15.00px' lengthAdjust='spacingAndGlyphs'>220</text>
+<text x='67.37' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2026</text>
+<text x='111.90' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2027</text>
+<text x='156.44' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2028</text>
+<text x='200.97' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2029</text>
+<text x='245.50' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2030</text>
+<text x='290.03' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2031</text>
+<text x='334.57' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2032</text>
+<text x='379.10' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2033</text>
+<text x='423.63' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2034</text>
+<text x='468.17' y='373.58' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.00px' lengthAdjust='spacingAndGlyphs'>2035</text>
+<text x='307.58' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='21.14px' lengthAdjust='spacingAndGlyphs'>Year</text>
+<text transform='translate(27.09,217.54) rotate(-90)' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='141.88px' lengthAdjust='spacingAndGlyphs'>Real Terms Index (2026 = 100)</text>
+<text x='59.09' y='45.04' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='382.31px' lengthAdjust='spacingAndGlyphs'>Offshore education revenue from franchises, branch campuses, and distance learning.</text>
+<text x='59.09' y='55.84' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='380.34px' lengthAdjust='spacingAndGlyphs'>Smaller base (~£3.5bn) but fastest-growing stream—a hedge against migration policy.</text>
+<text x='59.09' y='29.95' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='344.25px' lengthAdjust='spacingAndGlyphs'>Transnational Education (TNE) Income (Real Terms)</text>
+<text x='59.09' y='410.39' style='font-size: 8.00px;fill: #7F7F7F; font-family: "Arial";' textLength='357.89px' lengthAdjust='spacingAndGlyphs'>Source: HESA Aggregate Offshore Record; UUKi Scale of TNE Report 2024; QAA Global Framework</text>
+</g>
+</g>
+</svg>
