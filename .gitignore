@@ -1,0 +1,79 @@
+# ============================================================================
+# .gitignore for Regulated To Fail
+# ============================================================================
+
+# ==== macOS ====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# ==== R ====
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# R package build files (if applicable)
+/*.tar.gz
+/*.Rcheck/
+
+# ==== Editor / IDE ====
+# VS Code
+.vscode/
+*.code-workspace
+
+# RStudio
+.Rproj.user/
+*.Rproj
+
+# JetBrains IDEs
+.idea/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# ==== Temporary / Cache Files ====
+*.tmp
+*.temp
+*.bak
+*.log
+.cache/
+__pycache__/
+
+# ==== Build / Output (optional - uncomment if you don't want to track generated figures) ====
+# fig/*.png
+# fig/*.pdf
+# fig/*.svg
+
+# ==== System ====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==== Large files (if any) ====
+*.zip
+*.tar
+*.gz
+*.rar
+
+# ==== Node (if using npm for any tooling) ====
+node_modules/
+package-lock.json
+
+# ==== Quarto / R Markdown cache ====
+*_cache/
+*_files/
+*.html.md
+.quarto/
