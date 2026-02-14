@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='648.00pt' height='432.00pt' viewBox='0 0 648.00 432.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw2NDguMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='648.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='-0.000000000000064' y='0.000000000000057' width='648.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNzYuNTl8NjI4LjA3fDcyLjg4fDM4MC41MA=='>
+    <rect x='76.59' y='72.88' width='551.49' height='307.61' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzYuNTl8NjI4LjA3fDcyLjg4fDM4MC41MA==)'>
+<rect x='76.59' y='72.88' width='551.49' height='307.61' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='76.59,380.50 628.07,380.50 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,330.23 628.07,330.23 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,279.97 628.07,279.97 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,229.71 628.07,229.71 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,179.44 628.07,179.44 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,129.18 628.07,129.18 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<polyline points='76.59,78.92 628.07,78.92 ' style='stroke-width: 1.07; stroke: #E5E5E5; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<rect x='128.29' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<rect x='300.63' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<rect x='472.97' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<rect x='128.29' y='112.42' width='103.40' height='268.07' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E67E22; fill-opacity: 0.70;' />
+<rect x='300.63' y='154.31' width='103.40' height='226.19' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E67E22; fill-opacity: 0.70;' />
+<rect x='472.97' y='187.82' width='103.40' height='192.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E67E22; fill-opacity: 0.70;' />
+<rect x='128.29' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<rect x='300.63' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<rect x='472.97' y='220.74' width='103.40' height='159.75' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #95A5A6;' />
+<line x1='240.31' y1='220.74' x2='240.31' y2='112.42' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='238.18,217.06 240.31,220.74 242.44,217.06 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='242.44,116.11 240.31,112.42 238.18,116.11 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<line x1='412.65' y1='220.74' x2='412.65' y2='154.31' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='410.52,217.06 412.65,220.74 414.78,217.06 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='414.78,157.99 412.65,154.31 410.52,157.99 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<line x1='584.99' y1='220.74' x2='584.99' y2='187.82' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='582.86,217.06 584.99,220.74 587.12,217.06 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polyline points='587.12,191.50 584.99,187.82 582.86,191.50 ' style='stroke-width: 1.71; stroke: #C0392B; stroke-linecap: butt;' />
+<polygon points='222.25,173.14 258.37,173.14 258.30,173.13 258.59,173.12 258.87,173.06 259.14,172.96 259.39,172.82 259.61,172.64 259.80,172.42 259.96,172.18 260.07,171.91 260.14,171.63 260.16,171.34 260.16,171.34 260.16,161.83 260.16,161.83 260.14,161.54 260.07,161.26 259.96,160.99 259.80,160.75 259.61,160.53 259.39,160.35 259.14,160.21 258.87,160.10 258.59,160.05 258.37,160.03 222.25,160.03 222.46,160.05 222.17,160.03 221.89,160.07 221.61,160.15 221.35,160.27 221.11,160.44 220.91,160.64 220.73,160.87 220.60,161.12 220.51,161.40 220.46,161.68 220.45,161.83 220.45,171.34 220.46,171.20 220.46,171.49 220.51,171.77 220.60,172.05 220.73,172.30 220.91,172.53 221.11,172.73 221.35,172.90 221.61,173.02 221.89,173.10 222.17,173.13 ' style='stroke-width: 0.64; stroke: #C0392B; fill: #FADBD8;' />
+<text x='240.31' y='170.15' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #C0392B; font-family: "Arial";' textLength='33.73px' lengthAdjust='spacingAndGlyphs'>-£6,465</text>
+<polygon points='394.59,194.08 430.71,194.08 430.64,194.08 430.93,194.07 431.21,194.01 431.48,193.91 431.73,193.76 431.95,193.58 432.14,193.36 432.30,193.12 432.41,192.85 432.48,192.57 432.50,192.29 432.50,192.29 432.50,182.77 432.50,182.77 432.48,182.48 432.41,182.20 432.30,181.94 432.14,181.69 431.95,181.48 431.73,181.29 431.48,181.15 431.21,181.05 430.93,180.99 430.71,180.98 394.59,180.98 394.80,180.99 394.51,180.98 394.23,181.01 393.95,181.09 393.69,181.22 393.45,181.38 393.25,181.58 393.07,181.81 392.94,182.07 392.85,182.34 392.80,182.62 392.79,182.77 392.79,192.29 392.80,192.14 392.80,192.43 392.85,192.72 392.94,192.99 393.07,193.24 393.25,193.48 393.45,193.67 393.69,193.84 393.95,193.96 394.23,194.04 394.51,194.08 ' style='stroke-width: 0.64; stroke: #C0392B; fill: #FADBD8;' />
+<text x='412.65' y='191.09' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #C0392B; font-family: "Arial";' textLength='33.73px' lengthAdjust='spacingAndGlyphs'>-£3,965</text>
+<polygon points='566.93,210.83 603.05,210.83 602.98,210.83 603.27,210.82 603.55,210.76 603.82,210.66 604.07,210.52 604.29,210.33 604.48,210.12 604.64,209.87 604.75,209.61 604.82,209.33 604.84,209.04 604.84,209.04 604.84,199.52 604.84,199.52 604.82,199.24 604.75,198.96 604.64,198.69 604.48,198.45 604.29,198.23 604.07,198.05 603.82,197.90 603.55,197.80 603.27,197.74 603.05,197.73 566.93,197.73 567.14,197.74 566.86,197.73 566.57,197.77 566.29,197.85 566.03,197.97 565.79,198.13 565.59,198.33 565.41,198.56 565.28,198.82 565.19,199.09 565.14,199.38 565.13,199.52 565.13,209.04 565.14,208.90 565.14,209.19 565.19,209.47 565.28,209.74 565.41,210.00 565.59,210.23 565.79,210.43 566.03,210.59 566.29,210.72 566.57,210.80 566.86,210.83 ' style='stroke-width: 0.64; stroke: #C0392B; fill: #FADBD8;' />
+<text x='584.99' y='207.85' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #C0392B; font-family: "Arial";' textLength='33.73px' lengthAdjust='spacingAndGlyphs'>-£1,965</text>
+<text x='179.99' y='304.18' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='55.30px' lengthAdjust='spacingAndGlyphs'>Cap: £9,535</text>
+<text x='352.33' y='304.18' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='55.30px' lengthAdjust='spacingAndGlyphs'>Cap: £9,535</text>
+<text x='524.67' y='304.18' text-anchor='middle' style='font-size: 9.96px; font-weight: bold;fill: #FFFFFF; font-family: "Arial";' textLength='55.30px' lengthAdjust='spacingAndGlyphs'>Cap: £9,535</text>
+</g>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHw0MzIuMDA=)'>
+<text x='71.65' y='383.72' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.00px' lengthAdjust='spacingAndGlyphs'>£0</text>
+<text x='71.65' y='333.46' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='27.50px' lengthAdjust='spacingAndGlyphs'>£3,000</text>
+<text x='71.65' y='283.19' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='27.50px' lengthAdjust='spacingAndGlyphs'>£6,000</text>
+<text x='71.65' y='232.93' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='27.50px' lengthAdjust='spacingAndGlyphs'>£9,000</text>
+<text x='71.65' y='182.67' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>£12,000</text>
+<text x='71.65' y='132.40' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>£15,000</text>
+<text x='71.65' y='82.14' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>£18,000</text>
+<text x='179.99' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='55.03px' lengthAdjust='spacingAndGlyphs'>Global Elite</text>
+<text x='352.33' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='68.36px' lengthAdjust='spacingAndGlyphs'>Russell Group</text>
+<text x='524.67' y='392.59' text-anchor='middle' style='font-size: 10.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='80.58px' lengthAdjust='spacingAndGlyphs'>Modern / Post-92</text>
+<text transform='translate(27.09,226.69) rotate(-90)' text-anchor='middle' style='font-size: 10.00px; font-weight: bold; font-family: "Arial";' textLength='99.47px' lengthAdjust='spacingAndGlyphs'>Annual Fee / Cost (£)</text>
+<text x='76.59' y='45.04' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='324.48px' lengthAdjust='spacingAndGlyphs'>Universities lose money on every domestic student. The gap between the</text>
+<text x='76.59' y='55.84' style='font-size: 10.00px;fill: #666666; font-family: "Arial";' textLength='347.47px' lengthAdjust='spacingAndGlyphs'>fee cap (grey) and break-even cost (orange) represents the per-student deficit.</text>
+<text x='76.59' y='29.95' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='254.80px' lengthAdjust='spacingAndGlyphs'>The Deficit Reality: Teaching at a Loss</text>
+<text x='76.59' y='410.39' style='font-size: 8.00px;fill: #7F7F7F; font-family: "Arial";' textLength='389.08px' lengthAdjust='spacingAndGlyphs'>Source: Russell Group analysis (2024) estimates ~£4,000 deficit per student at research-intensive universities</text>
+</g>
+</g>
+</svg>
